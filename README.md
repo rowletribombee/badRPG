@@ -19,6 +19,7 @@ Some features we plan on providing include:
 * Dialogue: Humorous, story-driven dialogue adds to the game’s quirky tone. All the characters are a little silly.
 * Map Visualization: A 2D grid map will help players visualize their progress and decide their next moves.
 * Scoring System: The player's score is determined by how quickly they find the optimal path out of the cave. Certain paths may have detours to pick up items or fight bosses, but they add to the "move count." Winning is possible through various paths, but those who play strategically get higher points.
+* Save/Load Game Functionality: Players can save their current game state at any point, allowing them to load and continue their adventure later. This feature ensures that players can manage their gameplay time effectively without losing progress.
 
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:

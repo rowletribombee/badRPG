@@ -4,21 +4,21 @@
 
 ## Project Description
 
->  *  - We love video games and wanted to take this opportunity to create our own. I Woke Up in a Cave and All I Want is Wi-Fi blends strategy and fantasy while adding a satirical take on the isekai trope. It's a fun project because it allows us to explore creative game design, implement unique mechanics, and exercise our coding skills in C++. We're excited to design how the player's journey unfolds as they attempt to escape the cave.
+We love video games and wanted to take this opportunity to create our own. I Woke Up in a Cave and All I Want is Wi-Fi blends strategy and fantasy while adding a satirical take on the isekai trope. It's a fun project because it allows us to explore creative game design, implement unique mechanics, and exercise our coding skills in C++. We're excited to design how the player's journey unfolds as they attempt to escape the cave.
 
->  *  - We plan to use C++ for the backend and GitHub for tracking tasks and progress. For the output, ASCII art might be incorporated to depict simple visuals of characters or maps to add flavor.
+We plan to use C++ for the backend and GitHub for tracking tasks and progress. For the output, ASCII art might be incorporated to depict simple visuals of characters or maps to add flavor.
 
->  * - Input: The game will take the user's choices through text-based commands like movement (up, down, left, right), item usage, and combat interactions. For instance, players will choose their character class at the start, affecting base stats like Attack (ATK), Health (HP), Defense (DEF), and Size. Example inputs include choose direction (e.g., "move left"), attack options (e.g., "attack goblin"), and use item (e.g., "equip sword").
+Input: The game will take the user's choices through text-based commands like movement (up, down, left, right), item usage, and combat interactions. For instance, players will choose their character class at the start, affecting base stats like Attack (ATK), Health (HP), Defense (DEF), and Size. Example inputs include choose direction (e.g., "move left"), attack options (e.g., "attack goblin"), and use item (e.g., "equip sword").
 
->  * - Output: The output will show the consequences of these choices. Example outputs include descriptions of the current location (e.g., "You’ve entered a damp chamber. A skeleton is rolling dice with a goblin in the corner."), results of battles (e.g., "You successfully clobbered the goblin with your oversized hammer. +10 XP.", and score at the end of the game based on how efficiently they escaped or navigated the cave.
+Output: The output will show the consequences of these choices. Example outputs include descriptions of the current location (e.g., "You’ve entered a damp chamber. A skeleton is rolling dice with a goblin in the corner."), results of battles (e.g., "You successfully clobbered the goblin with your oversized hammer. +10 XP.", and score at the end of the game based on how efficiently they escaped or navigated the cave.
 
-> * Some features we plan on providing include:
->  * - Character Classes: Players choose from different character classes (Barbarian, Human, Dwarf, Elf, etc.), each with distinct base stats. Classes affect both combat mechanics.
->  * - Movement System: Players navigate the cave with a vector grid (e.g., vector<vector<int>> vect). Players can move up, down, left, or right but may encounter monsters or barriers that require a decision to fight or find another route.
->  * - Combat and Items: Players battle monsters they encounter and can equip items like swords, shields, and potions. Each item improves their chances in combat.
->  * - Dialogue: Humorous, story-driven dialogue adds to the game’s quirky tone. All the characters are silly gooses.
->  * - Map Visualization: A 2D grid map will help players visualize their progress and decide their next moves.
->  * - Scoring System: The player's score is determined by how quickly they find the optimal path out of the cave. Certain paths may have detours to pick up items or fight bosses, but they add to the "move count." Winning is possible through various paths, but those who play strategically get higher points.
+Some features we plan on providing include:
+* Character Classes: Players choose from different character classes (Barbarian, Human, Dwarf, Elf, etc.), each with distinct base stats. Classes affect both combat mechanics.
+* Movement System: Players navigate the cave with a vector grid (e.g., vector<vector<int>> vect). Players can move up, down, left, or right but may encounter monsters or barriers that require a decision to fight or find another route.
+* Combat and Items: Players battle monsters they encounter and can equip items like swords, shields, and potions. Each item improves their chances in combat.
+* Dialogue: Humorous, story-driven dialogue adds to the game’s quirky tone. All the characters are silly gooses.
+* Map Visualization: A 2D grid map will help players visualize their progress and decide their next moves.
+* Scoring System: The player's score is determined by how quickly they find the optimal path out of the cave. Certain paths may have detours to pick up items or fight bosses, but they add to the "move count." Winning is possible through various paths, but those who play strategically get higher points.
 
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:

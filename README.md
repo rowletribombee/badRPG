@@ -8,7 +8,7 @@ We love video games and wanted to take this opportunity to create our own. *I Wo
 
 We plan to use C++ for the backend and GitHub for tracking tasks and progress. For the output, ASCII art might be incorporated to depict simple visuals of characters or maps to add flavor.
 
-Input: The game will take the user's choices through text-based commands like movement (up, down, left, right), item usage, and combat interactions. For instance, players will choose their character class at the start, affecting base stats like Attack (ATK), Health (HP), Defense (DEF), and Size. Example inputs include choose direction (e.g., "move left"), attack options (e.g., "attack goblin"), and use item (e.g., "equip sword").
+Input: The game will take the user's choices through text-based commands like movement (up, down, left, right), item usage, and combat interactions. For instance, players will choose their character class at the start, affecting base stats like Attack (ATK), Health (HP), and Defense (DEF). Example inputs include choose direction (e.g., "move left"), attack options (e.g., "attack goblin"), and use item (e.g., "equip sword").
 
 Output: The output will show the consequences of these choices. Example outputs include descriptions of the current location, results of battles, and score at the end of the game based on how efficiently they escaped or navigated the cave.
 

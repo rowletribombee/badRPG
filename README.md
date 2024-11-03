@@ -27,7 +27,9 @@ Some features we plan on providing include:
 
 ### Navigation Diagram
 This navigation diagram represents how our screen and interaction options change as the player progresses from the main menu into character setup and the main game loop, where they navigate through exploration, item interaction, and combat outcomes.
-![cs100 navigation diagram (1)](https://github.com/user-attachments/assets/96e013a1-47f3-478f-b62a-a4352fd60643)
+<br />
+![cs100 navigation diagram (2)](https://github.com/user-attachments/assets/58192b4b-4c31-442f-8fa5-0af64640418f)
+
 
 ### Screen Layouts
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.

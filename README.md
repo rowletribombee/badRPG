@@ -32,7 +32,7 @@ This navigation diagram represents how our screen and interaction options change
 ### Screen Layouts
 [Screen Layout](https://docs.google.com/document/d/1VOla1fuHbr2JOMuvnhqX7As1DWS0icjsOhyZanJbCrs/edit?usp=sharing)
 
-## Dummy Game Map
+### Dummy Game Map
 ![image](https://github.com/user-attachments/assets/aaaf8e3f-1447-4c96-9c33-b07e5e4f94ff)
 
 ## Class Diagram

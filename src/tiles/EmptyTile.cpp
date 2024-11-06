@@ -3,6 +3,10 @@
 #include <cstdlib>
 #include <ctime>
 
+EmptyTile::EmptyTile(){
+    
+}
+
 void EmptyTile::print(){
     srand(static_cast<unsigned int>(time(0)));
     int dialogueVal = rand() % 3;

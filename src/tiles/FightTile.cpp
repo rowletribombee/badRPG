@@ -1,4 +1,4 @@
-#include "../lib/tiles/FightTile.h"
+#include "../../lib/tiles/FightTile.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>

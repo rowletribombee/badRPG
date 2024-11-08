@@ -9,4 +9,5 @@ class Tile{
         Tile();
         virtual void print() = 0;
         void setVisited(){ visited = true; }
+        bool isVisited(){return visited;}
 };

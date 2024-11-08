@@ -1,5 +1,6 @@
 #include "gtest/gtest.h"
 #include "../lib/tiles/EmptyTile.h"
+#include "../lib/tiles/SpawnTile.h"
 #include <sstream>
 #include <string>
 #include <vector>
@@ -63,4 +64,46 @@ TEST(EmptyTile, EmptyTileTest2) {
         }
     }
     EXPECT_TRUE(matches) << "Output was: " << result;
+}
+
+TEST(SpawnTile, SpawnTileFirstVisit){
+    SpawnTile spawnTile;
+    stringstream buffer;
+    streambuf* oldCoutBuffer = cout.rdbuf(buffer.rdbuf());
+    
+    spawnTile.print();
+
+    cout.rdbuf(oldCoutBuffer);
+    string result = buffer.str();
+
+    vector<string> dialogue = {
+        "You wake up in a cave and you crave the internet…",
+        ""
+    };
+
+    bool matches = false;
+    if (result == dialogue[0]) matches = true;
+    
+    EXPECT_TRUE(matches);
+}
+TEST(SpawnTile, SpawnTileNotFirstVisit){
+    SpawnTile spawnTile;
+    stringstream buffer;
+    streambuf* oldCoutBuffer = cout.rdbuf(buffer.rdbuf());
+    
+    spawnTile.setVisitStateFalse();
+    spawnTile.print();
+
+    cout.rdbuf(oldCoutBuffer);
+    string result = buffer.str();
+
+    vector<string> dialogue = {
+        "You wake up in a cave and you crave the internet…",
+        ""
+    };
+
+    bool matches = false;
+    if (result == dialogue[1]) matches = true;
+    
+    EXPECT_TRUE(matches);
 }

@@ -107,3 +107,14 @@ TEST(SpawnTile, SpawnTileNotFirstVisit){
     
     EXPECT_TRUE(matches);
 }
+
+TEST(Tiles, isVisitedTest1){
+    SpawnTile spawnTile;
+    spawnTile.setVisited();
+    EXPECT_TRUE(spawnTile.isVisited());
+}
+
+TEST(Tiles, isVisitedTest2){
+    SpawnTile spawnTile;
+    EXPECT_FALSE(spawnTile.isVisited());
+}

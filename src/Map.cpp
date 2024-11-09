@@ -13,6 +13,7 @@ void Map::print(){
 }
 
 void Map::initialize(){
+    mapOfTiles.resize(8, vector<Tile>(8));
     FightTile fightTile00("BasicBoss", {"Reward","Reward"});
     EmptyTile emptyTile01;
     ItemTile itemTile02("Item");

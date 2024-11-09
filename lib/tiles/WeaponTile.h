@@ -6,7 +6,7 @@ using namespace std;
 class WeaponTile : public Tile{
     public:
         WeaponTile(const string& weapon) : weapon(weapon) {}
-        void print() override;
+        void print();
     private:
         string weapon;
         vector<string> dialogue = {

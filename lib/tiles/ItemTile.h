@@ -5,7 +5,7 @@ using namespace std;
 
 class ItemTile : public Tile{
     public:
-        ItemTile(string& item) : item(item) {}
+        ItemTile(const string& item) : item(item) {}
         void print() override;
     private:
         string item;

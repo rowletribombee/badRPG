@@ -5,7 +5,7 @@ using namespace std;
 
 class WeaponTile : public Tile{
     public:
-        WeaponTile(string& weapon) : weapon(weapon) {}
+        WeaponTile(const string& weapon) : weapon(weapon) {}
         void print() override;
     private:
         string weapon;

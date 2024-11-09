@@ -40,7 +40,6 @@ void Game::printMap(){
         }
         cout << endl;
     }
-    
 }
 
 void Game::startGame(){

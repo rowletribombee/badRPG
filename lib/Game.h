@@ -1,7 +1,6 @@
 #pragma once
 #include <vector>
 #include "tiles/Tile.h"
-#include "../lib/Map.h"
 using namespace std;
 
 class Game{

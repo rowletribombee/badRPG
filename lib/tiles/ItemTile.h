@@ -5,8 +5,8 @@ using namespace std;
 
 class ItemTile : public Tile{
     public:
-        ItemTile(string& item) : item(item) {}
-        void print() override;
+        ItemTile(const string& item) : item(item) {}
+        void print();
     private:
         string item;
         vector<string> dialogue = {

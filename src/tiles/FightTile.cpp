@@ -5,4 +5,5 @@
 
 void FightTile::print(){
     // this heavily depends on the fighting mechanics that haven't been added yet
+    cout << "Test" << endl;
 }

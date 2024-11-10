@@ -6,7 +6,7 @@ using namespace std;
 class EmptyTile : public Tile{
     public:
         EmptyTile();
-        void print() override;
+        void print();
     private:
         vector<string> dialogue = {
             "Ah yes! Exactly what I needed! A whole lot of nothing. \n \n",

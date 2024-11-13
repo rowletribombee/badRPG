@@ -35,11 +35,11 @@ void Game::printMap(){
             cout << "|           |";
         }
         cout << endl;
-        for(int j = 0; j < mapOfTiles.at(i).size(); j++){
-            cout << "-------------";
-        }
-        cout << endl;
     }
+    for(int i = 0; i < mapOfTiles.size(); i++){
+        cout << "-------------";
+    }
+    cout << endl;
 }
 
 void Game::startGame(){

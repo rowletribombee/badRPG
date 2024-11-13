@@ -1,11 +1,14 @@
 #include "../lib/Screen.h"
+#include "../lib/Game.h"
 #include <iostream>
 
 Screen::Screen(){
 
 }
 
-void Screen::displayMapScreen(vector<vector<Tile>>& mapOfTiles){
+void Screen::displayMapScreen(Game& game){
+    const vector<vector<Tile>>& mapOfTiles = game.map.getMapOfTiles();
+    // vector<vector<Tile>>& mapOfTiles
     for(int i = 0; i < mapOfTiles.size(); i++){
         for(int j = 0; j < mapOfTiles.at(i).size(); j++){
             cout << "-------------";

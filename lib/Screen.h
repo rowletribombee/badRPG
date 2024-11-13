@@ -1,10 +1,9 @@
 #pragma once
-#include "tiles/Tile.h"
-#include <vector>
-using namespace std;
+#include "Game.h"
 class Screen{
     public:
         Screen();
+        void displayMapScreen(Game& game);
     private:
-        void displayMapScreen(vector<vector<Tile>>& mapOfTiles);
+        
 };

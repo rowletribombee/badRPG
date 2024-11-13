@@ -8,5 +8,5 @@ class Tile{
     public:
         Tile();
         void setVisited(){ visited = true; }
-        bool isVisited(){return visited;}
+        bool isVisited() const {return visited;}
 };

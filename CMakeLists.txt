@@ -6,6 +6,8 @@ ADD_SUBDIRECTORY(googletest)
 add_executable(startGame
 src/main.cpp
 src/Game.cpp
+src/Map.cpp
+src/Screen.cpp
 src/tiles/EmptyTile.cpp
 src/tiles/FightTile.cpp
 src/tiles/ItemTile.cpp

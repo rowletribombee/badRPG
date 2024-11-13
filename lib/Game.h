@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
 #include "tiles/Tile.h"
+#include "Screen.h"
 using namespace std;
 
 class Game{

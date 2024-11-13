@@ -1,10 +1,7 @@
 #include "../../lib/Player/Stats.h"
 
-Stats::Stats(string& n){
-    name = n;
-}
-
 void Stats::isHuman(){
+    hpMax = 60;
     hp = 60;
     atk = 7;
     def = 7;
@@ -15,6 +12,7 @@ void Stats::isHuman(){
 }
 
 void Stats::isElf(){
+    hpMax = 50;
     hp = 50;
     atk = 8;
     def = 6;
@@ -25,6 +23,7 @@ void Stats::isElf(){
 }
 
 void Stats::isDwarf(){
+    hpMax = 70;
     hp = 70;
     atk = 8;
     def = 10;
@@ -35,6 +34,7 @@ void Stats::isDwarf(){
 }
 
 void Stats::isOgre(){
+    hpMax = 90;
     hp = 90;
     atk = 10;
     def = 8;
@@ -45,6 +45,7 @@ void Stats::isOgre(){
 }
 
 void Stats::isFairy(){
+    hpMax = 40;
     hp = 40;
     atk = 5;
     def = 3;

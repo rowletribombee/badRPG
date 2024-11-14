@@ -5,5 +5,4 @@ class Screen{
         Screen();
         void displayMapScreen(Game& game);
     private:
-        
 };

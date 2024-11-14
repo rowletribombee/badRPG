@@ -11,10 +11,6 @@ Game::Game(){
     
 }
 
-Screen& Game::getScreen(){
-    return screen;
-}
-
 void Game::startGame(){
     
 }

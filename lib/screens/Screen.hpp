@@ -5,12 +5,6 @@ using namespace std;
 
 class Screen 
 {
-    private:
-    // string startScreenTxt;
-    // string introScreenTxt;
-    //vector<string> raceOptions = <"Human","Elf","Dwarf","Ogre","Fairy">
-    //vector<string> commandMenuOptions;
-    //vector<string> inventoryItems;
     public:
 
     //inline 
@@ -21,9 +15,10 @@ class Screen
                     "New Game [2]" << endl <<
                     "Credits [3]" << endl;
     }
+
     void displayIntroScreen();
 
-
+    //displays move options and promps user to chose
     void displayCommandMenu()
     { 
         cout << "What will you do?" << endl << endl <<

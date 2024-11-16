@@ -14,8 +14,8 @@ int main()
     // cout << endl << endl;
 
     //test instruciton screen 
-    cout << "Instructions: " << endl;
-    screenTest.displayInstructions();
+    // cout << "Instructions: " << endl;
+    // screenTest.displayInstructions();
 
     // //test intro display
     // cout << "Intro:" << endl;
@@ -30,6 +30,9 @@ int main()
     // screenTest.displayInventory();
 
 
+    //test credit print
+    cout << "Credits:" << endl;
+    screenTest.displayCredits();
 
     return 0;
 }

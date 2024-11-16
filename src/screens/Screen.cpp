@@ -113,7 +113,7 @@ void Screen::displayInventory()
     //Items still being figured out
 }
 
-void Screen:displayCredits()
+void Screen::displayCredits()
 {
     cout << "Developed by:" << endl;
     cout << "Sookie Drabla" << endl;

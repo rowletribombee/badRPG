@@ -21,7 +21,7 @@ void Screen::displayInstructions()
     cout << endl;
     cout << "Move[M]: Choose your movement direction (Forward, Left, Right, Back)" << endl;
     cout << "Inventory[I]: Check your items and equip gear" << endl;
-    cout << "Stats [S]: View your character’s current stats" << endl;
+    cout << "Stats [S]: View your characters current stats" << endl;
     cout << "Actions[A]: Choose your action during combat (Fight, flee, defend)" << endl;
     cout << "Command Menu[C]: Move, check Inventory, view Stats, or Quit and Save your game" << endl;
     cout << endl;
@@ -29,6 +29,17 @@ void Screen::displayInstructions()
     cout << endl;
     cout << "Final Note:" << endl;
     cout << "Your journey through the cave may be filled with uncertainty, but keep your sense of humor and discovery alive! Embrace the chaos and remember: sometimes, laughter is the best weapon against despair (or goblins). Good luck!" << endl;
+
+    sleep_for(3000); //pause for 3 seconds
+
+    //Race selection
+    cout << "Chose Your Race:" << endl << endl;
+    cout << "[1] Human:         HP:60  ATK:7    DEF:7    M.ATK:7    M.DEF:7     SPD:7  LUCK:7" << endl;
+    cout << "[2] Elf:           HP:50  ATK:8    DEF:6    M.ATK:7    M.DEF:9     SPD:8  LUCK:6" << endl;
+    cout << "[3] Dwarf:         HP:70  ATK:8    DEF:10   M.ATK:5    M.DEF:6     SPD:5  LUCK:6" << endl;
+    cout << "[4] Ogre:          HP:90  ATK:10   DEF:8    M.ATK:4    M.DEF:4     SPD:3  LUCK:3" << endl;
+    cout << "[5] Fairy:         HP:40  ATK:5    DEF:3    M.ATK:12   M.DEF:10    SPD:9  LUCK:5" << endl;
+
 }
 
 void Screen::displayIntroScreen()
@@ -95,8 +106,6 @@ void Screen::displayIntroScreen()
     cout << "..." << endl << endl;
 
 
-    //character selection
-    
 
 }
 

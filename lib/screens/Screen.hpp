@@ -16,6 +16,7 @@ class Screen
                     "Credits [3]" << endl;
     }
 
+    void displayInstructions();
     void displayIntroScreen();
 
     //displays move options and promps user to chose
@@ -28,7 +29,6 @@ class Screen
                 "Quit and Save [T]" << endl <<
                 "Credits[X]" << endl;
     }
-
 
     void displayInventory();
     void displayMapScreen();

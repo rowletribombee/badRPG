@@ -7,16 +7,21 @@ int main()
 {
     Screen screenTest;
 
-    //test start screen syntax
+    //test start screen 
     cout << "Start screen:" << endl;
     screenTest.displayStartScreen();
 
+    cout << endl << endl;
 
-    //test command manu syntax
+    //test instruciton screen 
+    cout << "Instructions: " << endl;
+    screenTest.displayInstructions();
+
+    //test command manu 
     cout << "Command screen:" << endl;
     screenTest.displayCommandMenu();
 
-    //test inventory print syntax
+    //test inventory print 
     cout << "Inventory screen:" << endl;
     screenTest.displayInventory();
 

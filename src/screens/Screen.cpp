@@ -104,12 +104,20 @@ void Screen::displayIntroScreen()
     
 
     cout << "..." << endl << endl;
-
-
-
 }
 
 void Screen::displayInventory()
 {
     cout << "========Inventory========" << endl;
+    //TO-DO
+    //Items still being figured out
+}
+
+void Screen:displayCredits()
+{
+    cout << "Developed by:" << endl;
+    cout << "Sookie Drabla" << endl;
+    cout << "Gregory Wang" << endl;
+    cout << "Kelly Ma" << endl;
+    cout << "Anthony Emery" << endl;
 }

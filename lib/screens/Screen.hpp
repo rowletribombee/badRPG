@@ -34,4 +34,5 @@ class Screen
     void displayMapScreen();
     void sleep_for(int milliseconds);
     void clearScreen();
+    void displayCredits();
 };

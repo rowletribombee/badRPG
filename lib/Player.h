@@ -8,6 +8,7 @@ class Player{
         Player(string race) : race(race){}
         void move(string dir);
         pair<int, int> getPosition();
+        void applyStatBoost(int boost);
         
     private:
         string race;

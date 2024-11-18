@@ -1,8 +1,9 @@
 #pragma once
-#include "Game.h"
+#include "Player.h"
+#include "Map.h"
 class Screen{
     public:
         Screen();
-        void displayMapScreen(Game& game);
+        void displayMapScreen(Map& mapOfTiles, Player& player);
     private:
 };

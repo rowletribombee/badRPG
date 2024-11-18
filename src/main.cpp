@@ -5,7 +5,7 @@ int main(){
 
     Game game;
     Screen screen;
-    screen.displayMapScreen(game);
+    game.startGame();
 
     return 0;
 }

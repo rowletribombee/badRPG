@@ -7,27 +7,27 @@ int main()
 {
     Screen screenTest;
 
-    // //test start screen 
-    // cout << "Start screen:" << endl;
-    // screenTest.displayStartScreen();
+    //test start screen 
+    cout << "Start screen:" << endl;
+    screenTest.displayStartScreen();
 
-    // cout << endl << endl;
+    cout << endl << endl;
 
     //test instruciton screen 
-    // cout << "Instructions: " << endl;
-    // screenTest.displayInstructions();
+    cout << "Instructions: " << endl;
+    screenTest.displayInstructions();
 
-    // //test intro display
-    // cout << "Intro:" << endl;
-    // screenTest.displayIntroScreen();
+    //test intro display
+    cout << "Intro:" << endl;
+    screenTest.displayIntroScreen();
 
-    // //test command manu 
-    // cout << "Command screen:" << endl;
-    // screenTest.displayCommandMenu();
+    //test command manu 
+    cout << "Command screen:" << endl;
+    screenTest.displayCommandMenu();
 
-    // //test inventory print 
-    // cout << "Inventory screen:" << endl;
-    // screenTest.displayInventory();
+    //test inventory print 
+    cout << "Inventory screen:" << endl;
+    screenTest.displayInventory();
 
 
     //test credit print

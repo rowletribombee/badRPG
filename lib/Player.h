@@ -9,7 +9,8 @@ class Player{
         void move(Map& map);
         bool checkForWall(char dir);
         bool checkValidDir(char dir);
-        pair<int, int> getPosition();
+        int getPositionX() { return positionX; }
+        int getPositionY() { return positionY; }
         friend class Screen;
     private:
         int positionX = 0;

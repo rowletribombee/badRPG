@@ -54,3 +54,5 @@ void Player::move(Map& map){
         map.mapOfTiles[positionY][positionX].setVisited();
     
 }
+
+

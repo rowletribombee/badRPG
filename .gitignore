@@ -1,5 +1,6 @@
 testTiles
 startGame
+testMovement
 
 Makefile
 CMakeCache.txt

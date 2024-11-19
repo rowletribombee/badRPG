@@ -40,3 +40,43 @@ TEST(MapMovement, MapMovementRightRightRightUpUpUpLeftDown) {
     EXPECT_EQ(player.getPositionX(), 2); // Check X-coordinate
     EXPECT_EQ(player.getPositionY(), 5); // Check Y-coordinate
 }
+
+TEST(MapMovement, MapMovementRightRightRightRightRightRightRightUpUpUpUpUpUpUp) {
+    Player player;
+    Map map;
+
+    istringstream input("d\nd\nd\nd\nd\nd\nd\nw\nw\nw\nw\nw\nw\nw\n");
+    cin.rdbuf(input.rdbuf());
+
+    player.move(map); // Reads 'd'
+    player.move(map); // Reads 'd'
+    player.move(map); // Reads 'd'
+    player.move(map); // Reads 'd'
+    player.move(map); // Reads 'd'
+    player.move(map); // Reads 'd'
+    player.move(map); // Reads 'd'
+    player.move(map); // Reads 'w'
+    player.move(map); // Reads 'w'
+    player.move(map); // Reads 'w'
+    player.move(map); // Reads 'w'
+    player.move(map); // Reads 'w'
+    player.move(map); // Reads 'w'
+    player.move(map); // Reads 'w'
+
+    EXPECT_EQ(player.getPositionX(), 7); // Check X-coordinate
+    EXPECT_EQ(player.getPositionY(), 0); // Check Y-coordinate
+}
+
+TEST(MapMovement, MapDownRight) {
+    Player player;
+    Map map;
+
+    istringstream input("s\nd\n");
+    cin.rdbuf(input.rdbuf());
+
+    player.move(map); // Reads 's'
+    player.move(map); // Reads 'd'
+
+    EXPECT_EQ(player.getPositionX(), 1); // Check X-coordinate
+    EXPECT_EQ(player.getPositionY(), 7); // Check Y-coordinate
+}

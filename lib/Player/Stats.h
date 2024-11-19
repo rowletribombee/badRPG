@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <random>
 using namespace std;
 
 class Stats{
@@ -16,6 +17,14 @@ class Stats{
         void isDwarf();
         void isOgre();
         void isFairy();
+        void reduceHp(int);
+        int getDef() const;
+        int getMDef() const;
+        int getSpd() const;
+        int getLck() const;
+        int rng(int, int) const; //gives random number between the two ints
+        bool CritCheck(Stats& opponent) const;
+        bool AccuracyCheck(Stats& opponent) const;
         /*
         Character classes
         void isWizard();
@@ -25,6 +34,4 @@ class Stats{
         void isArcher();
         */
        //enemy classes
-        
-
 };

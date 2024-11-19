@@ -7,4 +7,12 @@ void Player::Heal(){
     }
 }
 
+void Player::Attack(Stats& target) const{
+    target.reduceHp(this->atk * 4/target.getDef());
+}
+
+void Player::Guard(){
+    isGuarding = true;
+}
+
 

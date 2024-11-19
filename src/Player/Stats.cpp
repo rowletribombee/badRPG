@@ -54,3 +54,40 @@ void Stats::isFairy(){
     spd = 9;
     lck = 5;
 }
+
+void Stats::reduceHp(int minus){
+    hp -= minus;
+}
+
+int Stats::getDef() const{
+    return def;
+}
+
+int Stats::getMDef() const{
+    return mdef;
+}
+
+int Stats::getSpd() const{
+    return spd;
+}
+
+int Stats::getLck() const{
+    return lck;
+}
+
+bool Stats::AccuracyCheck(Stats& opponent) const{
+    int AccuracyDivisor = opponent.getLck()*0.5 + lck; //vary the multiplier for opponent luck in balancing
+    return (rng(0,AccuracyDivisor) < lck); //gives a boolean with a lck/AccuracyDivisor chance of being true (I think)
+}
+
+bool Stats::CritCheck(Stats& opponent) const{
+    int CritDivisor = opponent.getLck()*2;
+    return (rng(0, CritDivisor) < lck);
+}
+
+int Stats::rng(int min, int max) const{
+    random_device rd;
+    static mt19937 gen(rd()); //generates pseudorandom using mersenne twister
+    static uniform_int_distribution<> distribution(min, max); //random int values on interval
+    return distribution(gen);
+}

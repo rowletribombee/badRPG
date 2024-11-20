@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class Player : public Stats{
+class Player{
     private:
         int x, y, buffCounter;
         //weapon Held;
@@ -21,5 +21,5 @@ class Player : public Stats{
         void Heal();
         void BuffChosen(string&);
         void Guard();
-        void Throw(Stats) const;
+        void Throw(Stats&) const; //should also take an item
 };

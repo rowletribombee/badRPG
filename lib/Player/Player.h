@@ -15,7 +15,7 @@ class Player{
     public:
         
         Player() = delete;
-        Player(Stats& bStats) : x{0}, y{0}, buffCounter{0}, baseStats{bStats}, isGuarding{false}{};
+        Player(Stats& bStats) : x{0}, y{7}, buffCounter{0}, baseStats{bStats}, isGuarding{false}{};
         void Attack(Stats&) const;
         void MagicAttack(Stats&) const;
         void Heal();

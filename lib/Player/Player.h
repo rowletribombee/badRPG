@@ -1,7 +1,7 @@
+#pragma once
+
 #include "Stats.h"
 //#include "../Weapon.h" //for weapon implementation eventually
-
-#pragma once
 
 using namespace std;
 

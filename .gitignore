@@ -1,4 +1,6 @@
 testTiles
+startGame
+testMovement
 
 screenTest
 
@@ -8,3 +10,5 @@ cmake_install.cmake
 CMakeFiles/
 
 lib/*.a
+
+.vscode/

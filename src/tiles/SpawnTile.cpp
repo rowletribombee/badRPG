@@ -2,7 +2,7 @@
 #include <iostream>
 
 SpawnTile::SpawnTile(){
-    
+    setVisited();
 }
 
 void SpawnTile::print(){

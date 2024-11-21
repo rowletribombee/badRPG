@@ -74,8 +74,7 @@ TEST(MapMovement, MapDownRight) {
     istringstream input("s\nd\n");
     cin.rdbuf(input.rdbuf());
 
-    player.move(map); // Reads 's'
-    player.move(map); // Reads 'd'
+    player.move(map); // Reads 's and then d'
 
     EXPECT_EQ(player.getPositionX(), 1); // Check X-coordinate
     EXPECT_EQ(player.getPositionY(), 7); // Check Y-coordinate

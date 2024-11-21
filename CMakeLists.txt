@@ -6,13 +6,24 @@ ADD_SUBDIRECTORY(googletest)
 add_executable(startGame
 src/main.cpp
 src/Game.cpp
+src/Player.cpp
 src/Map.cpp
 src/Screen.cpp
 src/tiles/EmptyTile.cpp
 src/tiles/FightTile.cpp
-src/tiles/ItemTile.cpp
+src/tiles/PotionTile.cpp
 src/tiles/SpawnTile.cpp
 src/tiles/WeaponTile.cpp
+src/tiles/Tile.cpp
+)
+
+add_executable(testMovement
+test/testMovement.cpp
+src/Map.cpp
+src/Player.cpp
+src/Screen.cpp
+src/tiles/EmptyTile.cpp
+src/tiles/SpawnTile.cpp
 src/tiles/Tile.cpp
 )
 
@@ -20,7 +31,7 @@ add_executable(testTiles
 test/testTiles.cpp 
 src/tiles/EmptyTile.cpp
 src/tiles/FightTile.cpp
-src/tiles/ItemTile.cpp
+src/tiles/PotionTile.cpp
 src/tiles/SpawnTile.cpp
 src/tiles/WeaponTile.cpp
 src/tiles/Tile.cpp
@@ -28,3 +39,5 @@ src/tiles/Tile.cpp
 
 TARGET_LINK_LIBRARIES(testTiles gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testTiles PRIVATE gtest_disable_pthreads=ON)
+TARGET_LINK_LIBRARIES(testMovement gtest gtest_main)
+TARGET_COMPILE_DEFINITIONS(testMovement PRIVATE gtest_disable_pthreads=ON)

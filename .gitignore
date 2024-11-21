@@ -1,5 +1,6 @@
 testTiles
 startGame
+testMovement
 
 Makefile
 CMakeCache.txt
@@ -7,3 +8,5 @@ cmake_install.cmake
 CMakeFiles/
 
 lib/*.a
+
+.vscode/

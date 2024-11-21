@@ -1,16 +1,18 @@
 #pragma once
 #include <string>
 using namespace std;
-
+#include "Map.h"
 class Player{
     public:
-        Player() = delete;
-        Player(string race) : race(race){}
-        void move(string dir);
-        pair<int, int> getPosition();
-        
+        Player();
+        Player(string race);
+        void move(Map& map);
+        bool checkForWall(char dir);
+        bool checkValidDir(char dir);
+        int getPositionX() { return positionX; }
+        int getPositionY() { return positionY; }
+        friend class Screen;
     private:
-        string race;
         int positionX = 0;
         int positionY = 7;
         int baseHp;

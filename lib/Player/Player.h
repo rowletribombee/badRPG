@@ -1,7 +1,9 @@
 #pragma once
 
-#include "Stats.h"
+#include "../Stats.h"
 //#include "../Weapon.h" //for weapon implementation eventually
+
+//Obsolete, kept around for reference
 
 using namespace std;
 

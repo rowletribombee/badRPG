@@ -27,4 +27,5 @@ class Player{
         void BuffChosen(string&);
         void Guard();
         void Throw(Stats&) const; //should also take an item       
+        Stats& getStats() const; //gets stats from the player class, will be used in battle
 };

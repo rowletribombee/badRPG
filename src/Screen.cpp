@@ -138,6 +138,11 @@ void Screen::displayCredits()
     cout << "Anthony Emery" << endl;
 }
 
+void Screen::displayRaceSelection()
+{
+    
+}
+
 Screen::Screen(){
 
 }
@@ -180,3 +185,4 @@ void Screen::displayMapScreen(Map& map, Player& player){
     }
     cout << endl;
 }
+

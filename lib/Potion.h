@@ -1,15 +1,16 @@
 #pragma once
-#include <Item.h>
-using namespace std;
-
+#include "Item.h"
+#include <string>
 
 class Potion : public Item {
-    public:
-        Potion(const string& potionName, int healAmount);
-        void use(Player& target) override;
-        string getEffect() const override;
+public:
+    Potion(const std::string& potionName, int healAmount)
+        : name(potionName), healingAmount(healAmount) {}
 
-    private:
-        int healingAmount;
-        string name;
+    void use(Player& target) override;
+    std::string getEffect() const override;
+
+private:
+    std::string name;
+    int healingAmount;
 };

@@ -1,39 +1,28 @@
-#include "Weapon.h"
+#include "../lib/Weapon.h"
+#include "../lib/Player.h"
 #include <iostream>
 
-Weapon::Weapon(const string& weaponName, int wt, int atkBoost, int defBoost, int spdBoost, int lckBoost, bool uniqueEffect)
-   : attackBoost(atkBoost), defenseBoost(defBoost), speedBoost(spdBoost), luckBoost(lckBoost), hasUniqueEffect(uniqueEffect) {
-   name = weaponName;
-   weight = wt;
-}
-
-void Weapon::equip(Player& target) {
-   target.applyStatBoost(attackBoost);
-   target.applyStatBoost(defenseBoost);
-   target.applyStatBoost(speedBoost);
-   target.applyStatBoost(luckBoost);
-
-   if (hasUniqueEffect) {
-       applyUniqueEffect(target);
-   }
-
-   cout << name << " equipped!" << endl;
-}
-
-
 void Weapon::use(Player& target) {
-   equip(target);
+    target.applyStatBoost("ATK", attackBoost);
+    target.applyStatBoost("DEF", defenseBoost);
+    target.applyStatBoost("SPD", speedBoost);
+    target.applyStatBoost("LCK", luckBoost);
+    std::cout << name << " equipped!\n";
 }
 
-string Weapon::getEffect() const {
-   string effect = "Weight: " + to_string(weight);
-   if (attackBoost > 0) effect += ", ATK+" + to_string(attackBoost);
-   if (defenseBoost > 0) effect += ", DEF+" + to_string(defenseBoost);
-   if (speedBoost > 0) effect += ", SPD+" + to_string(speedBoost);
-   if (luckBoost > 0) effect += ", LCK+" + to_string(luckBoost);
-   return effect;
+void Weapon::unequip(Player& target) {
+    target.applyStatBoost("ATK", -attackBoost);
+    target.applyStatBoost("DEF", -defenseBoost);
+    target.applyStatBoost("SPD", -speedBoost);
+    target.applyStatBoost("LCK", -luckBoost);
+    std::cout << name << " unequipped!\n";
 }
 
-void Weapon::applyUniqueEffect(Player& target) {
-   // override in derived classes for unique effects
+std::string Weapon::getEffect() const {
+    std::string effect;
+    if (attackBoost) effect += "ATK+" + std::to_string(attackBoost) + " ";
+    if (defenseBoost) effect += "DEF+" + std::to_string(defenseBoost) + " ";
+    if (speedBoost) effect += "SPD+" + std::to_string(speedBoost) + " ";
+    if (luckBoost) effect += "LCK+" + std::to_string(luckBoost) + " ";
+    return effect.empty() ? "No effect" : effect;
 }

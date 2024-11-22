@@ -1,11 +1,10 @@
 #pragma once
 #include <string>
-#include "Player.h"
-using namespace std;
+class Player;
 
 class Item {
-   public:
-       virtual void use(Player& target) = 0;
-       virtual string getEffect() const = 0;
-       int weight;
+public:
+    virtual ~Item() = default;
+    virtual void use(Player& target) = 0;
+    virtual std::string getEffect() const = 0;
 };

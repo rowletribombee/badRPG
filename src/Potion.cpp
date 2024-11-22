@@ -1,19 +1,12 @@
-#include "Potion.h"
+#include "../lib/Potion.h"
+#include "../lib/Player.h"
 #include <iostream>
 
-
-Potion::Potion(const string& potionName, int healAmount)
-   : healingAmount(healAmount) {
-   name = potionName;
-   weight = 1;
-}
-
 void Potion::use(Player& target) {
-   target.applyStatBoost(healingAmount);
-   cout << name << " used! Healed " << healingAmount << " HP";
+    target.heal(healingAmount);
+    std::cout << name << " used! Healed " << healingAmount << " HP.\n";
 }
 
-string Potion::getEffect() const {
-   string effect = "Heals " + to_string(healingAmount) + " HP";
-   return effect;
+std::string Potion::getEffect() const {
+    return "Heals " + std::to_string(healingAmount) + " HP";
 }

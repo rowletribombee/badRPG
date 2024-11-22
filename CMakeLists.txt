@@ -65,6 +65,14 @@ src/tiles/SpawnTile.cpp
 src/tiles/Tile.cpp
 )
 
+add_executable(testItems
+test/testItems.cpp
+src/Potion.cpp
+src/Weapon.cpp 
+src/Player.cpp 
+src/Stats.cpp
+)
+
 TARGET_LINK_LIBRARIES(testTiles gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testTiles PRIVATE gtest_disable_pthreads=ON)
 TARGET_LINK_LIBRARIES(testMovement gtest gtest_main)

@@ -6,9 +6,25 @@ Player::Player(){
     
 }
 
-Player::Player(string race) : race(race), baseHp(100), baseAtk(10), baseDef(10),
-                              baseMatk(10), baseMdef(10), baseSpd(10), baseLuck(10) {
-    //  just for testing purposes
+Player::Player(string race){
+    if (race == "Human") {
+        baseStats.isHuman();
+    } 
+    else if (race == "Elf") {
+        baseStats.isElf();
+    } 
+    else if (race == "Dwarf") {
+        baseStats.isDwarf();
+    } 
+    else if (race == "Ogre") {
+        baseStats.isOgre();
+    } 
+    else if (race == "Fairy") {
+        baseStats.isFairy();
+    } 
+    else {
+        baseStats.isHuman();  // default to Human
+    }
 }
 
 Player::Player(Stats& bStats){
@@ -32,63 +48,6 @@ bool Player::checkForWall(char dir){
     }else{
         return false;
     }
-}
-
-void Player::applyStatBoost(const string& stat, int boost) {
-    int* statPtr = nullptr;
-
-    // map the stat string to the corresponding stat pointer
-    if (stat == "HP") {
-        statPtr = &baseHp;
-    } else if (stat == "ATK") {
-        statPtr = &baseAtk;
-    } else if (stat == "DEF") {
-        statPtr = &baseDef;
-    } else if (stat == "MATK") {
-        statPtr = &baseMatk;
-    } else if (stat == "MDEF") {
-        statPtr = &baseMdef;
-    } else if (stat == "SPD") {
-        statPtr = &baseSpd;
-    } else if (stat == "LCK") {
-        statPtr = &baseLuck;
-    }
-
-    // if the stat is valid, apply the boost
-    if (statPtr) {
-        *statPtr += boost;
-        cout << stat << " changed by " << boost << ". New value: " << *statPtr << endl;
-    } else {
-        // handle invalid stat
-        cerr << "Error: Unknown stat '" << stat << "'." << endl;
-    }
-}
-
-void Player::heal(int amount) {
-    baseHp += amount;
-    cout << "Healed " << amount << " HP. Current HP: " << baseHp << endl;
-}
-
-void Player::displayStats() const {
-    cout << "Stats for " << race << ":\n";
-    cout << "HP: " << baseHp << "\n";
-    cout << "ATK: " << baseAtk << "\n";
-    cout << "DEF: " << baseDef << "\n";
-    cout << "M.ATK: " << baseMatk << "\n";
-    cout << "M.DEF: " << baseMdef << "\n";
-    cout << "SPD: " << baseSpd << "\n";
-    cout << "LCK: " << baseLuck << "\n";
-}
-
-int& Player::getStatRef(const string& stat) {
-    if (stat == "HP") return baseHp;
-    if (stat == "ATK") return baseAtk;
-    if (stat == "DEF") return baseDef;
-    if (stat == "M.ATK") return baseMatk;
-    if (stat == "M.DEF") return baseMdef;
-    if (stat == "SPD") return baseSpd;
-    if (stat == "LCK") return baseLuck;
-    throw invalid_argument("Invalid stat: " + stat);
 }
 
 bool Player::checkValidDir(char dir){
@@ -136,4 +95,23 @@ void Player::Attack(Stats& target) const{
 
 void Player::Guard(){
     isGuarding = true;
+}
+
+void Player::applyStatBoost(const std::string& stat, int boost) {
+    baseStats.addStat(stat, boost);  
+}
+
+void Player::heal(int amount) {
+    baseStats.addStat("hp", amount);
+}
+
+void Player::displayStats() const {
+    std::cout << "Player Stats:" << std::endl;
+    std::cout << "HP: " << baseStats.getHP() << "/" << baseStats.getMaxHP() << std::endl;
+    std::cout << "ATK: " << baseStats.getAtk() << std::endl;
+    std::cout << "DEF: " << baseStats.getDef() << std::endl;
+    std::cout << "MATK: " << baseStats.getMAtk() << std::endl;
+    std::cout << "MDEF: " << baseStats.getMDef() << std::endl;
+    std::cout << "SPD: " << baseStats.getSpd() << std::endl;
+    std::cout << "LCK: " << baseStats.getLck() << std::endl;
 }

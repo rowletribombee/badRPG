@@ -3,26 +3,21 @@
 #include <iostream>
 
 void Weapon::use(Player& target) {
-    target.applyStatBoost("ATK", attackBoost);
-    target.applyStatBoost("DEF", defenseBoost);
-    target.applyStatBoost("SPD", speedBoost);
-    target.applyStatBoost("LCK", luckBoost);
+    target.applyStatBoost("atk", attackBoost);
+    target.applyStatBoost("def", defenseBoost);
+    target.applyStatBoost("matk", magicAttackBoost);
+    target.applyStatBoost("mdef", magicDefenseBoost);
+    target.applyStatBoost("spd", speedBoost);
+    target.applyStatBoost("lck", luckBoost);
     std::cout << name << " equipped!\n";
 }
 
 void Weapon::unequip(Player& target) {
-    target.applyStatBoost("ATK", -attackBoost);
-    target.applyStatBoost("DEF", -defenseBoost);
-    target.applyStatBoost("SPD", -speedBoost);
-    target.applyStatBoost("LCK", -luckBoost);
+    target.applyStatBoost("atk", -attackBoost);
+    target.applyStatBoost("def", -defenseBoost);
+    target.applyStatBoost("matk", -magicAttackBoost);
+    target.applyStatBoost("mdef", -magicDefenseBoost);
+    target.applyStatBoost("spd", -speedBoost);
+    target.applyStatBoost("lck", -luckBoost);
     std::cout << name << " unequipped!\n";
-}
-
-std::string Weapon::getEffect() const {
-    std::string effect;
-    if (attackBoost) effect += "ATK+" + std::to_string(attackBoost) + " ";
-    if (defenseBoost) effect += "DEF+" + std::to_string(defenseBoost) + " ";
-    if (speedBoost) effect += "SPD+" + std::to_string(speedBoost) + " ";
-    if (luckBoost) effect += "LCK+" + std::to_string(luckBoost) + " ";
-    return effect.empty() ? "No effect" : effect;
 }

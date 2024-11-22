@@ -21,8 +21,8 @@ int main() {
     player.displayStats();
 
     // create weapons
-    Weapon stick("Stick", 2, 2, 2, 0);  // ATK+2, DEF+2, SPD+2, 
-    Weapon rock("Rock", 3, 0, 0, 10); // ATK+3, LCK+10
+    Weapon stick("Stick", 2, 2, 0, 0, 2, 0);  // ATK+2, DEF+2, SPD+2, 
+    Weapon rock("Rock", 3, 0, 0, 0, 0, 10); // ATK+3, LCK+10
 
     // equip and unequip weapons
     cout << "\nEquipping weapons...\n";

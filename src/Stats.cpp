@@ -118,6 +118,35 @@ void Stats::addHP(int hpVal){
     }
 }
 
+void Stats::addStat(const std::string& stat, int value) {
+    if (stat == "hp") {
+        hp += value;
+        if (hp > hpMax) {
+            hp = hpMax;
+        }
+    } 
+    else if (stat == "atk") {
+        atk += value;
+    } 
+    else if (stat == "def") {
+        def += value;
+    } 
+    else if (stat == "matk") {
+        matk += value; 
+    } 
+    else if (stat == "mdef") {
+        mdef += value;
+    } 
+    else if (stat == "spd") {
+        spd += value;
+    } 
+    else if (stat == "lck") {
+        lck += value;
+    } else {
+        std::cout << "Invalid stat name!" << std::endl;
+    }
+}
+
 bool Stats::AccuracyCheck(Stats& opponent) const{
     int AccuracyDivisor = opponent.getLck()*0.5 + lck; //vary the multiplier for opponent luck in balancing
     return (rng(0,AccuracyDivisor) < lck); //gives a boolean with a lck/AccuracyDivisor chance of being true (I think)

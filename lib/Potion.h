@@ -8,7 +8,6 @@ public:
         : name(potionName), healingAmount(healAmount) {}
 
     void use(Player& target) override;
-    std::string getEffect() const override;
 
 private:
     std::string name;

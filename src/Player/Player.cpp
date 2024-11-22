@@ -1,14 +1,22 @@
-#include "../../lib/Player/Player.h"
+#include "../../lib/Player.h"
+
 
 void Player::Heal(){
-    hp += matk*3;
-    if(hp > hpMax){
-        hp = hpMax;
-    }
+    baseStats.addHP(baseStats.getMAtk()*3);
 }
 
 void Player::Attack(Stats& target) const{
-    target.reduceHp(this->atk * 4/target.getDef());
+    if(!baseStats.AccuracyCheck(target)){
+        return;
+    }
+    else{
+        if(baseStats.CritCheck(target)){
+            target.reduceHp(baseStats.getAtk() * 6/target.getDef());
+        }
+        else{
+            target.reduceHp(baseStats.getAtk() * 4/target.getDef());
+        }
+    }
 }
 
 void Player::Guard(){

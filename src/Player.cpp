@@ -10,6 +10,10 @@ Player::Player(string race){
     
 }
 
+Player::Player(Stats& bStats){
+    baseStats = bStats;
+}
+
 bool Player::checkForWall(char dir){
     if(positionX == 0 && dir == 'a'){
         cout << "Whoops! There appears to be a wall here! Try again! w for up, a for left, s for down and d for right!" << endl;

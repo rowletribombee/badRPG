@@ -7,6 +7,7 @@ class Player{
     public:
         Player();
         Player(string race);
+        Player(Stats&);
         void move(Map& map);
         bool checkForWall(char dir);
         bool checkValidDir(char dir);

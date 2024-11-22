@@ -3,6 +3,15 @@ project(IWokeUpInACaveAndAllIWantIsWifi)
 
 ADD_SUBDIRECTORY(googletest)
 
+add_executable(testScreens
+src/Screen.cpp
+src/Map.cpp
+src/Player.cpp
+src/tiles/Tile.cpp
+src/tiles/EmptyTile.cpp
+src/tiles/SpawnTile.cpp 
+test/testScreens.cpp
+)
 add_executable(startGame
 src/main.cpp
 src/Game.cpp

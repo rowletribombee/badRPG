@@ -8,6 +8,7 @@ using namespace std;
 
 int main()
 {
+    Player displayTest;
     Screen screenTest;
 
     //test start screen 
@@ -51,7 +52,7 @@ int main()
     
     //testing user race input
     cout << "Race Selection " << endl;
-    screenTest.displayRaceSelection();
+    screenTest.displayRaceSelection(displayTest);
     
     //create objects
     Player player;

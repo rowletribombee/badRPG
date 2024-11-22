@@ -1,7 +1,6 @@
 #include "../lib/Screen.h"
 #include "../lib/Game.h"
 #include "../lib/Player.h"
-#include "../lib/Stats.h"
 #include <iostream>
 #include <string>
 #include <chrono>
@@ -181,8 +180,9 @@ void Screen::displayRaceStats()
     charInfo(displayStats);
 }
 
-void Screen::displayRaceSelection()
+void Screen::displayRaceSelection(Player& player)
 {
+    Stats& stats = player.getStats();
     auto charInfo = [](const Stats& stats) {
         cout << "   HP: " << stats.getHP() << "/" << stats.getMaxHP() << endl;
         cout << "   ATK: " << stats.getAtk() << " | DEF: " << stats.getDef() << endl;
@@ -191,34 +191,34 @@ void Screen::displayRaceSelection()
         cout << "-----------------------------------------" << endl;
     };
 
+
     int choice;
     cin >> choice;
-    Stats playerStats;
 
     cout << " commented out for now, user selection screen " << endl;
-    // if (choice == 1) {
-    //     playerStats.isHuman();
-    //     cout << "You have chosen Human!" << endl;
-    //     charInfo(playerStats);
-    // } else if (choice == 2) {
-    //     playerStats.isElf();
-    //     cout << "You have chosen Elf!" << endl;
-    //     charInfo(playerStats);
-    // } else if (choice == 3) {
-    //     playerStats.isDwarf();
-    //     cout << "You have chosen Dwarf!" << endl;
-    //     charInfo(playerStats);
-    // } else if (choice == 4) {
-    //     playerStats.isOgre();
-    //     cout << "You have chosen Ogre!" << endl;
-    //     charInfo(playerStats);
-    // } else if (choice == 5) {
-    //     playerStats.isFairy();
-    //     cout << "You have chosen Fairy!" << endl;
-    //     charInfo(playerStats);
-    // } else {
-    //     cout << "Please choose a number from 1-5" << endl;
-    // }
+    if (choice == 1) {
+        stats.isHuman();
+        cout << "You have chosen Human!" << endl;
+        charInfo(stats);
+    } else if (choice == 2) {
+        stats.isElf();
+        cout << "You have chosen Elf!" << endl;
+        charInfo(stats);
+    } else if (choice == 3) {
+        stats.isDwarf();
+        cout << "You have chosen Dwarf!" << endl;
+        charInfo(stats);
+    } else if (choice == 4) {
+        stats.isOgre();
+        cout << "You have chosen Ogre!" << endl;
+        charInfo(stats);
+    } else if (choice == 5) {
+        stats.isFairy();
+        cout << "You have chosen Fairy!" << endl;
+        charInfo(stats);
+    } else {
+        cout << "Please choose a number from 1-5" << endl;
+    }
 }
 
 Screen::Screen(){

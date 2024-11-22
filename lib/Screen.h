@@ -1,7 +1,6 @@
 #pragma once
 #include "Player.h"
 #include "Map.h"
-#include "Stats.h"
 
 class Screen{
     public:
@@ -15,7 +14,7 @@ class Screen{
         void displayMapScreen();
         void sleep_for(int milliseconds);
         void displayCredits();
-        void displayRaceSelection();
+        void displayRaceSelection(Player& player);
         void displayRaceStats();
     private:
 };

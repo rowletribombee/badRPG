@@ -45,6 +45,14 @@ int main()
     //test map display
     cout << "Map Display:" << endl;
     
+    //testing display race
+    cout << "Race Display" << endl;
+    screenTest.displayRaceStats();
+    
+    //testing user race input
+    cout << "Race Selection " << endl;
+    screenTest.displayRaceSelection();
+    
     //create objects
     Player player;
     Map map;

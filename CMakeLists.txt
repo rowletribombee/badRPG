@@ -42,7 +42,8 @@ src/tiles/Tile.cpp
 
 add_executable(testStats
 test/testStats.cpp
-src/Player/Stats.cpp
+src/Player/Stats.cpp)
+
 add_executable(testScreens
 test/testScreens.cpp
 src/Screen.cpp

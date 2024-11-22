@@ -51,7 +51,7 @@ src/Map.cpp
 src/Player.cpp
 src/tiles/EmptyTile.cpp
 src/tiles/SpawnTile.cpp
-src/tiles/Tile.cpp6cc6cde39750
+src/tiles/Tile.cpp
 )
 
 TARGET_LINK_LIBRARIES(testTiles gtest gtest_main)

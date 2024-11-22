@@ -36,7 +36,6 @@ This navigation diagram represents how our screen and interaction options change
 ![image](https://github.com/user-attachments/assets/aaaf8e3f-1447-4c96-9c33-b07e5e4f94ff)
 
 ## Class Diagram
-![image](https://github.com/user-attachments/assets/f3569b35-f41a-4f44-8dc1-5e414160fea4)
 Updated Diagram: 
 ![IMG_0911](https://github.com/user-attachments/assets/8fe3c68b-a37a-4fb3-9ed2-9086d857fae6)
 

@@ -67,7 +67,7 @@ src/tiles/Tile.cpp
 )
 
 add_executable(testItems
-test/testItem.cpp
+test/testItems.cpp
 src/Potion.cpp
 src/Weapon.cpp 
 src/Player.cpp 

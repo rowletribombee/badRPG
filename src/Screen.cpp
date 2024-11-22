@@ -194,30 +194,50 @@ void Screen::displayRaceSelection(Player& player)
 
     int choice;
     cin >> choice;
+    bool validChoice = false;
 
-    cout << " commented out for now, user selection screen " << endl;
-    if (choice == 1) {
-        stats.isHuman();
-        cout << "You have chosen Human!" << endl;
-        charInfo(stats);
-    } else if (choice == 2) {
-        stats.isElf();
-        cout << "You have chosen Elf!" << endl;
-        charInfo(stats);
-    } else if (choice == 3) {
-        stats.isDwarf();
-        cout << "You have chosen Dwarf!" << endl;
-        charInfo(stats);
-    } else if (choice == 4) {
-        stats.isOgre();
-        cout << "You have chosen Ogre!" << endl;
-        charInfo(stats);
-    } else if (choice == 5) {
-        stats.isFairy();
-        cout << "You have chosen Fairy!" << endl;
-        charInfo(stats);
-    } else {
-        cout << "Please choose a number from 1-5" << endl;
+    while (!validChoice) 
+    {
+        cin >> choice;
+
+        if (choice == 1) 
+        {
+            stats.isHuman();
+            cout << "You have chosen Human!" << endl;
+            charInfo(stats);
+            validChoice = true; 
+        } 
+        else if (choice == 2) 
+        {
+            stats.isElf();
+            cout << "You have chosen Elf!" << endl;
+            charInfo(stats);
+            validChoice = true; 
+        } 
+        else if (choice == 3) 
+        {
+            stats.isDwarf();
+            cout << "You have chosen Dwarf!" << endl;
+            charInfo(stats);
+            validChoice = true; 
+        } 
+        else if (choice == 4) {
+            stats.isOgre();
+            cout << "You have chosen Ogre!" << endl;
+            charInfo(stats);
+            validChoice = true; 
+        } 
+        else if (choice == 5) 
+        {
+            stats.isFairy();
+            cout << "You have chosen Fairy!" << endl;
+            charInfo(stats);
+            validChoice = true; 
+        } 
+        else 
+        {
+            cout << "Invalid choice! Please choose a number between 1 and 5." << endl;
+        }
     }
 }
 

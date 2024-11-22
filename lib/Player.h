@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
-using namespace std;
 #include "Map.h"
 #include "Stats.h"
+using namespace std;
 class Player{
     public:
         Player();

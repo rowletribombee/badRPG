@@ -56,7 +56,26 @@ void Player::move(Map& map){
         if(dir == 'w') positionY--;
         if(dir == 's') positionY++;
         map.mapOfTiles[positionY][positionX].setVisited();
-    
 }
 
+void Player::Heal(){
+    baseStats.addHP(baseStats.getMAtk()*3);
+}
 
+void Player::Attack(Stats& target) const{
+    if(!baseStats.AccuracyCheck(target)){
+        return;
+    }
+    else{
+        if(baseStats.CritCheck(target)){
+            target.reduceHp(baseStats.getAtk() * 6/target.getDef());
+        }
+        else{
+            target.reduceHp(baseStats.getAtk() * 4/target.getDef());
+        }
+    }
+}
+
+void Player::Guard(){
+    isGuarding = true;
+}

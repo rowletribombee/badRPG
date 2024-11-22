@@ -1,4 +1,4 @@
-#include "../../lib/Stats.h"
+#include "../lib/Stats.h"
 
 Stats::Stats(){
     hpMax = 0, hp = 0, atk = 0, def = 0, matk =0 , mdef = 0, spd = 0, lck = 0;

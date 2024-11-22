@@ -6,7 +6,7 @@ ADD_SUBDIRECTORY(googletest)
 add_executable(startGame
 src/main.cpp
 src/Game.cpp
-src/Player/Stats.cpp
+src/Stats.cpp
 src/Player.cpp
 src/Map.cpp
 src/Screen.cpp
@@ -21,9 +21,8 @@ src/tiles/Tile.cpp
 add_executable(testMovement
 test/testMovement.cpp
 src/Map.cpp
-src/Player/Stats.cpp
 src/Player.cpp
-src/Player/Stats.cpp
+src/Stats.cpp
 src/Screen.cpp
 src/tiles/EmptyTile.cpp
 src/tiles/SpawnTile.cpp
@@ -42,11 +41,14 @@ src/tiles/Tile.cpp
 
 add_executable(testStats
 test/testStats.cpp
-src/Player/Stats.cpp)
+src/Stats.cpp
+src/Player.cpp
+)
 
 add_executable(testScreens
 test/testScreens.cpp
 src/Screen.cpp
+src/Stats.cpp
 src/Map.cpp
 src/Player.cpp
 src/tiles/EmptyTile.cpp

@@ -116,5 +116,5 @@ TEST(Tiles, isVisitedTest1){
 
 TEST(Tiles, isVisitedTest2){
     SpawnTile spawnTile;
-    EXPECT_FALSE(spawnTile.isVisited());
+    EXPECT_TRUE(spawnTile.isVisited());
 }

@@ -193,7 +193,6 @@ void Screen::displayRaceSelection(Player& player)
 
 
     int choice;
-    cin >> choice;
     bool validChoice = false;
 
     while (!validChoice) 

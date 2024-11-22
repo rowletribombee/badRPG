@@ -14,9 +14,9 @@ class Player{
         int getPositionX() { return positionX; }
         int getPositionY() { return positionY; }
         friend class Screen;
+        bool isGuarding = false;
     private:
         Stats baseStats;
-        bool isGuarding = false;
         int positionX = 0;
         int positionY = 7;
         int buffCounter = 0; // from prev player.h file

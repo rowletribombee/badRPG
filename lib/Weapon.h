@@ -1,6 +1,7 @@
 #pragma once
 #include "Item.h"
 #include <string>
+using namespace std;
 class Weapon : public Item {
 public:
     Weapon(const string& weaponName, int atkBoost = 0, int defBoost = 0, 

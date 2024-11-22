@@ -1,6 +1,7 @@
 #pragma once
 #include "Item.h"
 #include <string>
+using namespace std;
 
 class Potion : public Item {
 public:

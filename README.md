@@ -36,29 +36,14 @@ This navigation diagram represents how our screen and interaction options change
 ![image](https://github.com/user-attachments/assets/aaaf8e3f-1447-4c96-9c33-b07e5e4f94ff)
 
 ## Class Diagram
-![image](https://github.com/user-attachments/assets/f3569b35-f41a-4f44-8dc1-5e414160fea4)
+Updated Diagram: 
+![IMG_0911](https://github.com/user-attachments/assets/8fe3c68b-a37a-4fb3-9ed2-9086d857fae6)
 
  > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
- 
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
- >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
- > * Perform a new sprint plan like you did in Phase II.
- > * Make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
->  * Each team member should also submit the Individual Contributions Form on Canvas for phase III. In this form, you need to fill in the names of all team members, the percentage of work contributed by each member for phase III, and a description of their contributions. Remember that each team member should submit the form individually.
- 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
-
+## SOLID Principles
+* Single Responsibility: We applied the Single Responsibility principle by implementing a Screen class dedicated solely to managing and printing text for different screens (e.g., command menu, inventory, map, etc.). This allowed us to improve our code by centralizing all printing functionality into one class, reducing redundancy. Originally, many classes in our design included their own print functions, leading to unnecessary complexity. By refactoring to include a single Screen class responsible for printing, we simplified our class diagram and adhered to the principle effectively.
+* Open/Closed: This follows the Open/Closed principle, as we extended the Tile class's functionality by creating multiple derived classes for different types of tiles without modifying the original Tile class. This approach allowed us to enhance the behavior of Tile while keeping the base class intact. It improved our code by preventing repeated changes to the Tile class and instead enabling the creation of specific tile types through extension, resulting in a more maintainable and scalable design.
+* Interface Segregation: This follows the Interface Segregation principle, as we ensured that the Item class does not force its subclasses to implement irrelevant properties. Originally, the Item class had a weight variable that was only applicable to Weapon but not to Potion. By removing the weight variable from the Item class, we ensured that Potion does not implement functionality it doesn't need. This change improves our code by making the design more focused and preventing future issues where Potion might incorrectly handle a weight value, which is irrelevant to its purpose.
  
  > ## Final deliverable
  > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 

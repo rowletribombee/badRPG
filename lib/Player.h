@@ -17,7 +17,7 @@ class Player{
         bool isGuarding = false;
         void applyStatBoost(const std::string& stat, int boost);
         void heal(int amount);
-
+        Stats& getStats() {return baseStats; } //gets stats from the player class, will be used in battle
     private:
         Stats baseStats;
         int positionX = 0;
@@ -30,5 +30,4 @@ class Player{
         void BuffChosen(string&);
         void Guard();
         void Throw(Stats&) const; //should also take an item       
-        Stats& getStats() const; //gets stats from the player class, will be used in battle
 };

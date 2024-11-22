@@ -53,8 +53,6 @@ void Screen::displayInstructions()
 
     sleep_for(3000); //pause for 3 seconds
 
-    //Display race selection after ()
-
 }
 
 void Screen::displayIntroScreen()

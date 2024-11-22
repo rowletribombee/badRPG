@@ -129,6 +129,7 @@ void Screen::displayInventory()
 void Screen::displayCredits()
 {
     cout << "Developed by:" << endl;
+    cout << "Stanley Lew" << endl;
     cout << "Sookie Drabla" << endl;
     cout << "Gregory Wang" << endl;
     cout << "Kelly Ma" << endl;

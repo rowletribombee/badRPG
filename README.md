@@ -38,7 +38,7 @@ This navigation diagram represents how our screen and interaction options change
 ## Class Diagram
 ![image](https://github.com/user-attachments/assets/f3569b35-f41a-4f44-8dc1-5e414160fea4)
 Updated Diagram: 
-![Image 11-22-24 at 5 08 AM](https://github.com/user-attachments/assets/3b8e7927-5b61-4439-adf6-f56279b7f378)
+![IMG_0911](https://github.com/user-attachments/assets/8fe3c68b-a37a-4fb3-9ed2-9086d857fae6)
 
  > ## Phase III
 ## SOLID Principles

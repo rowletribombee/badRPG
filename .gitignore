@@ -1,10 +1,9 @@
 testTiles
 startGame
 testMovement
+testScreens
 
 a.out 
-
-screenTest
 
 Makefile
 CMakeCache.txt

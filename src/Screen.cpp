@@ -136,6 +136,110 @@ void Screen::displayCredits()
     cout << "Anthony Emery" << endl;
 }
 
+void Screen::displayRaceStats()
+{
+    Stats displayStats;
+
+    cout << "**************************************************\n";
+    cout << "*                                                *\n";
+    cout << "*                   STATS SCREEN                 *\n";
+    cout << "*                                                *\n";
+    cout << "**************************************************\n";
+    cout << endl;
+
+    cout << "Choose a race for your character! (Enter a number 1-5)\n";
+    cout << "--------------------------------------------------\n";
+
+    auto charInfo = [](const Stats& stats) 
+    {
+        cout << "   HP: " << stats.getHP() << "/" << stats.getMaxHP() << endl;
+        cout << "   ATK: " << stats.getAtk() << " | DEF: " << stats.getDef() << endl;
+        cout << "   MATK: " << stats.getMAtk() << " | MDEF: " << stats.getMDef() << endl;
+        cout << "   SPD: " << stats.getSpd() << " | LCK: " << stats.getLck() << endl;
+        cout << "-----------------------------------------" << endl;
+    };
+
+    cout << "1 Human" << endl;
+    displayStats.isHuman();
+    charInfo(displayStats);
+
+    cout << "2 Elf" << endl;
+    displayStats.isElf();
+    charInfo(displayStats);
+
+    cout << "3 Dwarf" << endl;
+    displayStats.isDwarf();
+    charInfo(displayStats);
+
+    cout << "4 Ogre" << endl;
+    displayStats.isOgre();
+    charInfo(displayStats);
+
+    cout << "5 Fairy" << endl;
+    displayStats.isFairy();
+    charInfo(displayStats);
+}
+
+void Screen::displayRaceSelection(Player& player)
+{
+    Stats& stats = player.getStats();
+    auto charInfo = [](const Stats& stats) {
+        cout << "   HP: " << stats.getHP() << "/" << stats.getMaxHP() << endl;
+        cout << "   ATK: " << stats.getAtk() << " | DEF: " << stats.getDef() << endl;
+        cout << "   MATK: " << stats.getMAtk() << " | MDEF: " << stats.getMDef() << endl;
+        cout << "   SPD: " << stats.getSpd() << " | LCK: " << stats.getLck() << endl;
+        cout << "-----------------------------------------" << endl;
+    };
+
+
+    int choice;
+    bool validChoice = false;
+
+    while (!validChoice) 
+    {
+        cin >> choice;
+
+        if (choice == 1) 
+        {
+            stats.isHuman();
+            cout << "You have chosen Human!" << endl;
+            charInfo(stats);
+            validChoice = true; 
+        } 
+        else if (choice == 2) 
+        {
+            stats.isElf();
+            cout << "You have chosen Elf!" << endl;
+            charInfo(stats);
+            validChoice = true; 
+        } 
+        else if (choice == 3) 
+        {
+            stats.isDwarf();
+            cout << "You have chosen Dwarf!" << endl;
+            charInfo(stats);
+            validChoice = true; 
+        } 
+        else if (choice == 4) {
+            stats.isOgre();
+            cout << "You have chosen Ogre!" << endl;
+            charInfo(stats);
+            validChoice = true; 
+        } 
+        else if (choice == 5) 
+        {
+            stats.isFairy();
+            cout << "You have chosen Fairy!" << endl;
+            charInfo(stats);
+            validChoice = true; 
+        } 
+        else 
+        {
+            cout << "Invalid choice! Please choose a number between 1 and 5." << endl;
+        }
+    }
+}
+
 Screen::Screen(){
 
 }
@@ -178,3 +282,4 @@ void Screen::displayMapScreen(Map& map, Player& player){
     }
     cout << endl;
 }
+

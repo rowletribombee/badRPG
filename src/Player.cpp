@@ -98,7 +98,7 @@ void Player::Guard(){
 }
 
 void Player::applyStatBoost(const std::string& stat, int boost) {
-    baseStats.addStat(stat, boost);  
+    baseStats.addStat(stat, boost);        
 }
 
 void Player::heal(int amount) {

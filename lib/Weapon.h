@@ -14,7 +14,6 @@ public:
 
 private:
     std::string name;
-    int weight;
     int attackBoost;
     int defenseBoost;
     int magicAttackBoost;

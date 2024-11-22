@@ -3,7 +3,6 @@ startGame
 testMovement
 testStats
 testScreens
-
 a.out 
 
 Makefile

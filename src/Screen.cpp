@@ -7,6 +7,9 @@
 #include <thread>
 using namespace std;
 
+Screen::Screen(){
+}
+
 void Screen::sleep_for(int milliseconds)
 {
     this_thread::sleep_for(chrono::milliseconds(milliseconds)); //pause for x amount of seconds
@@ -238,10 +241,6 @@ void Screen::displayRaceSelection(Player& player)
             cout << "Invalid choice! Please choose a number between 1 and 5." << endl;
         }
     }
-}
-
-Screen::Screen(){
-
 }
 
 // MAP LEGEND

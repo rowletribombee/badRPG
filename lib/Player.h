@@ -15,6 +15,8 @@ class Player{
         int getPositionY() { return positionY; }
         friend class Screen;
         bool isGuarding = false;
+        void applyStatBoost(const std::string& stat, int boost);
+        void heal(int amount);
         Stats& getStats() {return baseStats; } //gets stats from the player class, will be used in battle
     private:
         Stats baseStats;

@@ -29,6 +29,7 @@ class Stats{
         int getSpd() const;
         int getLck() const;
         void addHP (int); //for healing
+        void addStat(const std::string&, int); // for weapons
         void reduceHp(int);
         int rng(int, int) const; //gives random number between the two ints
         bool CritCheck(Stats& opponent) const;

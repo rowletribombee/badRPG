@@ -1,40 +1,44 @@
+#include "gtest/gtest.h"
 #include "../lib/Player.h"
 #include "../lib/Potion.h"
 #include "../lib/Weapon.h"
-#include <iostream>
 
-int main() {
-    // create a player
+TEST(PlayerTests, InitializeStats) {
     Player player("Elf");
-    player.displayStats();
+    EXPECT_EQ(player.getStats().getHP(), 50); 
+    EXPECT_EQ(player.getStats().getAtk(), 8);
+    EXPECT_EQ(player.getStats().getDef(), 6);
+    EXPECT_EQ(player.getStats().getMAtk(), 7);
+    EXPECT_EQ(player.getStats().getMDef(), 9);
+    EXPECT_EQ(player.getStats().getSpd(), 8);
+    EXPECT_EQ(player.getStats().getLck(), 6);
+}
 
-    // create potions
-    Potion smallPotion("Potion", 20);
-    Potion highPotion("High Potion", 40);
+TEST(PotionTests, UsePotion) {
+    Player player("Elf");
+    Potion potion("Potion", 20);
+    potion.use(player);
 
-    // use potions
-    cout << "\nUsing potions...\n";
-    smallPotion.use(player);
-    player.displayStats();
+    EXPECT_EQ(player.getStats().getHP(), 50);
+}
 
-    highPotion.use(player);
-    player.displayStats();
-
-    // create weapons
-    Weapon stick("Stick", 2, 2, 0, 0, 2, 0);  // ATK+2, DEF+2, SPD+2, 
-    Weapon rock("Rock", 3, 0, 0, 0, 0, 10); // ATK+3, LCK+10
-
-    // equip and unequip weapons
-    cout << "\nEquipping weapons...\n";
+TEST(WeaponTests, EquipWeapon) {
+    Player player("Elf");
+    Weapon stick("Stick", 2, 2, 0, 0, 2, 0);
     stick.use(player);
-    player.displayStats();
 
-    rock.use(player);
-    player.displayStats();
+    EXPECT_EQ(player.getStats().getAtk(), 10);
+    EXPECT_EQ(player.getStats().getDef(), 8);
+    EXPECT_EQ(player.getStats().getSpd(), 10);
+}
 
-    cout << "\nUnequipping Stick...\n";
+TEST(WeaponTests, UnequipWeapon) {
+    Player player("Elf");
+    Weapon stick("Stick", 2, 2, 0, 0, 2, 0); 
+    stick.use(player);
     stick.unequip(player);
-    player.displayStats();
 
-    return 0;
+    EXPECT_EQ(player.getStats().getAtk(), 8);
+    EXPECT_EQ(player.getStats().getDef(), 6); 
+    EXPECT_EQ(player.getStats().getSpd(), 8);
 }

@@ -12,6 +12,7 @@ ADD_SUBDIRECTORY(googletest)
 # src/tiles/SpawnTile.cpp 
 # test/testScreens.cpp
 # )
+
 add_executable(startGame
 src/main.cpp
 src/Game.cpp
@@ -66,7 +67,7 @@ src/tiles/Tile.cpp
 )
 
 add_executable(testItems
-test/testItems.cpp
+test/testItem.cpp
 src/Potion.cpp
 src/Weapon.cpp 
 src/Player.cpp 
@@ -79,3 +80,5 @@ TARGET_LINK_LIBRARIES(testMovement gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testMovement PRIVATE gtest_disable_pthreads=ON)
 TARGET_LINK_LIBRARIES(testStats gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testStats PRIVATE gtest_disable_pthreads=ON)
+TARGET_LINK_LIBRARIES(testItems gtest gtest_main)
+TARGET_COMPILE_DEFINITIONS(testItems PRIVATE gtest_disable_pthreads=ON)

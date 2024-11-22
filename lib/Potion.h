@@ -4,12 +4,11 @@
 
 class Potion : public Item {
 public:
-    Potion(const std::string& potionName, int healAmount)
-        : name(potionName), healingAmount(healAmount) {}
+    Potion(const string& potionName, int healAmount) : name(potionName), healingAmount(healAmount) {}
 
     void use(Player& target) override;
 
 private:
-    std::string name;
+    string name;
     int healingAmount;
 };

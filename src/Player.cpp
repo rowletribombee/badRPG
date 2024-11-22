@@ -104,14 +104,3 @@ void Player::applyStatBoost(const std::string& stat, int boost) {
 void Player::heal(int amount) {
     baseStats.addStat("hp", amount);
 }
-
-void Player::displayStats() const {
-    std::cout << "Player Stats:" << std::endl;
-    std::cout << "HP: " << baseStats.getHP() << "/" << baseStats.getMaxHP() << std::endl;
-    std::cout << "ATK: " << baseStats.getAtk() << std::endl;
-    std::cout << "DEF: " << baseStats.getDef() << std::endl;
-    std::cout << "MATK: " << baseStats.getMAtk() << std::endl;
-    std::cout << "MDEF: " << baseStats.getMDef() << std::endl;
-    std::cout << "SPD: " << baseStats.getSpd() << std::endl;
-    std::cout << "LCK: " << baseStats.getLck() << std::endl;
-}

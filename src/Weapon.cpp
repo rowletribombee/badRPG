@@ -9,7 +9,7 @@ void Weapon::use(Player& target) {
     target.applyStatBoost("mdef", magicDefenseBoost);
     target.applyStatBoost("spd", speedBoost);
     target.applyStatBoost("lck", luckBoost);
-    std::cout << name << " equipped!\n";
+    cout << name << " equipped!\n";
 }
 
 void Weapon::unequip(Player& target) {
@@ -19,5 +19,5 @@ void Weapon::unequip(Player& target) {
     target.applyStatBoost("mdef", -magicDefenseBoost);
     target.applyStatBoost("spd", -speedBoost);
     target.applyStatBoost("lck", -luckBoost);
-    std::cout << name << " unequipped!\n";
+    cout << name << " unequipped!\n";
 }

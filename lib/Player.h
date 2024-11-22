@@ -17,7 +17,6 @@ class Player{
         bool isGuarding = false;
         void applyStatBoost(const std::string& stat, int boost);
         void heal(int amount);
-        void displayStats() const;
 
     private:
         Stats baseStats;

@@ -4,5 +4,5 @@
 
 void Potion::use(Player& target) {
     target.heal(healingAmount);
-    std::cout << name << " used! Healed " << healingAmount << " HP.\n";
+    cout << name << " used! Healed " << healingAmount << " HP.\n";
 }

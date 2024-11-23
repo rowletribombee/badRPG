@@ -14,5 +14,7 @@ class Screen{
         void displayMapScreen();
         void sleep_for(int milliseconds);
         void displayCredits();
+        void displayRaceSelection(Player& player);
+        void displayRaceStats();
     private:
 };

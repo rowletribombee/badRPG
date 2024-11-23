@@ -7,7 +7,24 @@ Player::Player(){
 }
 
 Player::Player(string race){
-    
+    if (race == "Human") {
+        baseStats.isHuman();
+    } 
+    else if (race == "Elf") {
+        baseStats.isElf();
+    } 
+    else if (race == "Dwarf") {
+        baseStats.isDwarf();
+    } 
+    else if (race == "Ogre") {
+        baseStats.isOgre();
+    } 
+    else if (race == "Fairy") {
+        baseStats.isFairy();
+    } 
+    else {
+        baseStats.isHuman();  // default to Human
+    }
 }
 
 Player::Player(Stats& bStats){
@@ -78,4 +95,12 @@ void Player::Attack(Stats& target) const{
 
 void Player::Guard(){
     isGuarding = true;
+}
+
+void Player::applyStatBoost(const std::string& stat, int boost) {
+    baseStats.addStat(stat, boost);        
+}
+
+void Player::heal(int amount) {
+    baseStats.addStat("hp", amount);
 }

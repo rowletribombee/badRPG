@@ -1,6 +1,6 @@
 #include "../lib/Game.h"
 #include <iostream>
-
+#include <fstream>
 using namespace std;
 Game::Game(){
     
@@ -21,35 +21,68 @@ void Game::setThirdStageFalse(){
     gameOver = true;
 }
 
+void Game::save(){
+    ofstream outFile("saveFile.txt");
+    if(!outFile.is_open()){
+        cout << "Error: could not save the game" << endl;
+        return;
+    }
+    outFile << firstStage << endl;
+    outFile << secondStage << endl;
+    outFile << thirdStage << endl;
+    outFile << gameOver << endl;
+    outFile.close();
+    cout << "Game saved successfully!" << endl;
+}
+
+bool Game::load(){
+    ifstream inFile;
+    // ask for file blah blah
+    return true;
+}
+
 void Game::controls(){
     bool validChoice = false;
-    int choice;
-    // this line will be a screen print func that shows all available commands
+    char choice;
     while(!validChoice){
         cin >> choice;
-        if(choice >= 0 || choice <= 10){
+        if(choice == 'M' || choice == 'I' || choice == 'S' || choice == 'A' || choice == 'C' || choice == 'Q'){
             validChoice = true;
         }else{
-            cout << "Invalid menu choice!" << endl;
-            // this line will be a screen print func that shows all available commands
+            cout << "Invalid menu choice! Try again! Remember that you can always press C to see all available commands!" << endl;
         }
     }
-    if(choice == 0){
-        player.move(map);
-        screen.displayMapScreen(map, player);
+    switch(choice){
+        case 'M':
+            player.move(map);
+            screen.displayMapScreen(map, player); // automatically show map after every move?
+            break;
+        case 'I':
+            break;
+        case 'S':
+            break;
+        case 'A':
+            break;
+        case 'T':
+            save();
+            break;
+        case 'C':
+            screen.displayCommandMenu();
+            break;
     }
+
 }
 void Game::startGame(){
+    screen.displayInstructions();
     while(!gameOver){
         while(firstStage){
             controls();
         }
         while(secondStage){
-
+            controls();
         }
         while(thirdStage){
-
+            controls();
         }
-        screen.displayMapScreen(map, player);
     }
 }

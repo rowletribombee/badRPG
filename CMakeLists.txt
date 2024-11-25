@@ -15,18 +15,20 @@ ADD_SUBDIRECTORY(googletest)
 
 add_executable(startGame
 src/main.cpp
+src/LoadManager.cpp
 src/Game.cpp
 src/Stats.cpp
 src/Player.cpp
 src/Map.cpp
 src/Screen.cpp
+src/Potion.cpp
 src/tiles/EmptyTile.cpp
 src/tiles/FightTile.cpp
 src/tiles/PotionTile.cpp
 src/tiles/SpawnTile.cpp
 src/tiles/WeaponTile.cpp
 src/tiles/Tile.cpp
-src/Potion.cpp
+
 )
 
 add_executable(testMovement
@@ -70,7 +72,6 @@ src/Player.cpp
 src/tiles/EmptyTile.cpp
 src/tiles/SpawnTile.cpp
 src/tiles/Tile.cpp
-
 )
 
 add_executable(testItems

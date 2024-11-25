@@ -35,18 +35,12 @@ void Game::save(){
     cout << "Game saved successfully!" << endl;
 }
 
-bool Game::load(){
-    ifstream inFile;
-    // ask for file blah blah
-    return true;
-}
-
 void Game::controls(){
     bool validChoice = false;
     char choice;
     while(!validChoice){
         cin >> choice;
-        if(choice == 'M' || choice == 'I' || choice == 'S' || choice == 'A' || choice == 'C' || choice == 'Q'){
+        if(choice == 'M' || choice == 'I' || choice == 'S' || choice == 'A' || choice == 'C' || choice == 'T'){
             validChoice = true;
         }else{
             cout << "Invalid menu choice! Try again! Remember that you can always press C to see all available commands!" << endl;

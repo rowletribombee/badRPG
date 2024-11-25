@@ -10,7 +10,6 @@ class Game{
         void startGame(); // this is where we will be prompted to load or start a new game
         void controls();
         void save();
-        bool load();
         void setFirstStageFalse();
         void setSecondStageFalse();
         void setThirdStageFalse();

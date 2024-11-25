@@ -27,10 +27,25 @@ void Game::save(){
         cout << "Error: could not save the game" << endl;
         return;
     }
-    outFile << firstStage << endl;
-    outFile << secondStage << endl;
-    outFile << thirdStage << endl;
-    outFile << gameOver << endl;
+    // game constructor member stats
+    outFile << firstStage << ' ' << secondStage << ' ' << thirdStage << ' ' << gameOver << endl;
+    // map backup
+    for(int i = 0; i < map.getMapOfTiles().size(); i++){
+        for(int j = 0; j < map.getMapOfTiles().at(j).size(); j++){
+            if(i == map.getMapOfTiles().size() - 1 && j == map.getMapOfTiles().at(j).size() - 1){
+                outFile << map.getMapOfTiles().at(i).at(j).isVisited() << endl;
+            }else{
+                outFile << map.getMapOfTiles().at(i).at(j).isVisited() << ' ';
+            }
+        }
+    }
+    // inventory backup -- will need to create a key for diff int vals
+
+    // player backup
+
+    // stats backup
+
+    
     outFile.close();
     cout << "Game saved successfully!" << endl;
 }
@@ -64,7 +79,6 @@ void Game::controls(){
             screen.displayCommandMenu();
             break;
     }
-
 }
 void Game::startGame(){
     screen.displayInstructions();

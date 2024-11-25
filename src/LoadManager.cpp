@@ -19,6 +19,7 @@ Game LoadManager::loadGame(){
         }
         cout << endl << endl;
         if(choice == 'A'){
+                
             return loading(game);
         }
         if(choice == 'B'){

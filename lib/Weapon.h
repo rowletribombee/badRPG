@@ -11,7 +11,13 @@ public:
 
     void use(Player& target) override;
     void unequip(Player& target);
-
+    string getName() {return name;}
+    int getAtkBoost() {return attackBoost;}
+    int getDefBoost() {return defenseBoost;}
+    int getM_AtkBoost() {return magicAttackBoost;}
+    int getM_DefBoost() {return magicDefenseBoost;}
+    int getSpdBoost() {return speedBoost;}
+    int getLuckBoost() {return luckBoost;}
 private:
     string name;
     int attackBoost;

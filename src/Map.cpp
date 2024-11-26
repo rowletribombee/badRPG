@@ -16,13 +16,13 @@ void Map::initialize(){
     EmptyTile emptyTile03;
     EmptyTile emptyTile04;
     FightTile fightTile05("BasicBoss", {"Reward1","Reward2"});
-    WeaponTile weaponTile06("Weapon");
+    WeaponTile weaponTile06(Weapon("Iron Sword", 1, 1, 0, 0, 0, 0));
     PotionTile potionTile07(Potion("Potion", 20));
-    WeaponTile weaponTile10("Weapon");
+    WeaponTile weaponTile10(Weapon("Lance", 1, 0, 0, 0, 1, 0));
     EmptyTile emptyTile11;
     EmptyTile emptyTile12;
     FightTile fightTile13("EliteBoss", {"Reward1","Reward2"});
-    WeaponTile weaponTile14("Weapon");
+    WeaponTile weaponTile14(Weapon("Staff", 0,0,1,1,0,0));
     PotionTile potionTile15(Potion("Rare Potion", 30));
     FightTile fightTile16("EliteBoss", {"Reward1","Reward2"});
     EmptyTile emptyTile17;
@@ -36,7 +36,7 @@ void Map::initialize(){
     FightTile fightTile27("FinalBoss", {"Reward1","Reward2"});
     EmptyTile emptyTile30;
     EmptyTile emptyTile31;
-    WeaponTile weaponTile32("Weapon");
+    WeaponTile weaponTile32(Weapon("Plate Armour", 0,1,0,2,0,0));
     EmptyTile emptyTile33;
     PotionTile potionTile34(Potion("Potion", 20));
     EmptyTile emptyTile35;
@@ -55,15 +55,15 @@ void Map::initialize(){
     FightTile fightTile52("EliteBoss", {"Reward1","Reward2"});
     PotionTile potionTile53(Potion("Epic Potion", 40));
     EmptyTile emptyTile54;
-    WeaponTile weaponTile55("Weapon");
+    WeaponTile weaponTile55(Weapon("Iron Sword", 1, 1, 0, 0, 0, 0));
     EmptyTile emptyTile56;
     PotionTile potionTile57(Potion("Epic Potion", 40));
-    WeaponTile weaponTile60("Weapon");
+    WeaponTile weaponTile60(Weapon("Chain Mail", 0, 2, 0, 0, 0, 0));
     FightTile fightTile61("BasicBoss", {"Reward","Reward"});
     EmptyTile emptyTile62;
     PotionTile potionTile63(Potion("Potion", 20));
     FightTile fightTile64("BasicBoss", {"Reward","Reward"});
-    WeaponTile weaponTile65("Weapon");
+    WeaponTile weaponTile65(Weapon("Lance", 1, 0, 0, 0, 1, 0));
     EmptyTile emptyTile66;
     FightTile fightTile67("BasicBoss", {"Reward","Reward"});
     SpawnTile spawnTile70;
@@ -73,7 +73,7 @@ void Map::initialize(){
     EmptyTile emptyTile74;
     EmptyTile emptyTile75;
     FightTile fightTile76("EliteBoss", {"Reward1","Reward2"});
-    WeaponTile weaponTile77("Weapon");
+    WeaponTile weaponTile77(Weapon("Staff", 0,0,1,1,0,0));
 
     mapOfTiles[0][0] = fightTile00;
     mapOfTiles[0][1] = emptyTile01;

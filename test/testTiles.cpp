@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 #include "../lib/tiles/EmptyTile.h"
 #include "../lib/tiles/SpawnTile.h"
+#include "../lib/tiles/WeaponTile.h"
 #include <sstream>
 #include <string>
 #include <vector>
@@ -117,4 +118,16 @@ TEST(Tiles, isVisitedTest1){
 TEST(Tiles, isVisitedTest2){
     SpawnTile spawnTile;
     EXPECT_TRUE(spawnTile.isVisited());
+}
+
+//Testing dialouge for correct weapon
+TEST(Tiles, WeaponTile){
+    Weapon testWeapon("Chain Mail", 0, 2, 0, 0, 0, 0);
+    WeaponTile tile(testWeapon);
+
+    const vector<string>& dialogue = tile.getDialogue();
+    
+    ASSERT_EQ(dialogue.size(), 5); // Check there are 5 dialogue options
+    EXPECT_EQ(dialogue[1], "Wow, something useful for once. Maybe once I get out of here I’ll open a(n) Chain Mail shop! \n \n");
+    EXPECT_EQ(dialogue[4], "It is a(n) Chain Mail! You pick up this heavy tool and think to yourself that it will be useful in the near future… + \n \n");
 }

@@ -27,6 +27,7 @@ src/tiles/SpawnTile.cpp
 src/tiles/WeaponTile.cpp
 src/tiles/Tile.cpp
 src/Potion.cpp
+src/Weapon.cpp
 )
 
 add_executable(testMovement
@@ -36,6 +37,7 @@ src/Player.cpp
 src/Stats.cpp
 src/Screen.cpp
 src/Potion.cpp
+src/Weapon.cpp
 src/tiles/EmptyTile.cpp
 src/tiles/SpawnTile.cpp
 src/tiles/Tile.cpp
@@ -50,6 +52,7 @@ src/tiles/SpawnTile.cpp
 src/tiles/WeaponTile.cpp
 src/tiles/Tile.cpp
 src/Potion.cpp
+src/Weapon.cpp
 src/Player.cpp
 src/Stats.cpp
 )
@@ -66,6 +69,7 @@ src/Screen.cpp
 src/Stats.cpp
 src/Map.cpp
 src/Potion.cpp
+src/Weapon.cpp
 src/Player.cpp
 src/tiles/EmptyTile.cpp
 src/tiles/SpawnTile.cpp

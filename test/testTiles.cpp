@@ -2,6 +2,7 @@
 #include "../lib/tiles/EmptyTile.h"
 #include "../lib/tiles/SpawnTile.h"
 #include "../lib/tiles/WeaponTile.h"
+#include "../lib/tiles/FightTile.h"
 #include <sstream>
 #include <string>
 #include <vector>
@@ -120,7 +121,7 @@ TEST(Tiles, isVisitedTest2){
     EXPECT_TRUE(spawnTile.isVisited());
 }
 
-//Testing dialouge for correct weapon
+//Testing dialogue for correct weapon
 TEST(Tiles, WeaponTile){
     Weapon testWeapon("Chain Mail", 0, 2, 0, 0, 0, 0);
     WeaponTile tile(testWeapon);
@@ -130,4 +131,16 @@ TEST(Tiles, WeaponTile){
     ASSERT_EQ(dialogue.size(), 5); // Check there are 5 dialogue options
     EXPECT_EQ(dialogue[1], "Wow, something useful for once. Maybe once I get out of here I’ll open a(n) Chain Mail shop! \n \n");
     EXPECT_EQ(dialogue[4], "It is a(n) Chain Mail! You pick up this heavy tool and think to yourself that it will be useful in the near future… + \n \n");
+}
+
+//Testing dialouse for Fight Wins
+TEST(FightTile, BasicWin){
+    FightTile fightTile("Goblin", {"Excalibur", "Bow of Hou Yi", "Labrys", "Thief’s Glove", "Cloak of Invisibility"});
+
+    EXPECT_EQ(fightTile.getWinDialogue()[0], "You have finally defeated the Goblin with a final blow to the head with your trusty weapon! \n \n"
+            "As the Goblin gasps for air, it whispers, \n\"Fine... you’ve defeated me, but this is just the beginning of your torment.\" \n \n"
+            "“And what does that mean exactly? I really miss watching my daily YouTube videos on my lunch break,” you reply. \n \n"
+            "The Goblin smirks weakly, \"You’ll find out soon enough...\" \n \n"
+            "“Bruh that still doesn’t make any sense.” \n \n"
+            "You leave confused and frustrated, but a sense of accomplishment lingers as the Goblin leaves a Labrys behind \n");
 }

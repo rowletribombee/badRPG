@@ -135,12 +135,12 @@ TEST(Tiles, WeaponTile){
 
 //Testing dialouse for Fight Wins
 TEST(FightTile, BasicWin){
-    FightTile fightTile("Goblin", {"Excalibur", "Bow of Hou Yi", "Labrys", "Thief’s Glove", "Cloak of Invisibility"});
+    FightTile fightTile("Goblin", {"Excalibur", "Bow of Hou Yi", "Labrys", "Thief’s Glove", "Cloak of Invisibility", "Potion", "Rare Potion", "Epic Potion", "Legendary Potion"});
 
     EXPECT_EQ(fightTile.getWinDialogue()[0], "You have finally defeated the Goblin with a final blow to the head with your trusty weapon! \n \n"
             "As the Goblin gasps for air, it whispers, \n\"Fine... you’ve defeated me, but this is just the beginning of your torment.\" \n \n"
             "“And what does that mean exactly? I really miss watching my daily YouTube videos on my lunch break,” you reply. \n \n"
             "The Goblin smirks weakly, \"You’ll find out soon enough...\" \n \n"
             "“Bruh that still doesn’t make any sense.” \n \n"
-            "You leave confused and frustrated, but a sense of accomplishment lingers as the Goblin leaves a Labrys behind \n");
+            "You leave confused and frustrated, but a sense of accomplishment lingers as the Goblin leaves a Labrys and Potion behind \n");
 }

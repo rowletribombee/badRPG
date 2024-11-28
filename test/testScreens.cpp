@@ -34,10 +34,10 @@ int main()
     cout << "Command screen:" << endl;
     screenTest.displayCommandMenu();
 
-    //test inventory print 
-    //Needs items and weapons 
-    cout << "Inventory screen:" << endl;
-    screenTest.displayInventory();
+    // test inventory print 
+    // Needs items and weapons 
+    // cout << "Inventory screen:" << endl;
+    // screenTest.displayInventory();
 
     //test credit print
     cout << "Credits:" << endl;

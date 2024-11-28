@@ -20,6 +20,7 @@ src/Game.cpp
 src/Stats.cpp
 src/Player.cpp
 src/Map.cpp
+src/Inventory.cpp
 src/Screen.cpp
 src/Potion.cpp
 src/tiles/EmptyTile.cpp

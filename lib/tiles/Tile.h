@@ -5,6 +5,7 @@ using namespace std;
 class Tile{
     protected:
         bool visited = false;
+        bool instantEquip;
     public:
         Tile();
         void setVisited(){ visited = true; }

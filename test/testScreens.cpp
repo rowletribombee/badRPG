@@ -15,20 +15,15 @@ int main()
     cout << "Start screen:" << endl;
     screenTest.displayStartScreen();
  
-
     cout << endl << endl;
- 
 
     //test instruciton screen 
     cout << "Instructions: " << endl;
     screenTest.displayInstructions();
 
-
     //test intro display
     cout << "Intro:" << endl;
     screenTest.displayIntroScreen();
-
-
 
     // test command menu 
     cout << "Command screen:" << endl;

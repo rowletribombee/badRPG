@@ -5,7 +5,7 @@ using namespace std;
 
 class FightTile : public Tile{
     public:
-        FightTile(const string& boss, const vector<string>& rewards) : boss(boss), rewards(rewards) {}
+        FightTile(const string& boss, const vector<string>& rewards);
         void print();
     private:
         string boss;

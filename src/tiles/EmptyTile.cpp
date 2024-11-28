@@ -4,7 +4,7 @@
 #include <ctime>
 
 EmptyTile::EmptyTile(){
-    
+    instantEquip = false;
 }
 
 void EmptyTile::print(){

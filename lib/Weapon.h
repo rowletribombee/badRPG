@@ -11,6 +11,7 @@ public:
 
     void use(Player& target) override;
     void unequip(Player& target);
+    string getName() const override { return name; }
 
 private:
     string name;

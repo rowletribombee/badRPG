@@ -4,6 +4,7 @@ testMovement
 testStats
 testScreens
 testItems
+testInventory
 a.out 
 
 Makefile

@@ -9,7 +9,7 @@ TEST(InventoryTests, AddItem) {
 
     Potion* potion = new Potion("Health Potion", 50);
     Weapon* sword = new Weapon("Sword", 5, 2, 0, 0, 0, 0);
-
+    
     inventory.addItem(potion);
     inventory.addItem(sword);
 

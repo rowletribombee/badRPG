@@ -5,7 +5,6 @@ Stats::Stats(){
 }
 
 Stats::Stats(vector <int>& customStats){
-    
     assert(customStats.size() == 8 && "Max HP value is not greater than hp");
     hpMax = customStats.at(0);
     hp = customStats.at(1);

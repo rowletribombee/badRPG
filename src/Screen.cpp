@@ -112,7 +112,7 @@ void Screen::displayIntroScreen(){
     cout << "..." << endl << endl;
 }
 
-void Screen::displayInventory(){
+void Screen::displayInventory(Inventory& inventory){
     cout << "========Inventory========" << endl;
     //TO-DO
     //Items still being figured out
@@ -247,7 +247,7 @@ void Screen::displayMapScreen(Map& map, Player& player){
             cout << "|    ";
             if(!map.getMapOfTiles().at(i).at(j).isVisited()){
                 cout << "???";
-            }else if(map.getMapOfTiles().at(i).at(j).isVisited() && player.positionY == i && player.positionX == j){
+            }else if(map.getMapOfTiles().at(i).at(j).isVisited() && player.getPositionY() == i && player.getPositionX() == j){
                 cout << " x ";
             }else{
                 cout << " o ";

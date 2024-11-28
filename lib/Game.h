@@ -2,6 +2,7 @@
 #include "Map.h"
 #include "Player.h"
 #include "Screen.h"
+#include "Inventory.h"
 using namespace std;
 
 class Game{
@@ -17,6 +18,7 @@ class Game{
         Map map;
         Player player;
         Screen screen;
+        Inventory inventory;
         bool gameOver = false;
         bool firstStage = true;
         bool secondStage = false;

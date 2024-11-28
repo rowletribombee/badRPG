@@ -13,7 +13,7 @@ class Player{
         bool checkValidDir(char dir);
         int getPositionX() { return positionX; }
         int getPositionY() { return positionY; }
-        friend class Screen;
+        int getBuffCounter(){ return buffCounter; }
         bool isGuarding = false;
         void applyStatBoost(const std::string& stat, int boost);
         void heal(int amount);

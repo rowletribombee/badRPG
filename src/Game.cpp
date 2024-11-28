@@ -39,12 +39,55 @@ void Game::save(){
             }
         }
     }
-    // inventory backup -- will need to create a key for diff int vals
-
+    // inventory backup and inventory keys
+    // potion 0, rare potion 1, epic potion 2, legendary potion 3
+    // rusted sword 4, iron sword 5, wooden bat 6, chain mail 7
+    // lance 8, staff 9, plate armor 10, excalibur 11, 
+    // bow of hou yi 12, labrys 13, thief's glove 14, cloak of invisibility 15
+    for(int i = 0; i < inventory.getInventory().size(); i++){
+        if(inventory.getInventory()[i]->getName() == "Potion"){
+            outFile << 0;
+        }else if(inventory.getInventory()[i]->getName() == "Rare Potion"){
+            outFile << 1;
+        }else if(inventory.getInventory()[i]->getName() == "Epic Potion"){
+            outFile << 2;
+        }else if(inventory.getInventory()[i]->getName() == "Legendary Potion"){
+            outFile << 3;
+        }else if(inventory.getInventory()[i]->getName() == "Rusted Sword"){
+            outFile << 4;
+        }else if(inventory.getInventory()[i]->getName() == "Iron Sword"){
+            outFile << 5;
+        }else if(inventory.getInventory()[i]->getName() == "Wooden Bat"){
+            outFile << 6;
+        }else if(inventory.getInventory()[i]->getName() == "Chain Mail"){
+            outFile << 7;
+        }else if(inventory.getInventory()[i]->getName() == "Lance"){
+            outFile << 8;
+        }else if(inventory.getInventory()[i]->getName() == "Staff"){
+            outFile << 9;
+        }else if(inventory.getInventory()[i]->getName() == "Plate Armor"){
+            outFile << 10;
+        }else if(inventory.getInventory()[i]->getName() == "Excalibur"){
+            outFile << 11;
+        }else if(inventory.getInventory()[i]->getName() == "Bow of Hou Yi"){
+            outFile << 12;
+        }else if(inventory.getInventory()[i]->getName() == "Labrys"){
+            outFile << 13;
+        }else if(inventory.getInventory()[i]->getName() == "Thief's Glove"){
+            outFile << 14;
+        }else if(inventory.getInventory()[i]->getName() == "Cloak of Invisibility"){
+            outFile << 15;
+        }
+        if(i == inventory.getInventory().size() - 1){
+            outFile << endl;
+        }else{
+            outFile << ' ';
+        }
+    }
     // player backup
-
+    outFile << player.getPositionX() << ' ' << player.getPositionY() << ' ' << player.getBuffCounter() << endl;
     // stats backup
-
+    outFile << player.getStats().getMaxHP() << ' ' << player.getStats().getAtk() << ' ' << player.getStats().getMAtk() << ' ' << player.getStats().getDef() << ' ' << player.getStats().getMDef() << ' ' << player.getStats().getSpd() << ' ' << player.getStats().getLck() << endl;
     
     outFile.close();
     cout << "Game saved successfully!" << endl;
@@ -55,7 +98,7 @@ void Game::controls(){
     char choice;
     while(!validChoice){
         cin >> choice;
-        if(choice == 'M' || choice == 'I' || choice == 'S' || choice == 'A' || choice == 'C' || choice == 'T'){
+        if(choice == 'M' || choice == 'I' || choice == 'S' || choice == 'X' || choice == 'C' || choice == 'T'){
             validChoice = true;
         }else{
             cout << "Invalid menu choice! Try again! Remember that you can always press C to see all available commands!" << endl;
@@ -67,10 +110,14 @@ void Game::controls(){
             screen.displayMapScreen(map, player); // automatically show map after every move?
             break;
         case 'I':
+            screen.displayInventory(inventory);
             break;
         case 'S':
+            // there needs to be a function that shows the current stats of the player
+            // screen.displayStats(player);
             break;
-        case 'A':
+        case 'X':
+            screen.displayCredits();
             break;
         case 'T':
             save();

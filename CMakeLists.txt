@@ -81,6 +81,15 @@ src/Player.cpp
 src/Stats.cpp
 )
 
+add_executable(testInventory
+test/testInventory.cpp 
+src/Potion.cpp 
+src/Weapon.cpp
+src/Player.cpp
+src/Stats.cpp
+src/Inventory.cpp
+)
+
 TARGET_LINK_LIBRARIES(testTiles gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testTiles PRIVATE gtest_disable_pthreads=ON)
 TARGET_LINK_LIBRARIES(testMovement gtest gtest_main)
@@ -89,3 +98,5 @@ TARGET_LINK_LIBRARIES(testStats gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testStats PRIVATE gtest_disable_pthreads=ON)
 TARGET_LINK_LIBRARIES(testItems gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testItems PRIVATE gtest_disable_pthreads=ON)
+TARGET_LINK_LIBRARIES(testInventory gtest gtest_main)
+TARGET_COMPILE_DEFINITIONS(testInventory PRIVATE gtest_disable_pthreads=ON)

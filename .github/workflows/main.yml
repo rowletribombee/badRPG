@@ -25,3 +25,4 @@ jobs:
         ./testMovement
         ./testStats
         ./testItems
+        ./testInventory

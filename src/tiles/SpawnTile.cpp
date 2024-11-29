@@ -2,6 +2,7 @@
 #include <iostream>
 
 SpawnTile::SpawnTile(){
+    type = spawnTile;
     setVisited();
 }
 

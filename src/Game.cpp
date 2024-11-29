@@ -33,9 +33,9 @@ void Game::save(){
     for(int i = 0; i < map.getMapOfTiles().size(); i++){
         for(int j = 0; j < map.getMapOfTiles().at(j).size(); j++){
             if(i == map.getMapOfTiles().size() - 1 && j == map.getMapOfTiles().at(j).size() - 1){
-                outFile << map.getMapOfTiles().at(i).at(j).isVisited() << endl;
+                outFile << map.getMapOfTiles().at(i).at(j)->isVisited() << endl;
             }else{
-                outFile << map.getMapOfTiles().at(i).at(j).isVisited() << ' ';
+                outFile << map.getMapOfTiles().at(i).at(j)->isVisited() << ' ';
             }
         }
     }
@@ -96,6 +96,7 @@ void Game::save(){
 void Game::controls(){
     bool validChoice = false;
     char choice;
+    cout << "Enter in a command: ";
     while(!validChoice){
         cin >> choice;
         if(choice == 'M' || choice == 'I' || choice == 'S' || choice == 'X' || choice == 'C' || choice == 'T'){
@@ -106,9 +107,8 @@ void Game::controls(){
     }
     switch(choice){
         case 'M':
-            player.move(map);
+            player.move(map, inventory);
             screen.displayMapScreen(map, player); // automatically show map after every move?
-            break;
         case 'I':
             screen.displayInventory(inventory);
             break;
@@ -136,6 +136,7 @@ void Game::startGame(){
         while(secondStage){
             controls();
         }
+            break;
         while(thirdStage){
             controls();
         }

@@ -39,8 +39,12 @@ src/Player.cpp
 src/Stats.cpp
 src/Screen.cpp
 src/Potion.cpp
+src/Inventory.cpp
 src/tiles/EmptyTile.cpp
 src/tiles/SpawnTile.cpp
+src/tiles/FightTile.cpp
+src/tiles/PotionTile.cpp
+src/tiles/WeaponTile.cpp
 src/tiles/Tile.cpp
 )
 
@@ -52,6 +56,7 @@ src/tiles/PotionTile.cpp
 src/tiles/SpawnTile.cpp
 src/tiles/WeaponTile.cpp
 src/tiles/Tile.cpp
+src/Inventory.cpp
 src/Potion.cpp
 src/Player.cpp
 src/Stats.cpp
@@ -61,6 +66,9 @@ add_executable(testStats
 test/testStats.cpp
 src/Stats.cpp
 src/Player.cpp
+src/Inventory.cpp
+src/tiles/PotionTile.cpp
+src/Potion.cpp
 )
 
 add_executable(testScreens
@@ -70,8 +78,12 @@ src/Stats.cpp
 src/Map.cpp
 src/Potion.cpp
 src/Player.cpp
+src/Inventory.cpp
 src/tiles/EmptyTile.cpp
 src/tiles/SpawnTile.cpp
+src/tiles/FightTile.cpp
+src/tiles/PotionTile.cpp
+src/tiles/WeaponTile.cpp
 src/tiles/Tile.cpp
 )
 
@@ -81,6 +93,8 @@ src/Potion.cpp
 src/Weapon.cpp 
 src/Player.cpp 
 src/Stats.cpp
+src/tiles/PotionTile.cpp
+src/Inventory.cpp
 )
 
 add_executable(testInventory
@@ -90,6 +104,7 @@ src/Weapon.cpp
 src/Player.cpp
 src/Stats.cpp
 src/Inventory.cpp
+src/tiles/PotionTile.cpp
 )
 
 TARGET_LINK_LIBRARIES(testTiles gtest gtest_main)

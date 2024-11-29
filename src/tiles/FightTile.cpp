@@ -7,6 +7,7 @@ FightTile::FightTile(const string& boss, const vector<string>& rewards){
     this->boss = boss;
     this->rewards = rewards;
     instantEquip = false;
+    this->type = fightTile;
 }
 
 void FightTile::print(){

@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include "Map.h"
+#include "Inventory.h"
 #include "Stats.h"
 using namespace std;
 class Player{
@@ -8,7 +9,7 @@ class Player{
         Player();
         Player(string race);
         Player(Stats&);
-        void move(Map& map);
+        void move(Map& map, Inventory& inventory);
         bool checkForWall(char dir);
         bool checkValidDir(char dir);
         int getPositionX() { return positionX; }

@@ -5,6 +5,7 @@
 
 EmptyTile::EmptyTile(){
     instantEquip = false;
+    type = emptyTile;
 }
 
 void EmptyTile::print(){

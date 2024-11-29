@@ -50,7 +50,7 @@ void Screen::displayInstructions()
     cout << "As you explore more rooms you may encounter items or weapons. You may equip these and use them to advance to victory!" << endl;
     cout << endl;
     cout << "Final Note:" << endl;
-    cout << "Your journey through the cave may be filled with uncertainty, but keep your sense of humor and discovery alive! Embrace the chaos and remember: sometimes, laughter is the best weapon against despair (or goblins). Good luck!" << endl;
+    cout << "Your journey through the cave may be filled with uncertainty, but keep your sense of humor and discovery alive! Embrace the chaos and remember: sometimes, laughter is the best weapon against despair (or goblins). Good luck!" << endl << endl;
 
     sleep_for(3000); //pause for 3 seconds
 }
@@ -124,7 +124,7 @@ void Screen::displayCredits(){
     cout << "Sookie Drabla" << endl;
     cout << "Gregory Wang" << endl;
     cout << "Kelly Ma" << endl;
-    cout << "Anthony Emery" << endl;
+    cout << "Anthony Emery" << endl << endl;
 }
 
 void Screen::displayRaceStats(){
@@ -245,9 +245,9 @@ void Screen::displayMapScreen(Map& map, Player& player){
         cout << endl;
         for(int j = 0; j < map.getMapOfTiles().at(i).size(); j++){
             cout << "|    ";
-            if(!map.getMapOfTiles().at(i).at(j).isVisited()){
+            if(!map.getMapOfTiles().at(i).at(j)->isVisited()){
                 cout << "???";
-            }else if(map.getMapOfTiles().at(i).at(j).isVisited() && player.getPositionY() == i && player.getPositionX() == j){
+            }else if(map.getMapOfTiles().at(i).at(j)->isVisited() && player.getPositionY() == i && player.getPositionX() == j){
                 cout << " x ";
             }else{
                 cout << " o ";

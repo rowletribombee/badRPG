@@ -17,7 +17,7 @@ Game LoadManager::loadGame(){
                 cout << "Invalid option! Try again: ";
             }
         }
-        cout << endl << endl;
+        cout << endl;
         if(choice == 'A'){
                 
             return loading(game);

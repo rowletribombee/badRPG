@@ -14,21 +14,23 @@ class Player{
         bool checkValidDir(char dir);
         int getPositionX() { return positionX; }
         int getPositionY() { return positionY; }
-        int getBuffCounter(){ return buffCounter; }
         bool isGuarding = false;
-        void applyStatBoost(const std::string& stat, int boost);
-        void heal(int amount);
+        void applyStatBoost(const std::string& stat, int boost); //not for the user to use
+        void heal(int amount); //utility heal
         Stats& getStats() {return baseStats; } //gets stats from the player class, will be used in battle
+        int buffCounter = 0;
+        int buffMagnitude = 0;
+        int buffID = 0;
+
     private:
         Stats baseStats;
         int positionX = 0;
         int positionY = 7;
-        int buffCounter = 0; // from prev player.h file
 
         void Attack(Stats&) const;
         void MagicAttack(Stats&) const;
-        void Heal();
-        void BuffChosen(string&);
+        void HealPlayer();
+        void BuffChosen(string&); //gives +3 to the stats
         void Guard();
         void Throw(Stats&) const; //should also take an item       
 };

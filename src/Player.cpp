@@ -111,8 +111,8 @@ void Player::move(Map& map, Inventory& inventory){
         
 }
 
-void Player::Heal(){
-    baseStats.addHP(baseStats.getMAtk()*3);
+void Player::HealPlayer(){
+    baseStats.addStat("hp",baseStats.getMAtk()*3);
 }
 
 void Player::Attack(Stats& target) const{
@@ -133,7 +133,7 @@ void Player::Guard(){
     isGuarding = true;
 }
 
-void Player::applyStatBoost(const std::string& stat, int boost) {
+void Player::applyStatBoost(const std::string& stat, int boost) { //for utility
     baseStats.addStat(stat, boost);        
 }
 

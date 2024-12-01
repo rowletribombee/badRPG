@@ -5,8 +5,8 @@ using namespace std;
 
 class WeaponTile : public Tile{
     public:
-        WeaponTile(const string& weapon) : weapon(weapon) {}
-        void print();
+        WeaponTile(const string& weapon) : weapon(weapon) { type = weaponTile; }
+        void print() override;
     private:
         string weapon;
         vector<string> dialogue = {

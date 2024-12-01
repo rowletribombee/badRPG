@@ -110,6 +110,12 @@ int Stats::getMAtk() const{
     return matk;
 }
 
+void Stats::addHP(int hpVal){
+    hp += hpVal;
+    if(hpVal > hpMax){
+        hp = hpMax;
+    }
+}
 
 void Stats::addStat(const std::string& stat, int value) {
     if (stat == "hp") {

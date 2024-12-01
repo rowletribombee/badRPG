@@ -1,4 +1,6 @@
 #include "../lib/Player.h"
+#include "../lib/Potion.h"
+#include "../lib/tiles/PotionTile.h"
 #include <iostream>
 #include <cctype>
 
@@ -59,12 +61,12 @@ bool Player::checkValidDir(char dir){
     }
 }
 
-void Player::move(Map& map){
+void Player::move(Map& map, Inventory& inventory){
     char dir;
     cout << "Please enter in a direction! w for up, a for left, s for down and d for right: ";
     cin >> dir;
     if(isalpha(dir)) dir = tolower(dir);
-    while(!checkValidDir(dir) || checkForWall(dir)){
+    while(!checkValidDir(dir) || checkForWall(dir)){ // some kinks with output need to be fixed, showing you are still required to input to move. still in move phase
         cin >> dir;
         if(isalpha(dir)) dir = tolower(dir);
     }
@@ -72,7 +74,41 @@ void Player::move(Map& map){
         if(dir == 'd') positionX++;
         if(dir == 'w') positionY--;
         if(dir == 's') positionY++;
-        map.mapOfTiles[positionY][positionX].setVisited();
+
+        if(!map.mapOfTiles.at(positionY).at(positionX)->isVisited()){
+            // grab pos x pos y of map
+            // check if it was prev visited
+            // if it wasn't, add in the items based on the type of tile
+            // order of enums spawnTile, emptyTile, fightTile, potionTile, weaponTile
+            if(map.mapOfTiles.at(positionY).at(positionX)->getType() == 0){ // spawn tile
+                baseStats.addHP(20000); // arbitrarily large value, reset hp to max
+                // print stuff "A mysterious energy washes over you and you feel rejuvenated blah blah"
+            }
+            if(map.mapOfTiles.at(positionY).at(positionX)->getType() == 1){ // empty tile
+                // print stuff
+            }
+            if(map.mapOfTiles.at(positionY).at(positionX)->getType() == 2){ // fight tile
+                // initiate fight sequence 
+                // print stuff
+            }
+            if(map.mapOfTiles.at(positionY).at(positionX)->getType() == 3){ // potion tile
+                if (PotionTile* potionTile = dynamic_cast<PotionTile*>(map.mapOfTiles.at(positionY).at(positionX))) {
+                    Potion potion = potionTile->getPotion();
+                    inventory.addItem(new Potion(potion));
+                    cout << "You found a " << potion.getName() << " and added it to your inventory!\n";
+                }
+                // add it into inventory
+            }
+            if(map.mapOfTiles.at(positionY).at(positionX)->getType() == 4){ // weapon tile
+                // add weapon into the inventory, LATER PROBLEM -- WAITING ON PR TO BE MERGED
+                // dialogue
+            }
+
+            map.mapOfTiles.at(positionY).at(positionX)->setVisited();
+        }else{
+            // screen class can print something like looks like you've already been here yada yada, there's nothing here
+        }
+        
 }
 
 void Player::Heal(){

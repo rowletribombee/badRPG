@@ -15,29 +15,24 @@ int main()
     cout << "Start screen:" << endl;
     screenTest.displayStartScreen();
  
-
     cout << endl << endl;
- 
 
     //test instruciton screen 
     cout << "Instructions: " << endl;
     screenTest.displayInstructions();
 
-
     //test intro display
     cout << "Intro:" << endl;
     screenTest.displayIntroScreen();
-
-
 
     // test command menu 
     cout << "Command screen:" << endl;
     screenTest.displayCommandMenu();
 
-    //test inventory print 
-    //Needs items and weapons 
-    cout << "Inventory screen:" << endl;
-    screenTest.displayInventory();
+    // test inventory print 
+    // Needs items and weapons 
+    // cout << "Inventory screen:" << endl;
+    // screenTest.displayInventory();
 
     //test credit print
     cout << "Credits:" << endl;
@@ -61,9 +56,10 @@ int main()
     istringstream input("w\nd\nd\n");
     cin.rdbuf(input.rdbuf());
 
-    player.move(map); // Reads 'w'
-    player.move(map); // Reads 'd'
-    player.move(map); // Reads 'd'
+    Inventory inventory;
+    player.move(map, inventory); // Reads 'w'
+    player.move(map, inventory); // Reads 'd'
+    player.move(map, inventory); // Reads 'd'
 
     //output map with player currently on (x) [2,1] and [0,0][0,1][1,1] visited (x)
     screenTest.displayMapScreen(map,player);

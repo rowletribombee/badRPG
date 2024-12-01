@@ -7,7 +7,6 @@ testItems
 testInventory
 a.out 
 
-
 Makefile
 CMakeCache.txt
 cmake_install.cmake
@@ -17,3 +16,5 @@ lib/Player/
 lib/*.a
 
 .vscode/
+
+saveFile.txt

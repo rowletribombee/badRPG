@@ -2,6 +2,10 @@
 #include "../lib/Inventory.h"
 #include <iostream>
 
+Inventory::Inventory(){
+
+}
+
 void Inventory::addItem(Item* item) {
     items.push_back(item);
     cout << "Item added to inventory.\n";
@@ -38,5 +42,7 @@ Inventory::~Inventory() {
         delete items[i];
     }
     items.clear();
-    cout << "Inventory destructed and items cleaned up.\n";
+    // cout << "Inventory destructed and items cleaned up.\n";
+    // In a hypothetical situation, whenever a new game is started, the inventory will be empty regardless so we don't need to worry
+    // about copying over the data.
 }

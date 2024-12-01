@@ -41,9 +41,8 @@ void Game::save(){
     }
     // inventory backup and inventory keys
     // potion 0, rare potion 1, epic potion 2, legendary potion 3
-    // rusted sword 4, iron sword 5, wooden bat 6, chain mail 7
-    // lance 8, staff 9, plate armor 10, excalibur 11, 
-    // bow of hou yi 12, labrys 13, thief's glove 14, cloak of invisibility 15
+    // iron sword 4, chain mail 5, lance 6, staff 7, plate armor 8, excalibur 9, 
+    // bow of hou yi 10, labrys 11, thief's glove 12, cloak of invisibility 13
     for(int i = 0; i < inventory.getInventory().size(); i++){
         if(inventory.getInventory()[i]->getName() == "Potion"){
             outFile << 0;
@@ -53,30 +52,26 @@ void Game::save(){
             outFile << 2;
         }else if(inventory.getInventory()[i]->getName() == "Legendary Potion"){
             outFile << 3;
-        }else if(inventory.getInventory()[i]->getName() == "Rusted Sword"){
-            outFile << 4;
         }else if(inventory.getInventory()[i]->getName() == "Iron Sword"){
-            outFile << 5;
-        }else if(inventory.getInventory()[i]->getName() == "Wooden Bat"){
-            outFile << 6;
+            outFile << 4;
         }else if(inventory.getInventory()[i]->getName() == "Chain Mail"){
-            outFile << 7;
+            outFile << 5;
         }else if(inventory.getInventory()[i]->getName() == "Lance"){
-            outFile << 8;
+            outFile << 6;
         }else if(inventory.getInventory()[i]->getName() == "Staff"){
-            outFile << 9;
+            outFile << 7;
         }else if(inventory.getInventory()[i]->getName() == "Plate Armor"){
-            outFile << 10;
+            outFile << 8;
         }else if(inventory.getInventory()[i]->getName() == "Excalibur"){
-            outFile << 11;
+            outFile << 9;
         }else if(inventory.getInventory()[i]->getName() == "Bow of Hou Yi"){
-            outFile << 12;
+            outFile << 10;
         }else if(inventory.getInventory()[i]->getName() == "Labrys"){
-            outFile << 13;
+            outFile << 11;
         }else if(inventory.getInventory()[i]->getName() == "Thief's Glove"){
-            outFile << 14;
+            outFile << 12;
         }else if(inventory.getInventory()[i]->getName() == "Cloak of Invisibility"){
-            outFile << 15;
+            outFile << 13;
         }
         if(i == inventory.getInventory().size() - 1){
             outFile << endl;

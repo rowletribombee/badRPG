@@ -140,3 +140,7 @@ void Player::applyStatBoost(const std::string& stat, int boost) { //for utility
 void Player::heal(int amount) {
     baseStats.addStat("hp", amount);
 }
+
+void Player::reduceBuffCounter(){ buffCounter -= 1;}
+void Player::resetBuffMagnitude(){ buffMagnitude = 0;}
+void Player::resetBuffID(){buffID = 0;}

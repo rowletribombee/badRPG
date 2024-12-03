@@ -4,8 +4,8 @@ testMovement
 testStats
 testScreens
 testItems
+testInventory
 a.out 
-
 
 Makefile
 CMakeCache.txt
@@ -15,3 +15,5 @@ CMakeFiles/
 lib/*.a
 
 .vscode/
+
+saveFile.txt

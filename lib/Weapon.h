@@ -11,7 +11,7 @@ public:
 
     void use(Player& target) override;
     void unequip(Player& target);
-    string getName() {return name;}
+    string getName() const override {return name;}
     int getAtkBoost() {return attackBoost;}
     int getDefBoost() {return defenseBoost;}
     int getM_AtkBoost() {return magicAttackBoost;}

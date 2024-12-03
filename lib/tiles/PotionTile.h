@@ -6,8 +6,9 @@ using namespace std;
 
 class PotionTile : public Tile{
     public:
-        PotionTile(Potion potion) : potion(potion) {}
-        void print();
+        PotionTile(Potion potion) : potion(potion) { type = potionTile; }
+        void print() override;
+        Potion getPotion() { return potion; }
     private:
         Potion potion;
         vector<string> dialogue = {

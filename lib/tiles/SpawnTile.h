@@ -6,7 +6,7 @@ using namespace std;
 class SpawnTile : public Tile{
     public:
         SpawnTile();
-        void print();
+        void print() override;
         void setVisitStateFalse(){firstVisit = false;}
     private:
         bool firstVisit = true;

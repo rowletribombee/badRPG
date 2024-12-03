@@ -1,7 +1,7 @@
 #pragma once
 #include "Player.h"
 #include "Map.h"
-
+#include "Inventory.h"
 class Screen{
     public:
         Screen();
@@ -10,7 +10,7 @@ class Screen{
         void displayCommandMenu();
         void displayInstructions();
         void displayIntroScreen();
-        void displayInventory();
+        void displayInventory(Inventory& inventory);
         void displayMapScreen();
         void sleep_for(int milliseconds);
         void displayCredits();

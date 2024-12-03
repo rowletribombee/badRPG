@@ -3,7 +3,7 @@
 #include <iostream>
 
 Inventory::Inventory(){
-
+    
 }
 
 void Inventory::addItem(Item* item) {

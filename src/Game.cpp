@@ -123,6 +123,7 @@ void Game::controls(){
     }
 }
 void Game::startGame(){
+    screen.displayIntroScreen();
     screen.displayInstructions();
     while(!gameOver){
         while(firstStage){

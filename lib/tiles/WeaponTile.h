@@ -6,6 +6,7 @@ using namespace std;
 class WeaponTile : public Tile{
     public:
         WeaponTile(const string& weapon) : weapon(weapon) { type = weaponTile; }
+        ~WeaponTile();
         void print() override;
     private:
         string weapon;

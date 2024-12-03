@@ -68,6 +68,7 @@ src/Stats.cpp
 src/Player.cpp
 src/Inventory.cpp
 src/tiles/PotionTile.cpp
+src/tiles/Tile.cpp
 src/Potion.cpp
 )
 
@@ -93,8 +94,9 @@ src/Potion.cpp
 src/Weapon.cpp 
 src/Player.cpp 
 src/Stats.cpp
-src/tiles/PotionTile.cpp
 src/Inventory.cpp
+src/tiles/Tile.cpp
+src/tiles/PotionTile.cpp
 )
 
 add_executable(testInventory
@@ -105,6 +107,7 @@ src/Player.cpp
 src/Stats.cpp
 src/Inventory.cpp
 src/tiles/PotionTile.cpp
+src/tiles/Tile.cpp
 )
 
 TARGET_LINK_LIBRARIES(testTiles gtest gtest_main)

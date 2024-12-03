@@ -10,6 +10,7 @@ class Tile{
         TileType type;
     public:
         Tile();
+        ~Tile();
         void setVisited(){ visited = true; }
         bool isVisited() const { return visited; }
         TileType getType() const { return type; }

@@ -27,7 +27,7 @@ void Screen::displayCommandMenu(){
             "Inventory [I]" << endl << 
             "Stats [S]" << endl <<
             "Quit and Save [T]" << endl <<
-            "Credits[X]" << endl;
+            "Credits[X]" << endl << endl;
 }
 
 void Screen::displayInstructions()

@@ -2,6 +2,8 @@
 #include "../lib/Player.h"
 #include <iostream>
 
+Weapon::~Weapon(){}
+
 void Weapon::use(Player& target) {
     target.applyStatBoost("atk", attackBoost);
     target.applyStatBoost("def", defenseBoost);

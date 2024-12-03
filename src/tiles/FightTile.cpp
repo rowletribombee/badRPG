@@ -3,10 +3,16 @@
 #include <cstdlib>
 #include <ctime>
 
-FightTile::FightTile(const string& boss, const vector<Item*>* rewards)
+FightTile::FightTile(const string& boss, const vector<Item*> rewards)
 :boss(boss), rewards(rewards) {
     instantEquip = false;
     this->type = fightTile;
+}
+
+FightTile::~FightTile(){
+    for(int i = 0; i < rewards.size(); i++){
+        delete rewards[i];
+    }
 }
 
 void FightTile::print(){

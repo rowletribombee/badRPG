@@ -7,6 +7,7 @@ using namespace std;
 class WeaponTile : public Tile{
     public:
         WeaponTile(Weapon weapon) : weapon(weapon) { type = weaponTile; }
+        ~WeaponTile();
         void print();
         Weapon getWeapon() {return weapon;}
         const vector<string>& getDialogue() const { return dialogue; } //added for testing

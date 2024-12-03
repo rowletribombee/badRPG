@@ -71,6 +71,7 @@ src/Stats.cpp
 src/Player.cpp
 src/Inventory.cpp
 src/tiles/PotionTile.cpp
+src/tiles/Tile.cpp
 src/Potion.cpp
 )
 
@@ -98,6 +99,7 @@ src/Weapon.cpp
 src/Player.cpp 
 src/Stats.cpp
 src/tiles/PotionTile.cpp
+src/tiles/Tile.cpp
 src/Inventory.cpp
 )
 
@@ -109,6 +111,7 @@ src/Player.cpp
 src/Stats.cpp
 src/Inventory.cpp
 src/tiles/PotionTile.cpp
+src/tiles/Tile.cpp
 )
 
 TARGET_LINK_LIBRARIES(testTiles gtest gtest_main)

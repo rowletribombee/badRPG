@@ -125,7 +125,6 @@ TEST(Tiles, isVisitedTest2){
     EXPECT_TRUE(spawnTile.isVisited());
 }
 
-
 TEST(WeaponTile, WeaponTile){
     Weapon testWeapon("Chain Mail", 0, 2, 0, 0, 0, 0);
     WeaponTile tile(testWeapon);
@@ -138,18 +137,9 @@ TEST(WeaponTile, WeaponTile){
 }
 
 TEST(FightTile, Initialization) {
-    vector<Item*> rewards = {
-        new Weapon("Excalibur", 2, 2, 2, 2, 2, 0),
-        new Potion("Epic Potion", 40)
-    };
-
-    FightTile fightTile("Goblin", &rewards);
+    FightTile fightTile("Goblin", {new Weapon("Excalibur", 2, 2, 2, 2, 2, 0), new Potion("Epic Potion", 40)});
 
     EXPECT_EQ(fightTile.getBoss(), "Goblin"); 
-    EXPECT_EQ(rewards[0]->getName(), "Excalibur");
-    EXPECT_EQ(rewards[1]->getName(), "Epic Potion");
-
-    for (auto item : rewards) {
-        delete item; 
-    }
+    EXPECT_EQ(fightTile.getRewards()[0]->getName(), "Excalibur");
+    EXPECT_EQ(fightTile.getRewards()[1]->getName(), "Epic Potion");
 }

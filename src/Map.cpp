@@ -4,11 +4,22 @@
 #include "../lib/tiles/SpawnTile.h"
 #include "../lib/tiles/PotionTile.h"
 #include "../lib/tiles/WeaponTile.h"
+#include "../lib/Item.h"
 Map::Map(){
     initialize();
 }
 
 Map::~Map() {
+    for (auto item : EliteRewards) {
+            delete item;
+        }
+        EliteRewards.clear(); 
+
+    for (auto item : NormalRewards) {
+            delete item;
+        }
+        NormalRewards.clear();
+        
     for (auto& row : mapOfTiles) {
         for (auto& tile : row) {
             delete tile;

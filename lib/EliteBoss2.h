@@ -1,18 +1,14 @@
 #pragma once
 #include "Player.h"
+#include "Enemy.h"
 
-class EliteBoss2{
+class EliteBoss2 : public Enemy{
 
-    private:
-        int x, y; //not really sure if it needs this
-        Stats bossStats;
-        //drops a weapon on death, but never receives boosts
         
 
     public:
         EliteBoss2() = delete;
-        EliteBoss2(Stats& baseStats, int xCoord, int yCoord) : x{xCoord}, y{yCoord}, bossStats{baseStats}{};
-        Stats& getStats();
-        void Burn(Player&);
-        void Inferno(Player&);
+        EliteBoss2(Stats& baseStats, int xCoord, int yCoord) : Enemy{baseStats, xCoord, yCoord}{};
+        void Burn(Player&); //Magic, 4
+        void Inferno(Player&);  //Magic, 5, does 5 extra true damage
 };

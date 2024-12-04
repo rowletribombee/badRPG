@@ -31,6 +31,8 @@ class Stats{
         void addHP (int); //for healing
         void addStat(const std::string&, int); // for weapons
         void reduceHp(int);
+        int damageDealtPhys(Stats&, int); 
+        int damageDealtMagic(Stats&, int);
         int rng(int, int) const; //gives random number between the two ints
         bool CritCheck(Stats& opponent) const;
         bool AccuracyCheck(Stats& opponent) const;

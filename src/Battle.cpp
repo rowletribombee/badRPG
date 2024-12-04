@@ -6,23 +6,23 @@ int Battle::fBoss(Player& plr, FinalBoss& fnlBss){
     
 
     while(plr.getStats().getHP() != 0 || fnlBss.getStats().getHP() != 0 ){
-        if(fnlBss.getStats().getHP() > 70){
+        while(fnlBss.getStats().getHP() > 70){
              //determine speed order and thus priority
              fnlBss.Slam(plr); //boss move
         }
-        else if(fnlBss.getStats().getHP() > 40){
+        while(fnlBss.getStats().getHP() > 40){
             //spd priority
             fnlBss.Charge();
             fnlBss.Explosion(plr);
             //do nothing for a turn
         }
-        else if(fnlBss.getStats().getHP() > 15 && !fnlBss.revivedOnce){
+        while(fnlBss.getStats().getHP() > 15 && !fnlBss.revivedOnce){
             fnlBss.BackToFull();
         }
-        else if(fnlBss.getStats().getHP() > 15){
+        while(fnlBss.getStats().getHP() > 15){
             //normal pattern
         }
-        else{
+        while(fnlBss.getStats().getHP() > 0){
             //do nothing
             //do nothing
             //end

@@ -1,27 +1,12 @@
 #include "../lib/EliteBoss1.h"
 
-Stats& EliteBoss1::getStats(){
-    return bossStats;
-}
+
 
 void EliteBoss1::Slash(Player& target){
-    if(!bossStats.AccuracyCheck(target.getStats())){ //accuracy check on the player, attack misses
-        return;
-    }
-    else{ //attack hit
-        if(bossStats.CritCheck(target.getStats())){ //crits deal 1.5x damage and ignore guarding
-            target.getStats().reduceHp(bossStats.getAtk() * 6/target.getStats().getDef());
-        }
-        else if(target.isGuarding){ //guarding halves damage
-             target.getStats().reduceHp(bossStats.getAtk() * 2/target.getStats().getDef());
-        }
-        else{ //base attack, nothing special
-            target.getStats().reduceHp(bossStats.getAtk() * 4/target.getStats().getDef());
-        }
-    }
+    damageEnemyPhys(target, 4);
 }
 
-void EliteBoss1::Thrash(Player& target){
+void EliteBoss1::Thrash(Player& target){  //this one has a weird crit chance so it won't use the Enemy class damage formula
     if(!bossStats.AccuracyCheck(target.getStats())){ //accuracy check on the player, attack misses
         return;
     }

@@ -1,21 +1,16 @@
 #pragma once
 #include "Player.h"
+#include "Enemy.h"
 
-class FinalBoss{
+class FinalBoss : public Enemy{
 
-    private:
-        int x, y; //not really sure if it needs this
-        Stats bossStats;
-        //drops a weapon on death, but never receives boosts
-        
 
     public:
         bool revivedOnce = false;
         int buffCounter = 0; //it's always going to be magic attack
         int chargeCounter = 0;
         FinalBoss() = delete;
-        FinalBoss(Stats& baseStats, int xCoord, int yCoord) : x{xCoord}, y{yCoord}, bossStats{baseStats}{};
-        Stats& getStats();
+        FinalBoss(Stats& baseStats, int xCoord, int yCoord) : Enemy{baseStats, xCoord, yCoord}{};
         void Slam(Player&);
         void Charge();
         void Explosion(Player&);

@@ -68,6 +68,11 @@ src/Stats.cpp
 add_executable(testStats
 test/testStats.cpp
 src/Stats.cpp
+)
+
+add_executable(testPlayer
+test/testPlayer.cpp
+src/Stats.cpp
 src/Player.cpp
 src/Inventory.cpp
 src/tiles/PotionTile.cpp

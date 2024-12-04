@@ -9,6 +9,7 @@ class Player{
         Player();
         Player(string race);
         Player(Stats&);
+        Player(vector<int> bstats) : baseStats(bstats){};
         void move(Map& map, Inventory& inventory);
         bool checkForWall(char dir);
         bool checkValidDir(char dir);

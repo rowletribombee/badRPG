@@ -24,8 +24,8 @@ class Player{
         void applyStatBoost(const std::string& stat, int boost); //not for the user to use
         void heal(int amount); //utility heal
         Stats& getStats() {return baseStats; } //gets stats from the player class, will be used in battle
-        void Attack(Stats&) const;
-        void MagicAttack(Stats&) const;
+        void Attack(Stats&);
+        void MagicAttack(Stats&);
         void HealPlayer();
         void BuffChosen(string&); //gives +3 to the stats
         void Guard();    

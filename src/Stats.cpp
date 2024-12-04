@@ -197,3 +197,4 @@ int Stats::damageDealtMagic(Stats& target, int basePower){
         }
     }
 }
+

@@ -115,22 +115,16 @@ void Player::HealPlayer(){
     baseStats.addStat("hp",baseStats.getMAtk()*3);
 }
 
-void Player::Attack(Stats& target) const{
-    if(!baseStats.AccuracyCheck(target)){
-        return;
-    }
-    else{
-        if(baseStats.CritCheck(target)){
-            target.reduceHp(baseStats.getAtk() * 6/target.getDef());
-        }
-        else{
-            target.reduceHp(baseStats.getAtk() * 4/target.getDef());
-        }
-    }
+void Player::Attack(Stats& target){
+    baseStats.damageDealtPhys(target, 4);
+}
+
+void Player::MagicAttack(Stats& target){
+    baseStats.damageDealtMagic(target, 4);
 }
 
 void Player::Guard(){
-    isGuarding = true;
+    isGuarding = !isGuarding;
 }
 
 void Player::applyStatBoost(const std::string& stat, int boost) { //for utility
@@ -141,6 +135,75 @@ void Player::heal(int amount) { //utility
     baseStats.addStat("hp", amount);
 }
 
-void Player::reduceBuffCounter(){ buffCounter -= 1;}
-void Player::resetBuffMagnitude(){ buffMagnitude = 0;}
+void Player::reduceBuffCounter(){ 
+    if(buffCounter > 1){
+        buffCounter -= 1;
+    }
+    else if(buffCounter = 1){
+        buffCounter--;
+        resetBuffMagnitude();
+    }
+    else{ //in case it somehow went negative
+        buffCounter = 0;
+    }
+}
+void Player::resetBuffMagnitude(){ 
+    if(buffID = 1){
+        baseStats.addStat("atk", -1*buffMagnitude);
+    }
+    else if(buffID = 2){
+        baseStats.addStat("def", -1*buffMagnitude);
+    }
+    else if(buffID = 3){
+        baseStats.addStat("matk", -1*buffMagnitude);
+    }
+    else if(buffID = 4){
+        baseStats.addStat("mdef", -1*buffMagnitude);
+    }
+    else if(buffID = 5){
+        baseStats.addStat("spd", -1*buffMagnitude);
+    }
+    else{
+        baseStats.addStat("lck", -1*buffMagnitude);
+    }
+    buffMagnitude = 0;
+    resetBuffID();
+}
 void Player::resetBuffID(){buffID = 0;}
+
+void Player::BuffChosen(string& stat){ //playermove
+    
+    if (stat == "atk") {
+        buffID = 1;
+        applyStatBoost(stat, baseStats.getAtk()*0.5);
+        buffMagnitude = baseStats.getAtk()*0.5;
+    } 
+    else if (stat == "def") {
+        buffID = 2;
+        applyStatBoost(stat, baseStats.getDef()*0.5);
+        buffMagnitude = baseStats.getDef()*0.5;
+    } 
+    else if (stat == "matk") {
+        buffID = 3;
+        applyStatBoost(stat, baseStats.getMAtk()*0.5);
+        buffMagnitude = baseStats.getMAtk()*0.5;
+    } 
+    else if (stat == "mdef") {
+        buffID = 4;
+        applyStatBoost(stat, baseStats.getMDef()*0.5);
+        buffMagnitude = baseStats.getMDef()*0.5;
+    } 
+    else if (stat == "spd") {
+        buffID = 5;
+        applyStatBoost(stat, baseStats.getSpd()*0.5);
+        buffMagnitude = baseStats.getSpd()*0.5;
+    } 
+    else if (stat == "lck") {
+        buffID = 6;
+        applyStatBoost(stat, baseStats.getLck()*0.5);
+        buffMagnitude = baseStats.getLck()*0.5;
+    } 
+    else {
+        std::cout << "Invalid stat name!" << std::endl;
+    }   
+}

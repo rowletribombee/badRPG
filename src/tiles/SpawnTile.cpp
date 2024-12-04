@@ -8,6 +8,8 @@ SpawnTile::SpawnTile(){
     setVisited();
 }
 
+SpawnTile::~SpawnTile(){}
+
 void SpawnTile::print(){
     if(firstVisit){
         cout << dialogue.at(0);

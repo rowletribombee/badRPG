@@ -30,6 +30,7 @@ src/tiles/SpawnTile.cpp
 src/tiles/WeaponTile.cpp
 src/tiles/Tile.cpp
 
+src/Weapon.cpp
 )
 
 add_executable(testMovement
@@ -39,6 +40,7 @@ src/Player.cpp
 src/Stats.cpp
 src/Screen.cpp
 src/Potion.cpp
+src/Weapon.cpp
 src/Inventory.cpp
 src/tiles/EmptyTile.cpp
 src/tiles/SpawnTile.cpp
@@ -58,6 +60,7 @@ src/tiles/WeaponTile.cpp
 src/tiles/Tile.cpp
 src/Inventory.cpp
 src/Potion.cpp
+src/Weapon.cpp
 src/Player.cpp
 src/Stats.cpp
 )
@@ -78,6 +81,7 @@ src/Screen.cpp
 src/Stats.cpp
 src/Map.cpp
 src/Potion.cpp
+src/Weapon.cpp
 src/Player.cpp
 src/Inventory.cpp
 src/tiles/EmptyTile.cpp
@@ -97,6 +101,7 @@ src/Stats.cpp
 src/Inventory.cpp
 src/tiles/Tile.cpp
 src/tiles/PotionTile.cpp
+src/Inventory.cpp
 )
 
 add_executable(testInventory
@@ -107,7 +112,6 @@ src/Player.cpp
 src/Stats.cpp
 src/Inventory.cpp
 src/tiles/PotionTile.cpp
-src/tiles/Tile.cpp
 )
 
 TARGET_LINK_LIBRARIES(testTiles gtest gtest_main)
@@ -120,3 +124,5 @@ TARGET_LINK_LIBRARIES(testItems gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testItems PRIVATE gtest_disable_pthreads=ON)
 TARGET_LINK_LIBRARIES(testInventory gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testInventory PRIVATE gtest_disable_pthreads=ON)
+TARGET_LINK_LIBRARIES(testWeapons gtest gtest_main)
+TARGET_COMPILE_DEFINITIONS(testWeapons PRIVATE gtest_disable_pthreads=ON)

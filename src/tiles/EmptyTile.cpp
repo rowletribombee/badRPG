@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 
+EmptyTile::~EmptyTile(){}
+
 EmptyTile::EmptyTile(){
     instantEquip = false;
     type = emptyTile;

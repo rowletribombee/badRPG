@@ -5,6 +5,7 @@ testStats
 testScreens
 testItems
 testInventory
+testWeapons
 a.out 
 
 Makefile

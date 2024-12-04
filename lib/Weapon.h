@@ -8,11 +8,16 @@ public:
            int magicAttackBoost = 0, int magicDefenseBoost = 0, int spdBoost = 0, int lckBoost = 0)
         : name(weaponName), attackBoost(atkBoost), defenseBoost(defBoost), magicAttackBoost(magicAttackBoost), 
           magicDefenseBoost(magicDefenseBoost), speedBoost(spdBoost), luckBoost(lckBoost) {}
-
+    ~Weapon();
     void use(Player& target) override;
     void unequip(Player& target);
-    string getName() const override { return name; }
-
+    string getName() const override {return name;}
+    int getAtkBoost() {return attackBoost;}
+    int getDefBoost() {return defenseBoost;}
+    int getM_AtkBoost() {return magicAttackBoost;}
+    int getM_DefBoost() {return magicDefenseBoost;}
+    int getSpdBoost() {return speedBoost;}
+    int getLuckBoost() {return luckBoost;}
 private:
     string name;
     int attackBoost;

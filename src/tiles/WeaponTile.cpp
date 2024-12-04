@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <ctime>
 
+WeaponTile::~WeaponTile(){}
+
 void WeaponTile::print(){
     srand(static_cast<unsigned int>(time(0)));
     int dialogueVal = rand() % 3;

@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include "../lib/Item.h"
 #include "tiles/Tile.h"
 using namespace std;
 

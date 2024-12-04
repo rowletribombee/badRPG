@@ -137,7 +137,7 @@ void Player::applyStatBoost(const std::string& stat, int boost) { //for utility
     baseStats.addStat(stat, boost);        
 }
 
-void Player::heal(int amount) {
+void Player::heal(int amount) { //utility
     baseStats.addStat("hp", amount);
 }
 

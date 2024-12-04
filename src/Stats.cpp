@@ -163,3 +163,20 @@ int Stats::rng(int min, int max) const{
     return (distribution(gen));
     
 }
+
+int Stats::damageDealt(Stats& attacker, Stats& target, int basePower){
+    if(!attacker.AccuracyCheck(target)){ //accuracy check on the target, attack misses
+        return 0;
+    }
+    else{ //attack hit
+        int totalDamage = basePower*attacker.getAtk()/target.getDef();
+        if(attacker.CritCheck(target)){ //crits deal 1.5x damage
+            target.reduceHp(totalDamage*1.5);
+            return totalDamage*1.5;
+        }
+        else{ //base attack, nothing special
+            target.reduceHp(totalDamage);
+            return totalDamage;
+        }
+    }
+}

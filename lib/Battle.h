@@ -8,8 +8,12 @@
 class Battle{
 
     public:
-        int FinalBoss(Player&, FinalBoss&); 
-        int EliteEnemy1(Player&, EliteBoss1&);
-        int EliteEnemy2(Player&, EliteBoss2&);
-        int Boss(Player&, Boss&);
+        Battle(){};
+        int moveCountPlayer(Stats&, Stats&);
+        int moveCountEnemy(Stats&, Stats&);
+        int fBoss(Player&, FinalBoss&); 
+        int eEnemy1(Player&, EliteBoss1&);
+        int eEnemy2(Player&, EliteBoss2&);
+        int basicBoss(Player&, Boss&);
+        int takeTurn(Player&); //prompt the player to take their move
 };

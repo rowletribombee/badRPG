@@ -166,9 +166,8 @@ void Player::resetBuffMagnitude(){
         baseStats.addStat("lck", -1*buffMagnitude);
     }
     buffMagnitude = 0;
-    resetBuffID();
+    buffID = 0;
 }
-void Player::resetBuffID(){buffID = 0;}
 
 void Player::BuffChosen(string& stat){ //playermove
     if(buffID != 0 || buffCounter != 0){ //second case added just in case something slipped
@@ -176,33 +175,39 @@ void Player::BuffChosen(string& stat){ //playermove
     }
     else if (stat == "atk") {
         buffID = 1;
-        applyStatBoost(stat, baseStats.getAtk()*0.5);
         buffMagnitude = baseStats.getAtk()*0.5;
+        applyStatBoost(stat, baseStats.getAtk()*0.5);
+        buffCounter = 3;
     } 
     else if (stat == "def") {
         buffID = 2;
-        applyStatBoost(stat, baseStats.getDef()*0.5);
         buffMagnitude = baseStats.getDef()*0.5;
+        applyStatBoost(stat, baseStats.getDef()*0.5);
+        buffCounter = 3;
     } 
     else if (stat == "matk") {
         buffID = 3;
-        applyStatBoost(stat, baseStats.getMAtk()*0.5);
         buffMagnitude = baseStats.getMAtk()*0.5;
+        applyStatBoost(stat, baseStats.getMAtk()*0.5);
+        buffCounter = 3;
     } 
     else if (stat == "mdef") {
         buffID = 4;
-        applyStatBoost(stat, baseStats.getMDef()*0.5);
         buffMagnitude = baseStats.getMDef()*0.5;
+        applyStatBoost(stat, baseStats.getMDef()*0.5);
+        buffCounter = 3;
     } 
     else if (stat == "spd") {
         buffID = 5;
-        applyStatBoost(stat, baseStats.getSpd()*0.5);
         buffMagnitude = baseStats.getSpd()*0.5;
+        applyStatBoost(stat, baseStats.getSpd()*0.5);
+        buffCounter = 3;
     } 
     else if (stat == "lck") {
         buffID = 6;
-        applyStatBoost(stat, baseStats.getLck()*0.5);
         buffMagnitude = baseStats.getLck()*0.5;
+        applyStatBoost(stat, baseStats.getLck()*0.5);
+        buffCounter = 3;
     } 
     else {
         std::cout << "Invalid stat name!" << std::endl;

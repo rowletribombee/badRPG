@@ -10,6 +10,7 @@ class Player{
         Player(string race);
         Player(Stats&);
         Player(vector<int> bstats) : baseStats(bstats){};
+        bool isGuarding = false;
         void move(Map& map, Inventory& inventory);
         bool checkForWall(char dir);
         bool checkValidDir(char dir);
@@ -19,10 +20,8 @@ class Player{
         int getBuffMagnitude(){return buffMagnitude;}
         int getBuffID(){return buffID;};
         void reduceBuffCounter();
-        void resetBuffMagnitude();
-        void resetBuffID();
-        bool isGuarding = false;
-        void applyStatBoost(const std::string& stat, int boost); //not for the user to use
+        void resetBuffMagnitude(); //utility purposes
+        void applyStatBoost(const std::string& stat, int boost); //utility purposes
         void heal(int amount); //utility heal
         Stats& getStats() {return baseStats; } //gets stats from the player class, will be used in battle
         void Attack(Stats&);

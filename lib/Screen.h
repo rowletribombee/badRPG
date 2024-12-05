@@ -8,6 +8,7 @@ class Screen{
         void displayMapScreen(Map& mapOfTiles, Player& player);
         void displayStartScreen();
         void displayCommandMenu();
+        void displayDirectionOptions();
         void displayInstructions();
         void displayIntroScreen();
         void displayInventory(Inventory& inventory);

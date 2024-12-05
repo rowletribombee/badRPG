@@ -28,4 +28,5 @@ void EliteBoss1::Thrash(Player& target){  //this one has a weird crit chance so 
 
 void EliteBoss1::Enrage(){
     bossStats.addStat("atk", 3);
+    cout << "Enemy is enraged! Attack was boosted" << endl;
 }

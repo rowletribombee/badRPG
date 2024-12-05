@@ -288,6 +288,162 @@ int Battle::finalBoss(Player& plr, FinalBoss& fnlBss){
     return 1; //if the boss somehow gets bursted past final phase
 }
 
+int Battle::basicBoss(Player& plr, BasicBoss& bBoss){
+    while(plr.getStats().getHP() > 0 || bBoss.getStats().getHP() != 0){
+        if(moveCountEnemy(plr, bBoss.getStats()) > moveCountPlayer(plr, bBoss.getStats())){ //priority
+            for(int i = 0; i < moveCountEnemy(plr, bBoss.getStats()); i++){ //moves per turn for the boss
+                bBoss.Bonk(plr); 
+            }
+            if(plr.getStats().getHP() == 0){ //check if player died after getting hit
+                return -1;
+            }
+            takeTurn(plr, bBoss.getStats()); //player turn
+            endTurn(plr);
+        }
+        else{
+            for(int i = 0; i < moveCountPlayer(plr, bBoss.getStats()); i++){ //multiple moves per turn for the player
+                takeTurn(plr, bBoss.getStats()); 
+                if(bBoss.getStats().getHP() == 0){
+                    return 1;
+                }
+            }
+            bBoss.Bonk(plr); //one move for the boss
+            if(plr.getStats().getHP() == 0){
+                return -1;
+            }
+            endTurn(plr);
+        }
+    }
+    return 1; //player killed boss
+}
+
+int Battle::eliteEnemy1(Player& plr, EliteBoss1& eBoss){
+    bool nextPhase = false;
+    while(plr.getStats().getHP() > 0 && eBoss.getStats().getHP() > 20){ //phase 1
+        if(moveCountEnemy(plr, eBoss.getStats()) > moveCountPlayer(plr, eBoss.getStats())){ //priority
+            for(int i = 0; i < moveCountEnemy(plr, eBoss.getStats()); i++){ //moves per turn for the boss
+                eBoss.Slash(plr); 
+            }
+            if(plr.getStats().getHP() == 0){ //check if player died after getting hit
+                return -1;
+            }
+            takeTurn(plr, eBoss.getStats()); //player turn
+            endTurn(plr);
+        }
+        else{
+            for(int i = 0; i < moveCountPlayer(plr, eBoss.getStats()); i++){ //multiple moves per turn for the player
+                takeTurn(plr, eBoss.getStats()); 
+                if(eBoss.getStats().getHP() <= 20){
+                    nextPhase = true;
+                    break;
+                }
+            }
+            if(nextPhase){
+                break; //no need to reset nextPhase, it only has 2 phases anyways
+            }
+            eBoss.Slash(plr); //one move for the boss
+            if(plr.getStats().getHP() == 0){
+                return -1;
+            }
+            endTurn(plr);
+        }
+    }
+    eBoss.Enrage();
+    while(eBoss.getStats().getHP() > 0){ //phase 2
+        if(moveCountEnemy(plr, eBoss.getStats()) > moveCountPlayer(plr, eBoss.getStats())){ //priority
+            for(int i = 0; i < moveCountEnemy(plr, eBoss.getStats()); i++){ //moves per turn for the boss
+                eBoss.Thrash(plr); 
+            }
+            if(plr.getStats().getHP() == 0){ //check if player died after getting hit
+                return -1;
+            }
+            takeTurn(plr, eBoss.getStats()); //player turn
+            if(eBoss.getStats().getHP() == 0){
+                return 1; //player wins
+            }
+            endTurn(plr);
+        }
+        else{
+            for(int i = 0; i < moveCountPlayer(plr, eBoss.getStats()); i++){ //multiple moves per turn for the player
+                takeTurn(plr, eBoss.getStats()); 
+                if(eBoss.getStats().getHP() == 0){
+                    return 1; //boss defeated
+                }
+            }
+            eBoss.Thrash(plr); //one move for the boss
+            if(plr.getStats().getHP() == 0){
+                return -1; //player died
+            }
+            endTurn(plr);
+        }
+    }
+    return 1; //player killed boss
+    
+}
+
+int Battle::eliteEnemy2(Player& plr, EliteBoss2& eBoss){
+    bool nextPhase = false;
+    while(eBoss.getStats().getHP() > 25){ //phase 1
+        if(moveCountEnemy(plr, eBoss.getStats()) > moveCountPlayer(plr, eBoss.getStats())){ //priority
+            for(int i = 0; i < moveCountEnemy(plr, eBoss.getStats()); i++){ //moves per turn for the boss
+                eBoss.Burn(plr); 
+            }
+            if(plr.getStats().getHP() == 0){ //check if player died after getting hit
+                return -1;
+            }
+            takeTurn(plr, eBoss.getStats()); //player turn
+            endTurn(plr);
+        }
+        else{
+            for(int i = 0; i < moveCountPlayer(plr, eBoss.getStats()); i++){ //multiple moves per turn for the player
+                takeTurn(plr, eBoss.getStats()); 
+                if(eBoss.getStats().getHP() <= 25){
+                    nextPhase = true;
+                    break;
+                }
+            }
+            if(nextPhase){
+                break; //no need to reset nextPhase, it only has 2 phases anyways
+            }
+            eBoss.Burn(plr); //one move for the boss
+            if(plr.getStats().getHP() == 0){
+                return -1;
+            }
+            endTurn(plr);
+        }
+    }
+    while(eBoss.getStats().getHP() > 0){ //phase 2
+        if(moveCountEnemy(plr, eBoss.getStats()) > moveCountPlayer(plr, eBoss.getStats())){ //priority
+            for(int i = 0; i < moveCountEnemy(plr, eBoss.getStats()); i++){ //moves per turn for the boss
+                eBoss.Inferno(plr); 
+            }
+            if(plr.getStats().getHP() == 0){ //check if player died after getting hit
+                return -1;
+            }
+            takeTurn(plr, eBoss.getStats()); //player turn
+            if(eBoss.getStats().getHP() == 0){
+                return 1; //player wins
+            }
+            endTurn(plr);
+        }
+        else{
+            for(int i = 0; i < moveCountPlayer(plr, eBoss.getStats()); i++){ //multiple moves per turn for the player
+                takeTurn(plr, eBoss.getStats()); 
+                if(eBoss.getStats().getHP() == 0){
+                    return 1; //boss defeated
+                }
+            }
+            eBoss.Inferno(plr); //one move for the boss
+            if(plr.getStats().getHP() == 0){
+                return -1; //player died
+            }
+            endTurn(plr);
+        }
+    }
+    return 1; //player killed boss
+    
+}
+
 void Battle::takeTurn(Player& user, Stats& target){
     bool moved = false;
     while(!moved){

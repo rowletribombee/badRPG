@@ -6,7 +6,7 @@
 #include "Player.h"
 #include <iostream>
 
-class Battle{
+class Battle{ //there is no feasible way to test the important functions here without playtesting the game and checking statistics
 
     public:
         Battle(){}; //initiate once at the beginning to track turns

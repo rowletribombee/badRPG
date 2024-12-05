@@ -6,6 +6,8 @@ testScreens
 testItems
 testInventory
 testWeapons
+testPlayer
+testBattle
 a.out 
 
 Makefile

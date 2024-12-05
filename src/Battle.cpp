@@ -1,31 +1,344 @@
 #include "../lib/Battle.h"
 
-int Battle::fBoss(Player& plr, FinalBoss& fnlBss){
+int Battle::finalBoss(Player& plr, FinalBoss& fnlBss){
 
-    int turnCounter = 0;
-    
+    bool nextPhase = false;
 
-    while(plr.getStats().getHP() != 0 || fnlBss.getStats().getHP() != 0 ){
-        while(fnlBss.getStats().getHP() > 70){
-             //determine speed order and thus priority
-             fnlBss.Slam(plr); //boss move
+    while(fnlBss.getStats().getHP() > 70 && plr.getStats().getHP() != 0){ //phase 1
+        if(moveCountEnemy(plr, fnlBss.getStats()) > moveCountPlayer(plr, fnlBss.getStats())){ //priority
+            for(int i = 0; i < moveCountEnemy(plr, fnlBss.getStats()); i++){ //moves per turn for the boss
+                fnlBss.Slam(plr); 
+            }
+            if(plr.getStats().getHP() == 0){ //check if player died after getting hit
+                return -1;
+            }
+            takeTurn(plr, fnlBss.getStats()); //player turn
+            endTurn(plr);
         }
-        while(fnlBss.getStats().getHP() > 40){
-            //spd priority
-            fnlBss.Charge();
-            fnlBss.Explosion(plr);
-            //do nothing for a turn
-        }
-        while(fnlBss.getStats().getHP() > 15 && !fnlBss.revivedOnce){
-            fnlBss.BackToFull();
-        }
-        while(fnlBss.getStats().getHP() > 15){
-            //normal pattern
-        }
-        while(fnlBss.getStats().getHP() > 0){
-            //do nothing
-            //do nothing
-            //end
+        else{
+            for(int i = 0; i < moveCountPlayer(plr, fnlBss.getStats()); i++){ //multiple moves per turn for the player
+                takeTurn(plr, fnlBss.getStats()); 
+                if(fnlBss.getStats().getHP() <= 70){
+                    nextPhase = true; //move on to the next phase if it pushes over the break point, skips boss turn, will break out
+                    break;
+                }
+            }
+            if(nextPhase){
+                nextPhase = false; //reset
+                endTurn(plr); 
+                break; //breaks out of phase 1, moves out of loop
+            }
+            fnlBss.Slam(plr); //one move for the boss
+            if(plr.getStats().getHP() == 0){
+                return -1;
+            }
+            endTurn(plr);
         }
     }
+
+    //call dialogue
+
+    vector<int> bossRotation = {1,2,3}; //just to rotate through the moves
+    int rotationPosition = 0;
+
+    while(fnlBss.getStats().getHP() > 40){ //phase 2
+        
+        if(moveCountEnemy(plr, fnlBss.getStats()) > moveCountPlayer(plr, fnlBss.getStats())){ //priority
+            for(int i = 0; i < moveCountEnemy(plr, fnlBss.getStats()); i++){ //moves per turn for the boss
+                if(bossRotation.at(rotationPosition) = 1){
+                    fnlBss.Charge(); 
+                    rotationPosition++;
+                    fnlBss.buffCounter--;
+                }
+                else if(bossRotation.at(rotationPosition) = 2){
+                    fnlBss.Explosion(plr);
+                    rotationPosition++;
+                    fnlBss.buffCounter--;
+                    fnlBss.getStats().addHP(fnlBss.getStats().getMAtk()*-0.5); //reset the buffs
+                }
+                else{
+                    cout << "Boss is recharging." << endl;
+                    rotationPosition = 0;
+                }
+            }
+            //enemy has ended turn
+            if(plr.getStats().getHP() == 0){
+                return -1;
+            }
+            takeTurn(plr, fnlBss.getStats());
+
+        }
+        else{
+            for(int i = 0; i < moveCountPlayer(plr, fnlBss.getStats()); i++){ //multiple moves per turn for the player
+                takeTurn(plr, fnlBss.getStats()); 
+                if(fnlBss.getStats().getHP() <= 40){
+                    nextPhase = true; //move on to the next phase if it pushes over the break point, skips boss turn, will break out
+                    break;
+                }
+            }
+            if(nextPhase){
+                nextPhase = false;
+                endTurn(plr); 
+                break; //breaks out of phase 2, moves out of loop
+            }
+            if(bossRotation.at(rotationPosition) = 1){
+                fnlBss.Charge(); 
+                rotationPosition++;
+                fnlBss.buffCounter--;
+            }
+            else if(bossRotation.at(rotationPosition) = 2){
+                fnlBss.Explosion(plr);
+                rotationPosition++;
+                fnlBss.buffCounter--;
+                fnlBss.getStats().addHP(fnlBss.getStats().getMAtk()*-0.5); //reset the buffs
+            }
+            else{
+                cout << "Boss is recharging." << endl;
+                rotationPosition = 0;
+            }
+            if(plr.getStats().getHP() == 0){
+                return -1;
+            }
+            endTurn(plr);
+        }
+    } //end phase 2
+    rotationPosition = 0; //reset the rotation for the repeat
+    if(fnlBss.buffCounter != 0){ //in case the boss moved on to the next phase after using charge the previous turn
+        fnlBss.getStats().addHP(fnlBss.getStats().getMAtk()*-0.5);
+        fnlBss.buffCounter == 0;
+    }
+
+    fnlBss.BackToFull();
+    //call dialogue
+
+    while(fnlBss.getStats().getHP() > 70 && plr.getStats().getHP() != 0){ //phase 1 (revive)
+        if(moveCountEnemy(plr, fnlBss.getStats()) > moveCountPlayer(plr, fnlBss.getStats())){ //priority
+            for(int i = 0; i < moveCountEnemy(plr, fnlBss.getStats()); i++){ //moves per turn for the boss
+                fnlBss.Slam(plr); 
+            }
+            if(plr.getStats().getHP() == 0){ //check if player died after getting hit
+                return -1;
+            }
+            takeTurn(plr, fnlBss.getStats()); //player turn
+            endTurn(plr);
+        }
+        else{
+            for(int i = 0; i < moveCountPlayer(plr, fnlBss.getStats()); i++){ //multiple moves per turn for the player
+                takeTurn(plr, fnlBss.getStats()); 
+                if(fnlBss.getStats().getHP() <= 70){
+                    nextPhase = true; //move on to the next phase if it pushes over the break point, skips boss turn, will break out
+                    break;
+                }
+            }
+            if(nextPhase){
+                nextPhase = false;
+                endTurn(plr); 
+                break; //breaks out of phase 1, moves out of loop
+            }
+            fnlBss.Slam(plr); //one move for the boss
+            if(plr.getStats().getHP() == 0){
+                return -1;
+            }
+            endTurn(plr);
+        }
+    }
+
+    //call dialogue
+
+    while(fnlBss.getStats().getHP() > 40){ //phase 2 revive
+        
+        if(moveCountEnemy(plr, fnlBss.getStats()) > moveCountPlayer(plr, fnlBss.getStats())){ //priority
+            for(int i = 0; i < moveCountEnemy(plr, fnlBss.getStats()); i++){ //moves per turn for the boss
+                if(bossRotation.at(rotationPosition) = 1){
+                    fnlBss.Charge(); 
+                    rotationPosition++;
+                    fnlBss.buffCounter--;
+                }
+                else if(bossRotation.at(rotationPosition) = 2){
+                    fnlBss.Explosion(plr);
+                    rotationPosition++;
+                    fnlBss.buffCounter--;
+                    fnlBss.getStats().addHP(fnlBss.getStats().getMAtk()*-0.5); //reset the buffs
+                }
+                else{
+                    cout << "Boss is recharging." << endl;
+                    rotationPosition = 0;
+                }
+            }
+            //enemy has ended turn
+            if(plr.getStats().getHP() == 0){
+                return -1;
+            }
+            takeTurn(plr, fnlBss.getStats());
+
+        }
+        else{
+            for(int i = 0; i < moveCountPlayer(plr, fnlBss.getStats()); i++){ //multiple moves per turn for the player
+                takeTurn(plr, fnlBss.getStats()); 
+                if(fnlBss.getStats().getHP() <= 40){
+                    nextPhase = true; //move on to the next phase if it pushes over the break point, skips boss turn, will break out
+                    break;
+                }
+            }
+            if(nextPhase){
+                nextPhase = false;
+                endTurn(plr); 
+                break; //breaks out of phase 2, moves out of loop
+            }
+            if(bossRotation.at(rotationPosition) = 1){
+                fnlBss.Charge(); 
+                rotationPosition++;
+                fnlBss.buffCounter--;
+            }
+            else if(bossRotation.at(rotationPosition) = 2){
+                fnlBss.Explosion(plr);
+                rotationPosition++;
+                fnlBss.buffCounter--;
+                fnlBss.getStats().addHP(fnlBss.getStats().getMAtk()*-0.5); //reset the buffs
+            }
+            else{
+                cout << "Boss is recharging." << endl;
+                rotationPosition = 0;
+            }
+            if(plr.getStats().getHP() == 0){
+                return -1;
+            }
+            endTurn(plr);
+        }
+    } 
+    rotationPosition = 0;
+    
+    while(fnlBss.getStats().getHP() > 15){ //next phase (3), has similar rotation patterns to phase 2
+        if(moveCountEnemy(plr, fnlBss.getStats()) > moveCountPlayer(plr, fnlBss.getStats())){ //priority
+            for(int i = 0; i < moveCountEnemy(plr, fnlBss.getStats()); i++){ //moves per turn for the boss
+                if(bossRotation.at(rotationPosition) = 1){
+                    fnlBss.Cleave(plr); 
+                    rotationPosition++;
+                }
+                else if(bossRotation.at(rotationPosition) = 2){
+                    fnlBss.Brace();
+                    rotationPosition++;
+                }
+                else{
+                    fnlBss.SpeedUp();
+                    rotationPosition = 0;
+                }
+            }
+            //enemy has ended turn
+            if(plr.getStats().getHP() == 0){
+                return -1;
+            }
+            takeTurn(plr, fnlBss.getStats());
+
+        }
+        else{
+            for(int i = 0; i < moveCountPlayer(plr, fnlBss.getStats()); i++){ //multiple moves per turn for the player
+                takeTurn(plr, fnlBss.getStats()); 
+                if(fnlBss.getStats().getHP() <= 40){
+                    nextPhase = true; //move on to the next phase if it pushes over the break point, skips boss turn, will break out
+                    break;
+                }
+            }
+            if(nextPhase){
+                nextPhase = false;
+                endTurn(plr); 
+                break; //breaks out of phase 2, moves out of loop
+            }
+            if(bossRotation.at(rotationPosition) = 1){
+                fnlBss.Cleave(plr); 
+                rotationPosition++;
+            }
+            else if(bossRotation.at(rotationPosition) = 2){
+                fnlBss.Brace();
+                rotationPosition++;
+            }
+            else{
+                fnlBss.SpeedUp();
+                rotationPosition = 0;
+            }
+            if(plr.getStats().getHP() == 0){
+                return -1;
+            }
+            endTurn(plr);
+        }
+    }
+    cout << "The boss has begun charging its final attack!" << endl;
+    while(fnlBss.getStats().getHP() > 0){
+        for(int i = 0; i < 2*moveCountPlayer(plr, fnlBss.getStats()); i++){
+            takeTurn(plr, fnlBss.getStats());
+            if(fnlBss.getStats().getHP() == 0){
+                return 1;
+            }
+        }
+        if(moveCountEnemy(plr, fnlBss.getStats()) > moveCountPlayer(plr, fnlBss.getStats())){
+            fnlBss.TheEnd(plr);
+            return -1;
+        }
+        else{
+            for(int i = 0; i < moveCountPlayer(plr, fnlBss.getStats()); i++){
+                takeTurn(plr, fnlBss.getStats());
+                if(fnlBss.getStats().getHP() == 0){
+                    return 1;
+                }
+            }
+            fnlBss.TheEnd(plr);
+            return -1;
+        }
+    }
+    return 1; //if the boss somehow gets bursted past final phase
+}
+
+void Battle::takeTurn(Player& user, Stats& target){
+    bool moved = false;
+    while(!moved){
+        cout << "Pick your move! a - Attack, m - Magic Attack, b - Buff Yourself, h - Heal, g - Guard" << endl;
+        char usermove;
+        cin >> usermove;
+        if(usermove = 'a'){
+            user.Attack(target);
+        }
+        else if(usermove = 'm'){
+            user.MagicAttack(target);
+        }
+        else if(usermove = 'b'){
+            cout << "Choose a stat to buff: atk - Attack, def - Defense, matk - Magic Attack, mdef - Magic Defense, spd - Speed, lck - Luck" << endl;
+            string buffChoice; 
+            cin >> buffChoice;
+            user.BuffChosen(buffChoice);
+        }
+        else if(usermove = 'h'){
+            user.HealPlayer();
+        }
+        else if(usermove = 'g'){
+            user.Guard();
+        }
+        else{
+            cout << "Invalid input, try again!" << endl;
+        }
+    }
+}
+
+
+void Battle::endTurn(Player& user){
+    turnCount++;
+    if(user.isGuarding){
+        user.Guard(); //resets back to false
+    }
+    user.reduceBuffCounter(); //reduces buff counter, resets if it hits 0;
+}
+
+int Battle::moveCountEnemy(Player& player, Stats& enemy){
+    int spdRatio = enemy.getSpd()/player.getStats().getSpd();
+    if(spdRatio == 0){
+        spdRatio += 1;
+    }
+    return spdRatio;
+}
+
+int Battle::moveCountPlayer(Player& player, Stats& enemy){
+    int spdRatio = player.getStats().getSpd()/enemy.getSpd();
+    if(spdRatio == 0){
+        spdRatio += 1;
+    }
+    return spdRatio;
 }

@@ -12,7 +12,7 @@ class EliteBoss1 : public Enemy{
 
     public:
         EliteBoss1() = delete;
-        EliteBoss1(Stats& baseStats, int xCoord, int yCoord) : Enemy{baseStats, xCoord, yCoord}{};
+        EliteBoss1(Stats& baseStats) : Enemy{baseStats}{};
         void Slash(Player&);
         void Thrash(Player&);
         void Enrage();

@@ -6,11 +6,10 @@ class FinalBoss : public Enemy{
 
 
     public:
-        bool revivedOnce = false;
         int buffCounter = 0; //it's always going to be magic attack
         int chargeCounter = 0;
         FinalBoss() = delete;
-        FinalBoss(Stats& baseStats, int xCoord, int yCoord) : Enemy{baseStats, xCoord, yCoord}{};
+        FinalBoss(Stats& baseStats, int xCoord, int yCoord) : Enemy{baseStats}{};
         void Slam(Player&);
         void Charge();
         void Explosion(Player&);

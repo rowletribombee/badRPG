@@ -2,6 +2,7 @@
 #include "../lib/Potion.h"
 #include "../lib/tiles/PotionTile.h"
 #include <iostream>
+#include <string>
 #include <cctype>
 
 Player::Player(){
@@ -143,10 +144,8 @@ void Player::reduceBuffCounter(){
         buffCounter--;
         resetBuffMagnitude();
     }
-    else{ //in case it somehow went negative
-        buffCounter = 0;
-    }
 }
+
 void Player::resetBuffMagnitude(){ 
     if(buffID = 1){
         baseStats.addStat("atk", -1*buffMagnitude);
@@ -172,8 +171,10 @@ void Player::resetBuffMagnitude(){
 void Player::resetBuffID(){buffID = 0;}
 
 void Player::BuffChosen(string& stat){ //playermove
-    
-    if (stat == "atk") {
+    if(buffID != 0 || buffCounter != 0){ //second case added just in case something slipped
+        cout << "You already have a buff! No stacking allowed." << endl;
+    }
+    else if (stat == "atk") {
         buffID = 1;
         applyStatBoost(stat, baseStats.getAtk()*0.5);
         buffMagnitude = baseStats.getAtk()*0.5;

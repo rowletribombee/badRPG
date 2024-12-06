@@ -249,16 +249,18 @@ void Screen::displayRaceSelection(Player& player){
     }
 }
 
-// void Screen::displayPlayerCombat(Player& player, Stats& stats){
-//     int magicBasePower = player.getMAtk();
-//     int attackBasePower = player.getAtk();
+void Screen::displayPlayerCombat(Player& player, Stats& stats){
 
-//     int magicDamage = player.damageDealtMagic(stats, magicBasePower);
-//     int attackDamage = player.damageDealtPhys(stats, attackDamage);
-//     cout << "You were successful in dealing:" << endl;
-//     cout << "Magic Attack: " << magicDamage << endl;
-//     cout << "Attack:       " << attackDamage << endl;
-// }
+    Stats&baseStats = player.getStats();
+
+
+    int magicDamage = baseStats.damageDealtMagic(stats, 4);
+    int attackDamage = baseStats.damageDealtPhys(stats, 4);
+
+    cout << "You were successful in dealing:" << endl;
+    cout << "Magic Attack: " << magicDamage << endl;
+    cout << "Attack:       " << attackDamage << endl;
+}
 
  //battle screen 
 // MAP LEGEND

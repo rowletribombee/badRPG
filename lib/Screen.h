@@ -18,7 +18,7 @@ class Screen{
         void displayCredits();
         void displayRaceSelection(Player& player);
         void displayRaceStats();
-        void displayPlayerCombat(Stats& player);
+        void displayPlayerCombat(Player& player, Stats& stats);
 
 
     private:

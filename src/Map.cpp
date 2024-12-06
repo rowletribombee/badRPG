@@ -24,7 +24,6 @@ Map::~Map() {
 
 void Map::initialize(){
     mapOfTiles.resize(8, vector<Tile*>(8, nullptr));
-
     shared_ptr<Item> Excalibur = make_shared<Weapon>("Excalibur", 2, 2, 2, 2, 2, 0);
     shared_ptr<Item> BowOfHouYi = make_shared<Weapon>("Bow of Hou Yi", 0.5, 0, 0.5, 0, 0, 0);
     shared_ptr<Item> Labrys = make_shared<Weapon>("Labrys", 1, -0.3, 1, -0.3, 0, 0);
@@ -34,7 +33,8 @@ void Map::initialize(){
     shared_ptr<Item> EpicPotion = make_shared<Potion>("Epic Potion", 40);
     shared_ptr<Item> LegendaryPotion = make_shared<Potion>("Legendary Potion", 10000); // Assuming -1 indicates full HP restore.
 
-    mapOfTiles[0][0] = new FightTile("BasicBoss", EpicPotion);
+    // mapOfTiles[0][0] = new FightTile("BasicBoss", EpicPotion);
+    mapOfTiles[0][0] = new EmptyTile();
     mapOfTiles[0][1] = new EmptyTile();
     mapOfTiles[0][2] = new PotionTile(Potion("Legendary Potion", 10000));
     mapOfTiles[0][3] = new EmptyTile();

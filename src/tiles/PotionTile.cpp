@@ -5,10 +5,7 @@
 
 PotionTile::PotionTile(Potion potion) : potion(potion) {
     type = potionTile;
-    visited = false;
 }
-
-PotionTile::~PotionTile(){}
 
 void PotionTile::print(){
     srand(static_cast<unsigned int>(time(0)));

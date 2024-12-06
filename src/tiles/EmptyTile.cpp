@@ -6,10 +6,9 @@
 EmptyTile::EmptyTile(){
     instantEquip = false;
     type = emptyTile;
-    visited = false;
 }
 
-EmptyTile::~EmptyTile(){}
+// EmptyTile::~EmptyTile(){}
 
 void EmptyTile::print(){
     srand(static_cast<unsigned int>(time(0)));

@@ -2,11 +2,11 @@
 #include <string>
 #include "Tile.h"
 using namespace std;
-
 class EmptyTile : public Tile{
     public:
         EmptyTile();
-        ~EmptyTile();
+        bool isVisited() { return visited; }
+
         void print() override;
     private:
         vector<string> dialogue = {

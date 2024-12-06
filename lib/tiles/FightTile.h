@@ -8,7 +8,6 @@ using namespace std;
 class FightTile : public Tile {
     public:
         FightTile(const string& boss, shared_ptr<Item> reward);
-        ~FightTile() override;
 
         void print() override;
         string getBoss() const { return boss; }

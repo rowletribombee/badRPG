@@ -8,22 +8,23 @@
 #include <cctype>
 
 Player::Player(){
-    
+    positionY = 7;
+    positionX = 0;
 }
 
 Player::Player(string race){
     if (race == "Human") {
         baseStats.isHuman();
-    } 
+    }
     else if (race == "Elf") {
         baseStats.isElf();
-    } 
+    }
     else if (race == "Dwarf") {
         baseStats.isDwarf();
-    } 
+    }
     else if (race == "Ogre") {
         baseStats.isOgre();
-    } 
+    }
     else if (race == "Fairy") {
         baseStats.isFairy();
     } 
@@ -39,20 +40,20 @@ Player::Player(Stats& bStats){
 bool Player::checkForWall(char dir){
     Screen displayScreen;
     if(positionX == 0 && dir == 'a'){
-        cout << "Whoops! There appears to be a wall here!";
+        cout << "Whoops! There appears to be a wall here!" << endl << endl;
         displayScreen.displayDirectionOptions();
         return true;
     }else if(positionX == 7 && dir == 'd'){
-        cout << "Whoops! There appears to be a wall here!";
+        cout << "Whoops! There appears to be a wall here!" << endl << endl;
         displayScreen.displayDirectionOptions();
         return true;
     }else if(positionY == 0 && dir == 'w'){
-        cout << "Whoops! There appears to be a wall here!";
+        cout << "Whoops! There appears to be a wall here!" << endl << endl;
         displayScreen.displayDirectionOptions();
         return true;
     }
     else if(positionY == 7 && dir == 's'){
-        cout << "Whoops! There appears to be a wall here!";
+        cout << "Whoops! There appears to be a wall here!" << endl << endl;
         displayScreen.displayDirectionOptions();
         return true;
     }else{
@@ -76,9 +77,11 @@ void Player::move(Map& map, Inventory& inventory){
     Screen displayScreen;
     displayScreen.displayDirectionOptions();
     cin >> dir;
+    cout << endl;
     if(isalpha(dir)) dir = tolower(dir);
     while(!checkValidDir(dir) || checkForWall(dir)){ // some kinks with output need to be fixed, showing you are still required to input to move. still in move phase
         cin >> dir;
+        cout << endl;
         if(isalpha(dir)) dir = tolower(dir);
     }
         if(dir == 'a') positionX--;
@@ -120,7 +123,6 @@ void Player::move(Map& map, Inventory& inventory){
         }else{
             // screen class can print something like looks like you've already been here yada yada, there's nothing here
         }
-        
 }
 
 void Player::Heal(){

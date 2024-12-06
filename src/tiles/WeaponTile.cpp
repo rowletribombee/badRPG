@@ -5,10 +5,7 @@
 
 WeaponTile::WeaponTile(Weapon weapon) : weapon(weapon) {
     type = weaponTile;
-    visited = false;
 }
-
-WeaponTile::~WeaponTile(){}
 
 void WeaponTile::print(){
     srand(static_cast<unsigned int>(time(0)));

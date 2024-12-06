@@ -94,7 +94,7 @@ void Game::controls(){
     cout << "Enter in a command: ";
     while(!validChoice){
         cin >> choice;
-        if(choice == 'M' || choice == 'I' || choice == 'S' || choice == 'X' || choice == 'C' || choice == 'T'){
+        if(choice == 'M' || choice == 'I' || choice == 'S' || choice == 'X' || choice == 'C' || choice == 'T' || choice == 'G'){
             validChoice = true;
         }else{
             cout << "Invalid menu choice! Try again! Remember that you can always press C to see all available commands!" << endl;
@@ -117,6 +117,9 @@ void Game::controls(){
         case 'T':
             save();
             break;
+        case 'G':
+            screen.displayMapScreen(map, player);
+            break;
         case 'C':
             screen.displayCommandMenu();
             break;
@@ -132,7 +135,6 @@ void Game::startGame(){
         while(secondStage){
             controls();
         }
-            break;
         while(thirdStage){
             controls();
         }

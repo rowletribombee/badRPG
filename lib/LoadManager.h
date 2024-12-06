@@ -4,7 +4,7 @@
 class LoadManager{
     public:
         LoadManager();
-        Game loadGame();
+        Game& loadGame(Game& game);
         Game& loading(Game& game);
     private:
         Screen screen;

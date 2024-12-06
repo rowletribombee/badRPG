@@ -4,10 +4,9 @@ using namespace std;
 
 LoadManager::LoadManager(){}
 
-Game LoadManager::loadGame(){
+Game& LoadManager::loadGame(Game& game){
     screen.displayStartScreen();
     bool beginGame = false;
-    Game game;
     while(!beginGame){
         char choice;
         bool validChoice = false;

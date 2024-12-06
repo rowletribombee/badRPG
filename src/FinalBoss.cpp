@@ -2,7 +2,7 @@
 
 
 void FinalBoss::Slam(Player& target){
-    cout << "The Stanimal Slammed you! Damage delt: " << damageEnemyPhys(target, 4) << endl;
+    cout << "The Stanimal Slammed you! Damage dealt: " << damageEnemyPhys(target, 4) << endl;
 }
 
 void FinalBoss::Charge(){

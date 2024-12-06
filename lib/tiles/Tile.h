@@ -5,12 +5,11 @@ using namespace std;
 enum TileType{ spawnTile, emptyTile, fightTile, potionTile, weaponTile };
 class Tile{
     protected:
-        bool visited = false;
         bool instantEquip;
         TileType type;
+        bool visited = false;
     public:
         Tile();
-        virtual ~Tile() = default;
         void setVisited(){ visited = true; }
         bool isVisited() const { return visited; }
         TileType getType() const { return type; }

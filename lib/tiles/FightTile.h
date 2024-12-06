@@ -8,7 +8,6 @@ using namespace std;
 class FightTile : public Tile {
     public:
         FightTile(const string& boss, shared_ptr<Item> reward);
-        ~FightTile() override;
 
         void print() override;
         string getBoss() const { return boss; }
@@ -33,7 +32,6 @@ class FightTile : public Tile {
             "As the monster takes its last breath, it mutters, \n\"With time, my friend…with time, you'll have all the answers.\" \n \n"
             "\"Ugh, I'd rather just have all the answers now, but yeah okay, let's keep exploring this TOTALLY NOT creepy cave. Sounds like a blast.\" \n \n"
             "You leave with more questions than you began with and a new passion to get out of this place as the " + boss + " leaves a(n) " + reward->getName() + " behind.",
-            
             
             "With one final strike, the " + boss + " falls to the ground, defeated. \n \n"
             "Panting, you shout, \"Who keeps sending you guys? What do you want from me?!\" \n \n"

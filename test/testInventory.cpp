@@ -31,9 +31,8 @@ TEST(InventoryTests, RemoveItem) {
     inventory.removeItem(potion);
 
     string inventoryOutput = inventory.displayItems();
-
     EXPECT_TRUE(inventoryOutput.find("Health Potion") == string::npos);
-    EXPECT_TRUE(inventoryOutput.find("Sword") != string::npos); 
+    EXPECT_TRUE(inventoryOutput.find("Sword") != string::npos);
 }
 
 TEST(InventoryTests, DisplayEmptyInventory) {
@@ -48,10 +47,9 @@ TEST(InventoryTests, RemoveItemFromEmptyInventory) {
     Inventory inventory;
 
     Potion* potion = new Potion("Health Potion", 50);
-
+    
     inventory.removeItem(potion);
 
     string inventoryOutput = inventory.displayItems();
-
     EXPECT_TRUE(inventoryOutput == "No items in inventory.\n");
 }

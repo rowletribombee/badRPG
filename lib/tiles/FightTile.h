@@ -33,7 +33,6 @@ class FightTile : public Tile {
             "\"Ugh, I'd rather just have all the answers now, but yeah okay, let's keep exploring this TOTALLY NOT creepy cave. Sounds like a blast.\" \n \n"
             "You leave with more questions than you began with and a new passion to get out of this place as the " + boss + " leaves a(n) " + reward->getName() + " behind.",
             
-            
             "With one final strike, the " + boss + " falls to the ground, defeated. \n \n"
             "Panting, you shout, \"Who keeps sending you guys? What do you want from me?!\" \n \n"
             "The " + boss + " chuckles weakly, \"Sending us? No one sends us. You… you're the one who keeps coming back.\" \n \n"

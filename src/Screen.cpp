@@ -63,7 +63,7 @@ void Screen::displayInstructions()
     cout << "Final Note:" << endl;
     cout << "Your journey through the cave may be filled with uncertainty, but keep your sense of humor and discovery alive! Embrace the chaos and remember: sometimes, laughter is the best weapon against despair (or goblins). Good luck!" << endl << endl;
 
-    sleep_for(3000); //pause for 3 seconds
+    sleep_for(1000); //pause for 1 second
 }
 
 void Screen::displayIntroScreen(){

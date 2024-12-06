@@ -13,14 +13,12 @@ Map::Map(){
 }
 
 Map::~Map() {
-
-    for (auto& row : mapOfTiles) {
-        for (auto& tile : row) {
-            delete tile;
+    for (int i = 0; i < mapOfTiles.size(); i++) {
+        for (int j = 0; j < mapOfTiles.at(i).size(); j++) {
+            delete mapOfTiles.at(i).at(j);
         }
     }
 }
-
 
 void Map::initialize(){
     mapOfTiles.resize(8, vector<Tile*>(8, nullptr));
@@ -33,8 +31,7 @@ void Map::initialize(){
     shared_ptr<Item> EpicPotion = make_shared<Potion>("Epic Potion", 40);
     shared_ptr<Item> LegendaryPotion = make_shared<Potion>("Legendary Potion", 10000); // Assuming -1 indicates full HP restore.
 
-    // mapOfTiles[0][0] = new FightTile("BasicBoss", EpicPotion);
-    mapOfTiles[0][0] = new EmptyTile();
+    mapOfTiles[0][0] = new FightTile("BasicBoss", EpicPotion);
     mapOfTiles[0][1] = new EmptyTile();
     mapOfTiles[0][2] = new PotionTile(Potion("Legendary Potion", 10000));
     mapOfTiles[0][3] = new EmptyTile();

@@ -5,8 +5,6 @@ using namespace std;
 class EmptyTile : public Tile{
     public:
         EmptyTile();
-        bool isVisited() { return visited; }
-
         void print() override;
     private:
         vector<string> dialogue = {

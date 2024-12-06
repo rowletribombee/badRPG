@@ -11,9 +11,13 @@ class Game{
         void startGame(); // this is where we will be prompted to load or start a new game
         void controls();
         void save();
+        Map& getMap() { return map; }
+        Inventory& getInventory() { return inventory; }
+        Player& getPlayer(){ return player; }
         void setFirstStageFalse();
         void setSecondStageFalse();
         void setThirdStageFalse();
+        void setGameOver() { gameOver = true; }
     private:
         Map map;
         Player player;
@@ -24,4 +28,5 @@ class Game{
         bool secondStage = false;
         bool thirdStage = false;
         bool isSavedGame = false;
+        bool saveState = false;
 };

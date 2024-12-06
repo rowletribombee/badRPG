@@ -14,6 +14,9 @@ class Player{
         bool checkValidDir(char dir);
         int getPositionX() { return positionX; }
         int getPositionY() { return positionY; }
+        void setPositionX(int x){ positionX = x; }
+        void setPositionY(int y){ positionY = y; }
+        void setBuffCounter(int buff){ buffCounter = buff; }
         int getBuffCounter(){ return buffCounter; }
         bool isGuarding = false;
         void applyStatBoost(const std::string& stat, int boost);

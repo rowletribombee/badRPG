@@ -2,6 +2,9 @@
 #include "../lib/Map.h"
 #include "../lib/Player.h"
 #include "../lib/tiles/Tile.h"
+#include "../lib/Inventory.h"
+#include "../lib/Potion.h"
+#include "../lib/Weapon.h"
 #include <iostream>
 #include <sstream>
 using namespace std;
@@ -65,5 +68,16 @@ int main()
     
     //output map with player currently on (x) [2,1] and [0,0][0,1][1,1] visited (x)
     screenTest.displayMapScreen(map,player);
+
+    // Test inventory display
+    cout << "Inventory Display:" << endl;
+    Potion* potion = new Potion("Health Potion", 50);
+    Weapon* sword = new Weapon("Sword", 5, 2, 0, 0, 0, 0);
+
+    inventory.addItem(potion);
+    inventory.addItem(sword);
+
+    screenTest.displayInventory(inventory);
+
     return 0;
 }

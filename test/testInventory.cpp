@@ -40,7 +40,7 @@ TEST(InventoryTests, DisplayEmptyInventory) {
 
     string inventoryOutput = inventory.displayItems();
 
-    EXPECT_TRUE(inventoryOutput == "Inventory:\nNo items in inventory.\n");
+    EXPECT_TRUE(inventoryOutput == "No items in inventory.\n");
 }
 
 TEST(InventoryTests, RemoveItemFromEmptyInventory) {
@@ -51,5 +51,5 @@ TEST(InventoryTests, RemoveItemFromEmptyInventory) {
     inventory.removeItem(potion);
 
     string inventoryOutput = inventory.displayItems();
-    EXPECT_TRUE(inventoryOutput == "Inventory:\nNo items in inventory.\n");
+    EXPECT_TRUE(inventoryOutput == "No items in inventory.\n");
 }

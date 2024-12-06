@@ -110,7 +110,7 @@ void Game::controls(){
         
     }else if(choice == 'S'){
         // there needs to be a function that shows the current stats of the player
-        // screen.displayStats(player);
+        screen.displayStats(player);
     }else if(choice == 'X'){
         screen.displayCredits();
     }else if(choice == 'T'){

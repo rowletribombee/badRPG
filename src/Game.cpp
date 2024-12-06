@@ -122,7 +122,7 @@ void Game::controls(){
     }
 }
 void Game::startGame(){
-    // screen.displayIntroScreen(); temporarily commented out so executable testing works faster
+    screen.displayIntroScreen();
     screen.displayInstructions();
     while(!gameOver){
         while(firstStage){

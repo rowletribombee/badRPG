@@ -5,7 +5,7 @@ int Battle::finalBoss(Player& plr, FinalBoss& fnlBss){
     bool nextPhase = false;
 
     while(fnlBss.getStats().getHP() > 70 && plr.getStats().getHP() != 0){ //phase 1
-        if(moveCountEnemy(plr, fnlBss.getStats()) > moveCountPlayer(plr, fnlBss.getStats())){ //priority
+        if(moveCountEnemy(plr, fnlBss.getStats()) > moveCountPlayer(plr, fnlBss.getStats())){ //boss has priority
             for(int i = 0; i < moveCountEnemy(plr, fnlBss.getStats()); i++){ //moves per turn for the boss
                 fnlBss.Slam(plr); 
             }
@@ -15,21 +15,21 @@ int Battle::finalBoss(Player& plr, FinalBoss& fnlBss){
             takeTurn(plr, fnlBss.getStats()); //player turn
             endTurn(plr);
         }
-        else{
-            for(int i = 0; i < moveCountPlayer(plr, fnlBss.getStats()); i++){ //multiple moves per turn for the player
+        else{ //player has priority
+            for(int i = 0; i < moveCountPlayer(plr, fnlBss.getStats()); i++){ //multiple moves per turn for the player depending on speed ratio
                 takeTurn(plr, fnlBss.getStats()); 
                 if(fnlBss.getStats().getHP() <= 70){
                     nextPhase = true; //move on to the next phase if it pushes over the break point, skips boss turn, will break out
                     break;
                 }
             }
-            if(nextPhase){
+            if(nextPhase){  //if the boss got pushed past the break point, it'll move to the next phase
                 nextPhase = false; //reset
                 endTurn(plr); 
                 break; //breaks out of phase 1, moves out of loop
             }
             fnlBss.Slam(plr); //one move for the boss
-            if(plr.getStats().getHP() == 0){
+            if(plr.getStats().getHP() == 0){ 
                 return -1;
             }
             endTurn(plr);

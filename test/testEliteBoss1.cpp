@@ -43,3 +43,12 @@ TEST(Thrash, ThrashPlayerGuarded){
     testBoss.Thrash(p);
     EXPECT_TRUE(p.getStats().getHP()== 18 || p.getStats().getHP()== 14 || p.getStats().getHP()== 20);
 }
+
+TEST(Enrage, EnrageAtkBoost){
+    vector<int> bStats = {50,20,4,4,3,6,4,4};
+    Stats enemyStats(bStats);
+    EliteBoss1 testBoss(enemyStats);
+
+    testBoss.Enrage();
+    EXPECT_EQ(testBoss.getStats().getAtk(), 7);
+}

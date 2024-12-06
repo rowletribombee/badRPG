@@ -56,26 +56,25 @@ Updated Diagram:
  ## Screenshots
 * Starting game: <br/>
 ![image](https://github.com/user-attachments/assets/1279e814-a1d0-4282-9768-e73471712eed)
-
-* Starting message and instructions:
+* Starting message and instructions: <br/>
 ![image](https://github.com/user-attachments/assets/4173ed84-1e17-4e37-be67-58c85e7b1380)
-* Race selection:
+* Race selection: <br/>
 ![image](https://github.com/user-attachments/assets/b409c98e-edd8-4be2-b717-350cee921c7c)
-* Choosing race:
+* Choosing race: <br/>
 ![image](https://github.com/user-attachments/assets/2da0a841-c004-42c0-9af2-a838ff8126af)
-* Choice menu:
+* Choice menu: <br/>
 ![image](https://github.com/user-attachments/assets/a81403e2-c98f-42b4-84bf-a6776459f705)
-* (G) Map
+* (G) Map <br/>
 ![image](https://github.com/user-attachments/assets/bfdaaccc-d721-4c40-bbcc-2c6edabf0c08)
-* (X) Credits
+* (X) Credits <br/>
 ![image](https://github.com/user-attachments/assets/64ffe7eb-cf95-41f7-a333-da71000c39a0)
-* (I) Inventory
+* (I) Inventory <br/>
 ![image](https://github.com/user-attachments/assets/2540e603-490b-4e7b-9e63-da71aa824805)
-* (S) Stats
+* (S) Stats <br/>
 ![image](https://github.com/user-attachments/assets/9f1c5a56-ed7a-4b26-8e7d-b82147ee981a)
-* Move through the map:
+* Move through the map: <br/>
 ![image](https://github.com/user-attachments/assets/435e00c3-f83b-476a-b582-33734b583191)
-* Saving and quiting:
+* Saving and quiting: <br/>
 ![image](https://github.com/user-attachments/assets/efaf813b-714c-410d-97dd-35028a48be1c)
 
 

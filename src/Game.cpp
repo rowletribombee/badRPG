@@ -129,21 +129,27 @@ void Game::startGame(){
             if(!saveState){
                 controls();
             }else{
-                return;
+                setFirstStageFalse();
+                setSecondStageFalse();
+                setThirdStageFalse();
+                setGameOver();
             }
         }
         while(secondStage){
             if(!saveState){
                 controls();
             }else{
-                return;
+                setSecondStageFalse();
+                setThirdStageFalse();
+                setGameOver();
             }
         }
         while(thirdStage){
             if(!saveState){
                 controls();
             }else{
-                return;
+                setThirdStageFalse();
+                setGameOver();
             }
         }
     }

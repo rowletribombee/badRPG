@@ -141,7 +141,7 @@ TEST(getBuffCounter, buffMinus1){
     EXPECT_EQ(p.getBuffCounter(), 2);
 }
 
-TEST(getBuffCounter, buffReducedTo0){
+TEST(getBuffCounter, buffReducedTo0Atk){
     vector<int> bStats = {50,20,4,8,4,8,4,4};
     Player p(bStats);
     string s = "atk";
@@ -152,7 +152,7 @@ TEST(getBuffCounter, buffReducedTo0){
     EXPECT_EQ(p.getBuffCounter(), 0);
 }
 
-TEST(reduceBuffCounter, buffReset){
+TEST(reduceBuffCounter, buffResetAtk){
     vector<int> bStats = {50,20,4,8,4,8,4,4};
     Player p(bStats);
     string s = "atk";
@@ -161,6 +161,61 @@ TEST(reduceBuffCounter, buffReset){
     p.reduceBuffCounter();
     p.reduceBuffCounter();
     EXPECT_EQ(p.getStats().getAtk(), 4);
+}
+
+TEST(reduceBuffCounter, buffResetDef){
+    vector<int> bStats = {50,20,4,8,4,8,4,4};
+    Player p(bStats);
+    string s = "def";
+    p.BuffChosen(s);
+    p.reduceBuffCounter();
+    p.reduceBuffCounter();
+    p.reduceBuffCounter();
+    EXPECT_EQ(p.getStats().getDef(), 8);
+}
+
+TEST(reduceBuffCounter, buffResetMatk){
+    vector<int> bStats = {50,20,4,8,20,8,4,4};
+    Player p(bStats);
+    string a = "matk";
+    p.BuffChosen(a);
+    p.reduceBuffCounter();
+    p.reduceBuffCounter();
+    p.reduceBuffCounter();
+    EXPECT_EQ(p.getStats().getMAtk(), 20);
+}
+
+TEST(reduceBuffCounter, buffResetMDef){
+    vector<int> bStats = {50,20,4,8,4,8,4,4};
+    Player p(bStats);
+    string s = "mdef";
+    p.BuffChosen(s);
+    p.reduceBuffCounter();
+    p.reduceBuffCounter();
+    p.reduceBuffCounter();
+    EXPECT_EQ(p.getStats().getMDef(), 8);
+}
+
+TEST(reduceBuffCounter, buffResetSpd){
+    vector<int> bStats = {50,20,4,8,4,8,4,4};
+    Player p(bStats);
+    string s = "spd";
+    p.BuffChosen(s);
+    p.reduceBuffCounter();
+    p.reduceBuffCounter();
+    p.reduceBuffCounter();
+    EXPECT_EQ(p.getStats().getSpd(), 4);
+}
+
+TEST(reduceBuffCounter, buffResetLck){
+    vector<int> bStats = {50,20,4,8,4,8,4,4};
+    Player p(bStats);
+    string s = "lck";
+    p.BuffChosen(s);
+    p.reduceBuffCounter();
+    p.reduceBuffCounter();
+    p.reduceBuffCounter();
+    EXPECT_EQ(p.getStats().getLck(), 4);
 }
 
 TEST(reduceBuffCounter, buffNormal){

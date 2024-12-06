@@ -149,26 +149,26 @@ void Player::reduceBuffCounter(){
     if(buffCounter > 1){
         buffCounter -= 1;
     }
-    else if(buffCounter = 1){
-        buffCounter--;
+    else{
+        buffCounter = 0;
         resetBuffMagnitude();
     }
 }
 
 void Player::resetBuffMagnitude(){ 
-    if(buffID = 1){
+    if(buffID == 1){
         baseStats.addStat("atk", -1*buffMagnitude);
     }
-    else if(buffID = 2){
+    else if(buffID == 2){
         baseStats.addStat("def", -1*buffMagnitude);
     }
-    else if(buffID = 3){
+    else if(buffID == 3){
         baseStats.addStat("matk", -1*buffMagnitude);
     }
-    else if(buffID = 4){
+    else if(buffID == 4){
         baseStats.addStat("mdef", -1*buffMagnitude);
     }
-    else if(buffID = 5){
+    else if(buffID == 5){
         baseStats.addStat("spd", -1*buffMagnitude);
     }
     else{

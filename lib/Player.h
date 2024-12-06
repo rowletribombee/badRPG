@@ -3,6 +3,7 @@
 #include "Map.h"
 #include "Inventory.h"
 #include "Stats.h"
+#include "Screen.h"
 using namespace std;
 class Player{
     public:

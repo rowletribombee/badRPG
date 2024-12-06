@@ -7,6 +7,7 @@ testItems
 testInventory
 testWeapons
 testPlayer
+testFinalBoss
 testBattle
 a.out 
 

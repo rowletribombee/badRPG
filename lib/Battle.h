@@ -18,9 +18,9 @@ class Battle{ //there is no feasible way to test the important functions here wi
         int getTurnCount(){ return turnCount; };
 
     private:
-        int turnCount = 0; //total turncount after all battles
+        int turnCount = 0; //total turncount after all battles, can be used to check score
         void takeTurn(Player&, Stats& target); //prompt the player to take their move
         int moveCountPlayer(Player&, Stats&); //moves per turn
         int moveCountEnemy(Player&, Stats&); //moves per turn for enemy (inverse of the other)
-        void endTurn(Player& user); //makes sure buffs end, etc;
+        void endTurn(Player& user); //makes sure buffs end, etc
 };

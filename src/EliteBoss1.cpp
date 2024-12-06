@@ -14,12 +14,15 @@ void EliteBoss1::Thrash(Player& target){  //this one has a weird crit chance so 
         bossStats.addStat("lck", bossStats.getSpd()); //crit chance is now modified for this attack
         if(bossStats.CritCheck(target.getStats())){ //crits deal 1.5x damage and ignore guarding
             target.getStats().reduceHp(bossStats.getAtk() * 6/target.getStats().getDef());
+            cout << "The boss used Thrash and dealt " <<bossStats.getAtk() * 6/target.getStats().getDef() << " damage!" << endl;
         }
         else if(target.isGuarding){ //guarding halves damage
              target.getStats().reduceHp(bossStats.getAtk() * 2/target.getStats().getDef());
+             cout << "The boss used Thrash and dealt " <<bossStats.getAtk() * 2/target.getStats().getDef() << " damage!" << endl;
         }
         else{ //base attack, nothing special
             target.getStats().reduceHp(bossStats.getAtk() * 4/target.getStats().getDef());
+            cout << "The boss used Thrash and dealt " <<bossStats.getAtk() * 4/target.getStats().getDef() << " damage!" << endl;
         }
 
         bossStats.addStat("lck", (-1*bossStats.getSpd())); //crit chance is now returned to normal

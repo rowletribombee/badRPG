@@ -3,7 +3,8 @@
 #include "../lib/LoadManager.h"
 int main(){
     LoadManager loadmanager;
-    Game game = loadmanager.loadGame();
+    Game game;
+    loadmanager.loadGame(game);
     game.startGame();
     return 0;
 }

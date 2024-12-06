@@ -2,11 +2,12 @@
 #include <iostream>
 
 SpawnTile::SpawnTile(){
+    cout << "HELO WORLD" << endl;
     type = spawnTile;
+    cout << "RIZZ WORLD" << endl;
+
     setVisited();
 }
-
-SpawnTile::~SpawnTile(){}
 
 void SpawnTile::print(){
     if(firstVisit){

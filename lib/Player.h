@@ -21,8 +21,8 @@ class Player{
         Stats& getStats() {return baseStats; } //gets stats from the player class, will be used in battle
     private:
         Stats baseStats;
-        int positionX = 0;
-        int positionY = 7;
+        int positionX;
+        int positionY;
         int buffCounter = 0; // from prev player.h file
 
         void Attack(Stats&) const;

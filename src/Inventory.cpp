@@ -3,7 +3,9 @@
 #include <iostream>
 
 Inventory::Inventory(){
-
+    for (auto& item : items) {
+        delete item;
+    }
 }
 
 void Inventory::addItem(Item* item) {

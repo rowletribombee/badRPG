@@ -13,18 +13,15 @@ Map::Map(){
 }
 
 Map::~Map() {
-
-    for (auto& row : mapOfTiles) {
-        for (auto& tile : row) {
-            delete tile;
+    for (int i = 0; i < mapOfTiles.size(); i++) {
+        for (int j = 0; j < mapOfTiles.at(i).size(); j++) {
+            delete mapOfTiles.at(i).at(j);
         }
     }
 }
 
-
 void Map::initialize(){
     mapOfTiles.resize(8, vector<Tile*>(8, nullptr));
-
     shared_ptr<Item> Excalibur = make_shared<Weapon>("Excalibur", 2, 2, 2, 2, 2, 0);
     shared_ptr<Item> BowOfHouYi = make_shared<Weapon>("Bow of Hou Yi", 0.5, 0, 0.5, 0, 0, 0);
     shared_ptr<Item> Labrys = make_shared<Weapon>("Labrys", 1, -0.3, 1, -0.3, 0, 0);

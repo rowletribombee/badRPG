@@ -3,7 +3,9 @@
 #include <cstdlib>
 #include <ctime>
 
-PotionTile::~PotionTile(){}
+PotionTile::PotionTile(Potion potion) : potion(potion) {
+    type = potionTile;
+}
 
 void PotionTile::print(){
     srand(static_cast<unsigned int>(time(0)));

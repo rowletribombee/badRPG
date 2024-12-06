@@ -10,10 +10,6 @@ FightTile::FightTile(const string& boss, shared_ptr<Item> reward)
         this->type = fightTile;
 }
 
-FightTile::~FightTile(){
-
-}
-
 void FightTile::print(){
     // this heavily depends on the fighting mechanics that haven't been added yet
     cout << "You have encountered a(n)" << boss << "!" << endl;

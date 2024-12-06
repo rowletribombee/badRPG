@@ -2,7 +2,7 @@
 
 
 void FinalBoss::Slam(Player& target){
-    cout << "The Stanimal Slamed you! Damage delt: " << damageEnemyPhys(target, 4) << endl;
+    cout << "The Stanimal Slammed you! Damage delt: " << damageEnemyPhys(target, 4) << endl;
 }
 
 void FinalBoss::Charge(){
@@ -13,7 +13,7 @@ void FinalBoss::Charge(){
 }
 
 void FinalBoss::Explosion(Player& target){
-    cout << " The Stanimal caused an Explotion! Damage delt: " << damageEnemyMagic(target, 5) << endl;
+    cout << " The Stanimal caused an Explosion! Damage dealt: " << damageEnemyMagic(target, 5) << endl;
 }
 
 void FinalBoss::BackToFull(){
@@ -22,7 +22,7 @@ void FinalBoss::BackToFull(){
 }
 
 void FinalBoss::Cleave(Player& target){
-    cout << " The Stanimal caused an Explotion! Damage delt: " << damageEnemyPhys(target, 5+chargeCounter) << endl;
+    cout << " The Stanimal caused an Explosion! Damage dealt: " << damageEnemyPhys(target, 5+chargeCounter) << endl;
 }
 
 void FinalBoss::Brace(){

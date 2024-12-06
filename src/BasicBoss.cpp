@@ -3,6 +3,6 @@
 using namespace std;
 
 void BasicBoss::Bonk(Player& target){
-    cout << "The Kellossus was just Bonked you! Damage delt: " << damageEnemyPhys(target, 3) << endl;
+    cout << "The Kellossus was Bonked you! Damage delt: " << damageEnemyPhys(target, 3) << endl;
     
 }

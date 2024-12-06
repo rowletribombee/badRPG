@@ -31,7 +31,7 @@ string Inventory::displayItems() const {
     else {
         for (int i = 0; i < items.size(); ++i) {
             Item* item = items[i];
-            output += "- " + item->getName() + "\n"; 
+            output += to_string(i + 1) + ") " + item->getName() + "\n"; 
         }
     }
     return output;

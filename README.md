@@ -83,5 +83,5 @@ Updated Diagram:
  > cmake . && make && ./startGame
 
  ## Testing
-* Our project was tested (gtest) and validated using CI via Github Actions. 
+* Our project was tested (gtest) and validated using CI via Github Actions. We tested our project using unit tests, and using the googletest submodule as a framework to validate the tests. In the folder called tests, we include all of our separate testing .cpp files for separate interfaces as well as a CMakeLists.txt file to have executables to run the tests. 
  

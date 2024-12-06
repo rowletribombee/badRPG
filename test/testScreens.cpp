@@ -70,22 +70,37 @@ int main()
     // screenTest.displayMapScreen(map,player);
 
     // Test inventory display
-    cout << "Inventory Display:" << endl;
-    Inventory inventory;
-    Potion* potion = new Potion("Potion", 20);
-    Weapon* sword = new Weapon("Sword", 5, 2, 0, 0, 0, 0);
+    // cout << "Inventory Display:" << endl;
+    // Inventory inventory;
+    // Potion* potion = new Potion("Potion", 20);
+    // Weapon* sword = new Weapon("Sword", 5, 2, 0, 0, 0, 0);
 
-    inventory.addItem(potion);
-    inventory.addItem(sword);
+    // inventory.addItem(potion);
+    // inventory.addItem(sword);
    
-    sword->use(displayTest);
+    // sword->use(displayTest);
 
-    screenTest.displayInventory(inventory);
+    // screenTest.displayInventory(inventory);
 
-    screenTest.displayItemDetails(*potion, inventory);
-    cout << endl << endl;
+    // screenTest.displayItemDetails(*potion, inventory);
+    // cout << endl << endl;
 
-    screenTest.displayItemDetails(*sword, inventory);
+    // screenTest.displayItemDetails(*sword, inventory);
     
+
+
+    //Test Battle Screen
+
+    // Hardcoded player stats
+    Stats playerStats;
+    playerStats.isElf(); // Set player stats to Human
+    Player player(playerStats); // Create a player with these stats
+
+    // Hardcoded enemy stats
+    Stats enemyStats;
+    enemyStats.isElf(); // Set enemy stats to Elf
+
+
+    screenTest.displayPlayerCombat(player, enemyStats);
     return 0;
 }

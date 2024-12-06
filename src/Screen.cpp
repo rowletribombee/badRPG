@@ -249,6 +249,20 @@ void Screen::displayRaceSelection(Player& player){
     }
 }
 
+void Screen::displayPlayerCombat(Player& player, Stats& stats){
+
+    Stats&baseStats = player.getStats();
+
+
+    int magicDamage = baseStats.damageDealtMagic(stats, 4);
+    int attackDamage = baseStats.damageDealtPhys(stats, 4);
+
+    cout << "You were successful in dealing:" << endl;
+    cout << "Magic Attack: " << magicDamage << endl;
+    cout << "Attack:       " << attackDamage << endl;
+}
+
+ //battle screen 
 // MAP LEGEND
 // ??? for undiscovered
 //  x  for spot they are on

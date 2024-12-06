@@ -3,8 +3,6 @@
 #include "Enemy.h"
 
 class FinalBoss : public Enemy{
-
-
     public:
         int buffCounter = 0; //also indicates whether buffs need to be erased at phase change, decrements/resets per action
         int chargeCounter = 0; //accumulating counter, never resets

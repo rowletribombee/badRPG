@@ -5,6 +5,7 @@
 #include "../lib/tiles/PotionTile.h"
 #include "../lib/tiles/WeaponTile.h"
 #include <iostream>
+#include <string>
 #include <cctype>
 
 Player::Player(){
@@ -125,32 +126,104 @@ void Player::move(Map& map, Inventory& inventory){
         }
 }
 
-void Player::Heal(){
-    baseStats.addHP(baseStats.getMAtk()*3);
+void Player::HealPlayer(){
+    baseStats.addStat("hp",baseStats.getMAtk()*3);
 }
 
-void Player::Attack(Stats& target) const{
-    if(!baseStats.AccuracyCheck(target)){
-        return;
-    }
-    else{
-        if(baseStats.CritCheck(target)){
-            target.reduceHp(baseStats.getAtk() * 6/target.getDef());
-        }
-        else{
-            target.reduceHp(baseStats.getAtk() * 4/target.getDef());
-        }
-    }
+void Player::Attack(Stats& target){
+    baseStats.damageDealtPhys(target, 4);
+}
+
+void Player::MagicAttack(Stats& target){
+    baseStats.damageDealtMagic(target, 4);
 }
 
 void Player::Guard(){
-    isGuarding = true;
+    isGuarding = !isGuarding;
 }
 
-void Player::applyStatBoost(const std::string& stat, int boost) {
+void Player::applyStatBoost(const std::string& stat, int boost) { //for utility
     baseStats.addStat(stat, boost);        
 }
 
-void Player::heal(int amount) {
+void Player::heal(int amount) { //utility
     baseStats.addStat("hp", amount);
+}
+
+void Player::reduceBuffCounter(){ 
+    if(buffCounter > 1){
+        buffCounter -= 1;
+    }
+    else{
+        buffCounter = 0;
+        resetBuffMagnitude();
+    }
+}
+
+void Player::resetBuffMagnitude(){ 
+    if(buffID == 1){
+        baseStats.addStat("atk", -1*buffMagnitude);
+    }
+    else if(buffID == 2){
+        baseStats.addStat("def", -1*buffMagnitude);
+    }
+    else if(buffID == 3){
+        baseStats.addStat("matk", -1*buffMagnitude);
+    }
+    else if(buffID == 4){
+        baseStats.addStat("mdef", -1*buffMagnitude);
+    }
+    else if(buffID == 5){
+        baseStats.addStat("spd", -1*buffMagnitude);
+    }
+    else{
+        baseStats.addStat("lck", -1*buffMagnitude);
+    }
+    buffMagnitude = 0;
+    buffID = 0;
+}
+
+void Player::BuffChosen(string& stat){ //playermove
+    if(buffID != 0 || buffCounter != 0){ //second case added just in case something slipped
+        cout << "You already have a buff! No stacking allowed." << endl;
+    }
+    else if (stat == "atk") {
+        buffID = 1;
+        buffMagnitude = baseStats.getAtk()*0.5;
+        applyStatBoost(stat, baseStats.getAtk()*0.5);
+        buffCounter = 3;
+    } 
+    else if (stat == "def") {
+        buffID = 2;
+        buffMagnitude = baseStats.getDef()*0.5;
+        applyStatBoost(stat, baseStats.getDef()*0.5);
+        buffCounter = 3;
+    } 
+    else if (stat == "matk") {
+        buffID = 3;
+        buffMagnitude = baseStats.getMAtk()*0.5;
+        applyStatBoost(stat, baseStats.getMAtk()*0.5);
+        buffCounter = 3;
+    } 
+    else if (stat == "mdef") {
+        buffID = 4;
+        buffMagnitude = baseStats.getMDef()*0.5;
+        applyStatBoost(stat, baseStats.getMDef()*0.5);
+        buffCounter = 3;
+    } 
+    else if (stat == "spd") {
+        buffID = 5;
+        buffMagnitude = baseStats.getSpd()*0.5;
+        applyStatBoost(stat, baseStats.getSpd()*0.5);
+        buffCounter = 3;
+    } 
+    else if (stat == "lck") {
+        buffID = 6;
+        buffMagnitude = baseStats.getLck()*0.5;
+        applyStatBoost(stat, baseStats.getLck()*0.5);
+        buffCounter = 3;
+    } 
+    else {
+        std::cout << "Invalid stat name!" << std::endl;
+    }   
 }

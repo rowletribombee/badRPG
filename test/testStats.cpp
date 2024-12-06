@@ -74,3 +74,23 @@ TEST(rng, rngRange){
     int randomResult = testStats.rng(min, max);
     EXPECT_TRUE(min <= randomResult);
 }
+
+TEST(damageDealtPhys, damageValues){
+    
+    vector <int> bstats = {50,50,8,4,8,4,6,7};
+    Stats attackStats(bstats);
+    vector <int> tstats = {50,50,8,4,8,4,6,7};
+    Stats targetStats(tstats);
+    attackStats.damageDealtPhys(targetStats, 4);
+    EXPECT_TRUE(targetStats.getHP() == 50 || targetStats.getHP() == 42 || targetStats.getHP() == 38);
+}
+
+TEST(damageDealtMagic, damageValues){
+    
+    vector <int> bstats = {50,50,8,4,8,4,6,7};
+    Stats attackStats(bstats);
+    vector <int> tstats = {50,50,8,4,8,4,6,7};
+    Stats targetStats(tstats);
+    attackStats.damageDealtMagic(targetStats, 4);
+    EXPECT_TRUE(targetStats.getHP() == 50 || targetStats.getHP() == 42 || targetStats.getHP() == 38);
+}

@@ -6,12 +6,19 @@ testScreens
 testItems
 testInventory
 testWeapons
+testPlayer
+testFinalBoss
+testEliteBoss1
+testEliteBoss2
+testBasicBoss
+testBattle
 a.out 
 
 Makefile
 CMakeCache.txt
 cmake_install.cmake
 CMakeFiles/
+lib/Player/
 
 lib/*.a
 

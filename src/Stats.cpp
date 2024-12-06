@@ -163,3 +163,38 @@ int Stats::rng(int min, int max) const{
     return (distribution(gen));
     
 }
+
+int Stats::damageDealtPhys(Stats& target, int basePower){
+    if(!this->AccuracyCheck(target)){ //accuracy check on the target, attack misses
+        return 0;
+    }
+    else{ //attack hit
+        int totalDamage = basePower*this->getAtk()/target.getDef();
+        if(this->CritCheck(target)){ //crits deal 1.5x damage
+            target.reduceHp(totalDamage*1.5);
+            return totalDamage*1.5;
+        }
+        else{ //base attack, nothing special
+            target.reduceHp(totalDamage);
+            return totalDamage;
+        }
+    }
+}
+
+int Stats::damageDealtMagic(Stats& target, int basePower){
+    if(!this->AccuracyCheck(target)){ //accuracy check on the target, attack misses
+        return 0;
+    }
+    else{ //attack hit
+        int totalDamage = basePower*this->getMAtk()/target.getMDef();
+        if(this->CritCheck(target)){ //crits deal 1.5x damage
+            target.reduceHp(totalDamage*1.5);
+            return totalDamage*1.5;
+        }
+        else{ //base attack, nothing special
+            target.reduceHp(totalDamage);
+            return totalDamage;
+        }
+    }
+}
+

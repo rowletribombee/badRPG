@@ -29,17 +29,14 @@ int main()
     cout << "Command screen:" << endl;
     screenTest.displayCommandMenu();
 
-    // test inventory print 
-    // Needs items and weapons 
-    // cout << "Inventory screen:" << endl;
-    // screenTest.displayInventory();
+    //test Direction Options
+    cout << "Direction screen:" << endl;
+    screenTest.displayDirectionOptions();
 
     //test credit print
     cout << "Credits:" << endl;
     screenTest.displayCredits();
 
-    //test map display
-    cout << "Map Display:" << endl;
     
     //testing display race
     cout << "Race Display" << endl;
@@ -49,6 +46,9 @@ int main()
     cout << "Race Selection " << endl;
     screenTest.displayRaceSelection(displayTest);
     
+
+    //test map display
+    cout << "Map Display:" << endl;
     //create objects
     Player player;
     Map map;
@@ -61,6 +61,8 @@ int main()
     player.move(map, inventory); // Reads 'd'
     player.move(map, inventory); // Reads 'd'
 
+
+    
     //output map with player currently on (x) [2,1] and [0,0][0,1][1,1] visited (x)
     screenTest.displayMapScreen(map,player);
     return 0;

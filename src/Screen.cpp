@@ -152,13 +152,6 @@ void Screen::displayCredits(){
 void Screen::displayRaceStats(){
     Stats displayStats;
 
-    cout << "**************************************************\n";
-    cout << "*                                                *\n";
-    cout << "*                   STATS SCREEN                 *\n";
-    cout << "*                                                *\n";
-    cout << "**************************************************\n";
-    cout << endl;
-
     cout << "Choose a race for your character! (Enter a number 1-5)\n";
     cout << "--------------------------------------------------\n";
 
@@ -189,6 +182,7 @@ void Screen::displayRaceStats(){
     cout << "5 Fairy" << endl;
     displayStats.isFairy();
     charInfo(displayStats);
+
 }
 
 void Screen::displayRaceSelection(Player& player){
@@ -261,6 +255,7 @@ void Screen::displayPlayerCombat(Player& player, Stats& stats){
     cout << "Magic Attack: " << magicDamage << endl;
     cout << "Attack:       " << attackDamage << endl;
 }
+
 
  //battle screen 
 // MAP LEGEND

@@ -24,7 +24,7 @@ void Inventory::removeItem(Item* item) {
 }
 
 string Inventory::displayItems() const {
-    string output;
+    string output = "";
     if (items.empty()) {
         output += "No items in inventory.\n";
     } 

@@ -92,6 +92,7 @@ void Game::save(){
 void Game::controls(){
     bool validChoice = false;
     char choice;
+    screen.displayCommandMenu();
     cout << "Enter in a command: ";
     while(!validChoice){
         cin >> choice;
@@ -122,8 +123,10 @@ void Game::controls(){
     }
 }
 void Game::startGame(){
-    screen.displayIntroScreen();
+    // screen.displayIntroScreen();
     screen.displayInstructions();
+    screen.displayRaceStats();
+    screen.displayRaceSelection(player);
     while(!gameOver){
         while(firstStage){
             if(!saveState){

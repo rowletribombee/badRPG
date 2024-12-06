@@ -3,7 +3,9 @@
 #include <iostream>
 
 Inventory::Inventory(){
-
+    for (auto& item : items) {
+        delete item;
+    }
 }
 
 void Inventory::addItem(Item* item) {
@@ -24,14 +26,14 @@ void Inventory::removeItem(Item* item) {
 }
 
 string Inventory::displayItems() const {
-    string output = "Inventory:\n";
+    string output = "";
     if (items.empty()) {
         output += "No items in inventory.\n";
     } 
     else {
         for (int i = 0; i < items.size(); ++i) {
             Item* item = items[i];
-            output += "- " + item->getName() + "\n"; 
+            output += to_string(i + 1) + ") " + item->getName() + "\n"; 
         }
     }
     return output;

@@ -3,7 +3,9 @@
 #include <cstdlib>
 #include <ctime>
 
-WeaponTile::~WeaponTile(){}
+WeaponTile::WeaponTile(Weapon weapon) : weapon(weapon) {
+    type = weaponTile;
+}
 
 void WeaponTile::print(){
     srand(static_cast<unsigned int>(time(0)));

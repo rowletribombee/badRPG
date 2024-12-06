@@ -23,19 +23,21 @@ void Screen::displayStartScreen(){
 
 void Screen::displayCommandMenu(){ 
     cout << "What will you do?" << endl << endl <<
-            "Move[M]" << endl <<
-            "Inventory [I]" << endl << 
-            "Stats [S]" << endl <<
-            "Quit and Save [T]" << endl <<
-            "Credits[X]" << endl << endl;
+            "[M] Move" << endl <<
+            "[I] Inventory" << endl << 
+            "[S] Stats" << endl <<
+            "[G] Map" << endl <<
+            "[Q] Quit and Save" << endl <<
+            "[C] Command Menu" << endl <<
+            "[X] Credits" << endl << endl;
 }
 
 void Screen::displayDirectionOptions(){
     cout << "What direction will you go?" << endl << endl <<
-            "Up[w]" << endl << 
-            "Left[a]" << endl <<
-            "Down[s]" << endl <<
-            "Right[d]" << endl << endl;
+            "[w] Up" << endl << 
+            "[a] Left" << endl <<
+            "[s] Down" << endl <<
+            "[d] Right" << endl << endl << "Enter in a direction: ";
 }
 
 void Screen::displayInstructions()
@@ -47,12 +49,13 @@ void Screen::displayInstructions()
     cout << "Game controls:" << endl;
     cout << "(These will be available as you play)" << endl;
     cout << endl;
-    cout << "Move[M]: Choose your movement direction (Forward, Left, Right, Back)" << endl;
-    cout << "Inventory[I]: Check your items and equip gear" << endl;
-    cout << "Stats [S]: View your characters current stats" << endl;
-    cout << "Actions[A]: Choose your action during combat (Fight, flee, defend)" << endl;
-    cout << "Quit and Save[Q]: Quit and save your game locally" << endl;
-    cout << "Command Menu[C]: Move, check Inventory, view Stats, or Quit and Save your game";
+    cout << "[M] Move: Choose your movement direction (Forward, Left, Right, Back)" << endl;
+    cout << "[I] Inventory: Check your items and equip gear" << endl;
+    cout << "[S] Stats: View your characters current stats" << endl;
+    cout << "[A] Actions: Choose your action during combat (Fight, flee, defend)" << endl;
+    cout << "[G] Map: See your current position on the map and places you've visited before" << endl;
+    cout << "[Q] Quit and Save: Quit and save your game locally" << endl;
+    cout << "[C] Command Menu: Move, check Inventory, view Stats, or Quit and Save your game";
     cout << endl;
     cout << "=========================================" << endl << endl;
     cout << "As you explore more rooms you may encounter items or weapons. You may equip these and use them to advance to victory!" << endl;
@@ -60,7 +63,7 @@ void Screen::displayInstructions()
     cout << "Final Note:" << endl;
     cout << "Your journey through the cave may be filled with uncertainty, but keep your sense of humor and discovery alive! Embrace the chaos and remember: sometimes, laughter is the best weapon against despair (or goblins). Good luck!" << endl << endl;
 
-    sleep_for(3000); //pause for 3 seconds
+    sleep_for(1000); //pause for 1 second
 }
 
 void Screen::displayIntroScreen(){
@@ -122,8 +125,7 @@ void Screen::displayIntroScreen(){
 
 void Screen::displayInventory(Inventory& inventory){
     cout << "========Inventory========" << endl;
-    //TO-DO
-    //Items still being figured out
+    cout << inventory.displayItems();
 }
 
 void Screen::displayCredits(){
@@ -253,12 +255,12 @@ void Screen::displayMapScreen(Map& map, Player& player){
         cout << endl;
         for(int j = 0; j < map.getMapOfTiles().at(i).size(); j++){
             cout << "|    ";
-            if(!map.getMapOfTiles().at(i).at(j)->isVisited()){
-                cout << "???";
-            }else if(map.getMapOfTiles().at(i).at(j)->isVisited() && player.getPositionY() == i && player.getPositionX() == j){
+            if(map.getMapOfTiles().at(i).at(j)->isVisited() && player.getPositionY() == i && player.getPositionX() == j){
                 cout << " x ";
-            }else{
+            }else if(map.getMapOfTiles().at(i).at(j)->isVisited()){
                 cout << " o ";
+            }else{
+                cout << "???";
             }
             cout << "    |";
         }

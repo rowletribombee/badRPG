@@ -1,11 +1,12 @@
 #include "../lib/LoadManager.h"
+#include <fstream>
+using namespace std;
 
 LoadManager::LoadManager(){}
 
-Game LoadManager::loadGame(){
+Game& LoadManager::loadGame(Game& game){
     screen.displayStartScreen();
     bool beginGame = false;
-    Game game;
     while(!beginGame){
         char choice;
         bool validChoice = false;
@@ -34,5 +35,23 @@ Game LoadManager::loadGame(){
 }
 
 Game& LoadManager::loading(Game& game){
+    ifstream inFile("saveFile.txt");
+    if(!inFile.is_open()){
+        cout << "Error: file could not be opened. File must be named 'saveFile.txt'" << endl << endl << "A new game will be loaded" << endl;
+        return game;
+    }
+
+    // game class loading
+    int firstStage, secondStage, thirdStage;
+    inFile >> firstStage >> secondStage >> thirdStage;
+    if(thirdStage){
+        game.setSecondStageFalse();
+        game.setFirstStageFalse();
+    }else if(secondStage){
+        game.setFirstStageFalse();
+    }
+    // map loading
+    
+
     return game;
 }

@@ -3,12 +3,12 @@
 #include <cstdlib>
 #include <ctime>
 
-EmptyTile::~EmptyTile(){}
-
 EmptyTile::EmptyTile(){
     instantEquip = false;
     type = emptyTile;
 }
+
+// EmptyTile::~EmptyTile(){}
 
 void EmptyTile::print(){
     srand(static_cast<unsigned int>(time(0)));

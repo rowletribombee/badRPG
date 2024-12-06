@@ -7,10 +7,11 @@ public:
     Weapon(const string& weaponName, int atkBoost = 0, int defBoost = 0, 
            int magicAttackBoost = 0, int magicDefenseBoost = 0, int spdBoost = 0, int lckBoost = 0)
         : name(weaponName), attackBoost(atkBoost), defenseBoost(defBoost), magicAttackBoost(magicAttackBoost), 
-          magicDefenseBoost(magicDefenseBoost), speedBoost(spdBoost), luckBoost(lckBoost) {}
+          magicDefenseBoost(magicDefenseBoost), speedBoost(spdBoost), luckBoost(lckBoost), type(weapon){}
     ~Weapon();
     void use(Player& target) override;
     void unequip(Player& target);
+    bool isEquipped() const { return equipped; }
     string getName() const override {return name;}
     int getAtkBoost() {return attackBoost;}
     int getDefBoost() {return defenseBoost;}
@@ -18,8 +19,12 @@ public:
     int getM_DefBoost() {return magicDefenseBoost;}
     int getSpdBoost() {return speedBoost;}
     int getLuckBoost() {return luckBoost;}
+    ItemType getType() const override {return type; }
+
 private:
+    ItemType type;
     string name;
+    bool equipped = false;
     int attackBoost;
     int defenseBoost;
     int magicAttackBoost;

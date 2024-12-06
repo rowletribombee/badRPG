@@ -1,6 +1,7 @@
 #include "../lib/Screen.h"
 #include "../lib/Game.h"
 #include "../lib/Player.h"
+#include "../lib/Inventory.h"
 #include <iostream>
 #include <string>
 #include <chrono>
@@ -127,6 +128,17 @@ void Screen::displayInventory(Inventory& inventory){
     cout << "========Inventory========" << endl;
     cout << inventory.displayItems();
 }
+
+void Screen::displayItemDetails(Item& item, Inventory& inventory){
+    cout << "========Item Details=====" << endl;
+
+    cout << inventory.displayItemDetails(item);
+
+    cout << "Optons: " << endl;
+    cout << "1. Use" << endl;
+    cout << "2. Back to Inventory" << endl;
+}
+
 
 void Screen::displayCredits(){
     cout << "Developed by:" << endl;

@@ -16,10 +16,38 @@ class FightTile : public Tile {
         const vector<string>& getEliteWinDialogue() const { return winDialogueEliteBoss; }
         const vector<string>& getNormalWinDialogue() const { return winDialogueNormalBoss; }
         const vector<string>& getPhaseDialogueFinalBoss() const { return PhaseDialogueFinalBoss; }
+        const string getFinalBossWin() const { return FinalBossWin; }
     private:
         string boss;
         shared_ptr<Item> reward;
         
+        string FinalBossWin = {
+           
+            "After a relentless and grueling battle, you finally land the decisive blow. The " + boss + " collapses with a dramatic groan. A stunned silence fills the air.\n\n"
+            "For a moment, you stand there, catching your breath, hardly believing it's over.\n"
+            "\"Oh my god, it's finally over. I thought I was gonna die like...80 times back there.\"\n"
+            "You wipe the sweat from your brow and point your weapon at the fallen foe.\n\n"
+            "\"Alright, final chance to explain things around here. C'mon what's going on here. Is this like a dream? Are we in the matrix or something? Did I eat weird mushrooms? Did YOU put me here? I deserve at least some explanation after everything I've been through.\"\n\n"
+            "The " + boss + " groans and shifts, turning to face you.\n"
+            "\"Okay, okay, you really want to know? You've been stuck in this cave because YOU put yourself here. Everything that you've been through has been because of your own actions, and yours alone. So don't go blaming me, I just work here.\"\n\n"
+            "You stumble back as you process his words.\n"
+            "\"Wha- What are you talking about?? I didn't do anything. I just woke up here with ZERO memory. How is that my fault?\"\n\n"
+            "The " + boss + " rolls his eyes and sighs out of frustration.\n"
+            "\"Dude, how do you think you knew how to fight all those other monsters? Did you ever stop and wonder why this place felt...weirdly familiar?\"\n\n"
+            "\"...No?\"\n\n"
+            "The " + boss + " scoffs.\n"
+            "\"Of course not. Do I have to spell it out: you built this cave. Every wall, rock, monster-even me! You designed this place with your own grubby little hands. It's your own fault for getting stuck here, no one else. Us monsters only fought you to help you get stronger so you could finally get out.\"\n\n"
+            "You blink, trying to process the absurdity of it all.\n"
+            "\"Wait, wait, wait. So you're telling me... I'm the idiot who invented this torture dungeon and then forgot about it?\"\n\n"
+            "\"Exactly. You know, for a genius you really are stupid. Anyways don't worry about us, we'll be okay once this game resets and the next sucker-I mean, player comes.\"\n\n"
+            "Time suddenly feels frozen as you process. Suddenly a portal appears near the cavern entrance, sending debris and air around you. The twinkling light reminds you of the strange flicker you noticed when you first arrived.\n\n"
+            "You glance between the portal and the " + boss + ", still slumped and wheezing on the ground. Your emotions are a confused soup of anger, embarrassment, and—against your better judgment—a little bit of sympathy.\n\n"
+            "\"Welp,\" you mutter. \"Guess I'm out.\" You pause at the portal's edge looking back one last time.\n"
+            "\"Thanks for uh..helping me escape from...me, I guess.\"\n\n"
+            "The " + boss + " groans. \"Just go already. You're ruining my dramatic death scene.\"\n\n"
+            "With a shrug, you step through the portal, muttering under your breath, \"I seriously need to stop watching all those anime late at night.\"\n\n\n"
+            "CONGRATULATIONS! You beat the final boss and won the game!! Thank you for playing and we hope you had fun! Roll the credits!!\n\n\n"
+        };
         //each string is a part of a phase (out of 4 phases)
         vector<string> PhaseDialogueFinalBoss = {
             "You finally find a moment to step back and center your thoughts\n\n"

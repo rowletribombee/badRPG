@@ -197,3 +197,11 @@ TEST(FightTile, FinalBossDialogue){
     cout << dialogue[3];
    
 }
+
+TEST(FightTile, Ending){
+    shared_ptr<Item> testReward = make_shared<Weapon>("Freedom", 0, 0, 0, 0, 0, 0);
+    FightTile fightTile("Dragon", testReward);
+    const string& dialogue = fightTile.getFinalBossWin();
+
+    cout << dialogue;
+}

@@ -54,8 +54,9 @@ Updated Diagram:
 >  * Each team member should also submit the Individual Contributions Form on Canvas for this final phase. In this form, you need to fill in the names of all team members, the percentage of work contributed by each member for the final phase, and a description of their contributions. Remember that each team member should submit the form individually.
  
  ## Screenshots
-* Starting game:
+* Starting game: <br/>
 ![image](https://github.com/user-attachments/assets/1279e814-a1d0-4282-9768-e73471712eed)
+
 * Starting message and instructions:
 ![image](https://github.com/user-attachments/assets/4173ed84-1e17-4e37-be67-58c85e7b1380)
 * Race selection:

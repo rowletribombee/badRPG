@@ -1,5 +1,5 @@
-# I Woke Up in a Cave and All I Want is Wi-Fi
-
+# I Woke Up in a Cave and All I Want is Wi-Fi 
+![Build Status](https://github.com/cs100/final-project-pinkie-pie/actions/workflows/main.yml/badge.svg)
  > Authors: [Sookie Drabla](https://github.com/sdrabla), [Stanley Lew](https://github.com/stanleylew5), [Gregory Wang](https://github.com/rowletribombee), [Kelly Ma](https://github.com/kellyma073), & [Anthony Emery](https://github.com/antodough)
 
 ## Project Description
@@ -58,5 +58,7 @@ Updated Diagram:
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ > Our project was tested and validated using CI via Github Actions. 
+
+How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  

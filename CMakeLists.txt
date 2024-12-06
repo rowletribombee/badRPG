@@ -63,18 +63,26 @@ src/Potion.cpp
 src/Weapon.cpp
 src/Player.cpp
 src/Stats.cpp
+src/Screen.cpp
+src/Player.cpp
+src/Map.cpp
 )
 
 add_executable(testStats
 test/testStats.cpp
 src/Stats.cpp
 src/Player.cpp
+src/Screen.cpp
+src/Map.cpp
 src/Inventory.cpp
 src/Potion.cpp
 src/Weapon.cpp
 src/tiles/Tile.cpp
 src/tiles/PotionTile.cpp
 src/tiles/WeaponTile.cpp
+src/tiles/EmptyTile.cpp
+src/tiles/FightTile.cpp
+src/tiles/SpawnTile.cpp
 )
 
 add_executable(testScreens
@@ -97,6 +105,7 @@ src/tiles/WeaponTile.cpp
 add_executable(testItems
 test/testItems.cpp
 src/Player.cpp 
+src/Screen.cpp
 src/Stats.cpp
 src/Inventory.cpp
 src/Potion.cpp
@@ -104,11 +113,16 @@ src/Weapon.cpp
 src/tiles/Tile.cpp
 src/tiles/PotionTile.cpp
 src/tiles/WeaponTile.cpp
+src/tiles/EmptyTile.cpp
+src/tiles/SpawnTile.cpp
+src/tiles/FightTile.cpp
+src/Map.cpp
 )
 
 add_executable(testInventory
 test/testInventory.cpp 
 src/Player.cpp
+src/Screen.cpp
 src/Stats.cpp
 src/Potion.cpp 
 src/Weapon.cpp
@@ -116,11 +130,16 @@ src/Inventory.cpp
 src/tiles/Tile.cpp
 src/tiles/PotionTile.cpp
 src/tiles/WeaponTile.cpp
+src/tiles/EmptyTile.cpp
+src/tiles/SpawnTile.cpp
+src/tiles/FightTile.cpp
+src/Map.cpp
 )
 
 add_executable(testWeapons
 test/testInventory.cpp 
 src/Player.cpp
+src/Screen.cpp
 src/Stats.cpp
 src/Inventory.cpp
 src/Potion.cpp 
@@ -128,6 +147,10 @@ src/Weapon.cpp
 src/tiles/Tile.cpp
 src/tiles/PotionTile.cpp
 src/tiles/WeaponTile.cpp
+src/tiles/EmptyTile.cpp
+src/tiles/SpawnTile.cpp
+src/tiles/FightTile.cpp
+src/Map.cpp
 )
 
 

@@ -1,6 +1,7 @@
 #include "../lib/Player.h"
 #include "../lib/Potion.h"
 #include "../lib/Weapon.h"
+#include "../lib/Screen.h"
 #include "../lib/tiles/PotionTile.h"
 #include "../lib/tiles/WeaponTile.h"
 #include <iostream>
@@ -36,18 +37,23 @@ Player::Player(Stats& bStats){
 }
 
 bool Player::checkForWall(char dir){
+    Screen displayScreen;
     if(positionX == 0 && dir == 'a'){
-        cout << "Whoops! There appears to be a wall here! Try again!" << endl << "Please enter in a direction! w for up, a for left, s for down and d for right: ";
+        cout << "Whoops! There appears to be a wall here!";
+        displayScreen.displayDirectionOptions();
         return true;
     }else if(positionX == 7 && dir == 'd'){
-        cout << "Whoops! There appears to be a wall here! Try again!" << endl << "Please enter in a direction! w for up, a for left, s for down and d for right: ";
+        cout << "Whoops! There appears to be a wall here!";
+        displayScreen.displayDirectionOptions();
         return true;
     }else if(positionY == 0 && dir == 'w'){
-        cout << "Whoops! There appears to be a wall here! Try again!" << endl << "Please enter in a direction! w for up, a for left, s for down and d for right: ";
+        cout << "Whoops! There appears to be a wall here!";
+        displayScreen.displayDirectionOptions();
         return true;
     }
     else if(positionY == 7 && dir == 's'){
-        cout << "Whoops! There appears to be a wall here! Try again!" << endl << "Please enter in a direction! w for up, a for left, s for down and d for right: ";
+        cout << "Whoops! There appears to be a wall here!";
+        displayScreen.displayDirectionOptions();
         return true;
     }else{
         return false;
@@ -56,7 +62,9 @@ bool Player::checkForWall(char dir){
 
 bool Player::checkValidDir(char dir){
     if(!isalpha(dir) && dir != 'w' && dir != 'a' && dir != 's' && dir != 'd'){
-        cout << "Invalid direction! Try again! w for up, a for left, s for down and d for right!" << endl << endl;
+        Screen displayScreen;
+        cout << "Invalid direction! Try again!!" << endl;
+        displayScreen.displayDirectionOptions();
         return false;
     }else{
         return true;
@@ -65,7 +73,8 @@ bool Player::checkValidDir(char dir){
 
 void Player::move(Map& map, Inventory& inventory){
     char dir;
-    cout << "Please enter in a direction! w for up, a for left, s for down and d for right: ";
+    Screen displayScreen;
+    displayScreen.displayDirectionOptions();
     cin >> dir;
     if(isalpha(dir)) dir = tolower(dir);
     while(!checkValidDir(dir) || checkForWall(dir)){ // some kinks with output need to be fixed, showing you are still required to input to move. still in move phase

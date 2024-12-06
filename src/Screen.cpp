@@ -30,10 +30,18 @@ void Screen::displayCommandMenu(){
             "Credits[X]" << endl << endl;
 }
 
+void Screen::displayDirectionOptions(){
+    cout << "What direction will you go?" << endl << endl <<
+            "Up[w]" << endl << 
+            "Left[a]" << endl <<
+            "Down[s]" << endl <<
+            "Right[d]" << endl << endl;
+}
+
 void Screen::displayInstructions()
 {
     cout << "Welcome to “I woke up in a Cave and All I Want is Wi-fi”!" << endl << endl;
-    cout << "Your Mission: You’ve awoken in a mysterious cave with no memory of how you got there. As you explore the different rooms the cave has to offer, you must face off a series of bosses to uncover the truth and find a way out. Remember: the Wi-fi signal is weak, but your determination is strong!";
+    cout << "Your Mission: You've awoken in a mysterious cave with no memory of how you got there. As you explore the different rooms the cave has to offer, you must face off a series of bosses to uncover the truth and find a way out. Remember: the Wi-fi signal is weak, but your determination is strong!";
     cout << endl << endl;
     cout << "=========================================" << endl;
     cout << "Game controls:" << endl;

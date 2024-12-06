@@ -54,7 +54,25 @@ Updated Diagram:
 >  * Each team member should also submit the Individual Contributions Form on Canvas for this final phase. In this form, you need to fill in the names of all team members, the percentage of work contributed by each member for the final phase, and a description of their contributions. Remember that each team member should submit the form individually.
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ > Starting game:
+![image](https://github.com/user-attachments/assets/1279e814-a1d0-4282-9768-e73471712eed)
+> Starting message and instructions:
+![image](https://github.com/user-attachments/assets/4173ed84-1e17-4e37-be67-58c85e7b1380)
+> Race selection:
+![image](https://github.com/user-attachments/assets/b409c98e-edd8-4be2-b717-350cee921c7c)
+> Choosing race:
+![image](https://github.com/user-attachments/assets/2da0a841-c004-42c0-9af2-a838ff8126af)
+> Choice menu:
+![image](https://github.com/user-attachments/assets/a81403e2-c98f-42b4-84bf-a6776459f705)
+> (G) Map
+![image](https://github.com/user-attachments/assets/bfdaaccc-d721-4c40-bbcc-2c6edabf0c08)
+> (X) Credits
+![image](https://github.com/user-attachments/assets/64ffe7eb-cf95-41f7-a333-da71000c39a0)
+> (I) Inventory
+![image](https://github.com/user-attachments/assets/2540e603-490b-4e7b-9e63-da71aa824805)
+> Move through the map:
+![image](https://github.com/user-attachments/assets/435e00c3-f83b-476a-b582-33734b583191)
+
  ## Installation/Usage
  To install and run 'I Woke Up in a Cave and All I Want is Wi-Fi,' clone the repository and then run the following commands in your terminal:
  > cmake . && make && ./startGame

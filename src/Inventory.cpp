@@ -70,7 +70,14 @@ string Inventory::displayItemDetails(Item& item) const {
 
 Inventory::~Inventory() {
     for (int i = 0; i < items.size(); i++) {
-        delete items[i];
+        if(items[i]->getType() == 0){
+            Weapon* weapon = dynamic_cast<Weapon*>(items[i]);
+            delete weapon;
+        }
+        if(items[i]->getType() == 1){
+            Potion* potion = dynamic_cast<Potion*>(items[i]);
+            delete potion;
+        }
     }
     items.clear();
     // cout << "Inventory destructed and items cleaned up.\n";

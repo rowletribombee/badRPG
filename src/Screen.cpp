@@ -122,8 +122,7 @@ void Screen::displayIntroScreen(){
 
 void Screen::displayInventory(Inventory& inventory){
     cout << "========Inventory========" << endl;
-    //TO-DO
-    //Items still being figured out
+    cout << inventory.displayItems();
 }
 
 void Screen::displayCredits(){

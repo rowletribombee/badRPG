@@ -122,28 +122,34 @@ void Game::controls(){
     }
 }
 void Game::startGame(){
-    // screen.displayIntroScreen(); temporarily commented out so executable testing works faster
+    screen.displayIntroScreen();
     screen.displayInstructions();
     while(!gameOver){
         while(firstStage){
             if(!saveState){
                 controls();
             }else{
-                return;
+                setFirstStageFalse();
+                setSecondStageFalse();
+                setThirdStageFalse();
+                setGameOver();
             }
         }
         while(secondStage){
             if(!saveState){
                 controls();
             }else{
-                return;
+                setSecondStageFalse();
+                setThirdStageFalse();
+                setGameOver();
             }
         }
         while(thirdStage){
             if(!saveState){
                 controls();
             }else{
-                return;
+                setThirdStageFalse();
+                setGameOver();
             }
         }
     }

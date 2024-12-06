@@ -15,7 +15,25 @@ Map::Map(){
 Map::~Map() {
     for (int i = 0; i < mapOfTiles.size(); i++) {
         for (int j = 0; j < mapOfTiles.at(i).size(); j++) {
-            delete mapOfTiles.at(i).at(j);
+            if(mapOfTiles.at(i).at(j)->getType() == 0){
+                SpawnTile* spawnTile = dynamic_cast<SpawnTile*>(mapOfTiles.at(i).at(j));
+                delete spawnTile;
+            }else if(mapOfTiles.at(i).at(j)->getType() == 1){
+                EmptyTile* emptyTile = dynamic_cast<EmptyTile*>(mapOfTiles.at(i).at(j));
+                delete emptyTile;
+            }else if(mapOfTiles.at(i).at(j)->getType() == 2){
+                FightTile* fightTile = dynamic_cast<FightTile*>(mapOfTiles.at(i).at(j));
+                delete fightTile;
+            }else if(mapOfTiles.at(i).at(j)->getType() == 3){
+                PotionTile* potionTile = dynamic_cast<PotionTile*>(mapOfTiles.at(i).at(j));
+                delete potionTile;
+            }else if(mapOfTiles.at(i).at(j)->getType() == 4){
+                WeaponTile* weaponTile = dynamic_cast<WeaponTile*>(mapOfTiles.at(i).at(j));
+                delete weaponTile;
+            }else{
+                delete mapOfTiles.at(i).at(j);
+            }
+            
         }
     }
 }

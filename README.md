@@ -56,9 +56,13 @@ Updated Diagram:
  ## Screenshots
  > Screenshots of the input/output after running your application
  ## Installation/Usage
- > Instructions on installing and running your application
+ To install and run 'I Woke Up in a Cave and All I Want is Wi-Fi,' clone the repository and then run the following commands in your terminal:
+ > cmake .
+  
+ > make
+
+ > ./startGame
+
  ## Testing
  > Our project was tested and validated using CI via Github Actions. 
-
-How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  

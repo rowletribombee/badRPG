@@ -10,4 +10,5 @@ class BasicBoss : public Enemy{
         BasicBoss(Stats& baseStats) : Enemy{baseStats}{};
         void Bonk(Player&);
 
+    private:
 };

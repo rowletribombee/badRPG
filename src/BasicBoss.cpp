@@ -1,5 +1,8 @@
 #include "../lib/BasicBoss.h"
+#include <iostream>
+using namespace std;
 
 void BasicBoss::Bonk(Player& target){
-    damageEnemyPhys(target, 3);
+    cout << "The Kellossus was just Bonked you! Damage delt: " << damageEnemyPhys(target, 3) << endl;
+    
 }

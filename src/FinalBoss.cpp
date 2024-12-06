@@ -16,7 +16,7 @@ void FinalBoss::Explosion(Player& target){
 }
 
 void FinalBoss::BackToFull(){
-    bossStats.addHP(bossStats.getMaxHP());
+    bossStats.addHP(9999);
     cout << "Boss healed back to full HP!" << endl;
 }
 

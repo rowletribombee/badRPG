@@ -41,6 +41,4 @@ class Player{
         int buffCounter = 0;
         int buffMagnitude = 0;
         int buffID = 0;
-
-        
 };

@@ -122,6 +122,69 @@ src/tiles/Tile.cpp
 src/Potion.cpp
 )
 
+add_executable(testEliteBoss2
+test/testEliteBoss2.cpp
+src/Stats.cpp
+src/Player.cpp
+src/Screen.cpp
+src/Map.cpp
+src/tiles/EmptyTile.cpp
+src/tiles/FightTile.cpp
+src/tiles/PotionTile.cpp
+src/tiles/SpawnTile.cpp
+src/tiles/Tile.cpp
+src/tiles/WeaponTile.cpp
+src/Enemy.cpp
+src/EliteBoss2.cpp
+src/Inventory.cpp
+src/Weapon.cpp
+src/tiles/PotionTile.cpp
+src/tiles/Tile.cpp
+src/Potion.cpp
+)
+
+add_executable(testEliteBoss1
+test/testEliteBoss1.cpp
+src/Stats.cpp
+src/Player.cpp
+src/Screen.cpp
+src/Map.cpp
+src/tiles/EmptyTile.cpp
+src/tiles/FightTile.cpp
+src/tiles/PotionTile.cpp
+src/tiles/SpawnTile.cpp
+src/tiles/Tile.cpp
+src/tiles/WeaponTile.cpp
+src/Enemy.cpp
+src/EliteBoss1.cpp
+src/Inventory.cpp
+src/Weapon.cpp
+src/tiles/PotionTile.cpp
+src/tiles/Tile.cpp
+src/Potion.cpp
+)
+
+add_executable(testBasicBoss
+test/testBasicBoss.cpp
+src/Stats.cpp
+src/Player.cpp
+src/Screen.cpp
+src/Map.cpp
+src/tiles/EmptyTile.cpp
+src/tiles/FightTile.cpp
+src/tiles/PotionTile.cpp
+src/tiles/SpawnTile.cpp
+src/tiles/Tile.cpp
+src/tiles/WeaponTile.cpp
+src/Enemy.cpp
+src/BasicBoss.cpp
+src/Inventory.cpp
+src/Weapon.cpp
+src/tiles/PotionTile.cpp
+src/tiles/Tile.cpp
+src/Potion.cpp
+)
+
 add_executable(testPlayer
 test/testPlayer.cpp
 src/Stats.cpp
@@ -234,3 +297,9 @@ TARGET_LINK_LIBRARIES(testBattle gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testWeapons PRIVATE gtest_disable_pthreads=ON)
 TARGET_LINK_LIBRARIES(testFinalBoss gtest gtest_main)
 TARGET_COMPILE_DEFINITIONS(testFinalBoss PRIVATE gtest_disable_pthreads=ON)
+TARGET_LINK_LIBRARIES(testBasicBoss gtest gtest_main)
+TARGET_COMPILE_DEFINITIONS(testBasicBoss PRIVATE gtest_disable_pthreads=ON)
+TARGET_LINK_LIBRARIES(testEliteBoss1 gtest gtest_main)
+TARGET_COMPILE_DEFINITIONS(testEliteBoss1 PRIVATE gtest_disable_pthreads=ON)
+TARGET_LINK_LIBRARIES(testEliteBoss2 gtest gtest_main)
+TARGET_COMPILE_DEFINITIONS(testEliteBoss2 PRIVATE gtest_disable_pthreads=ON)

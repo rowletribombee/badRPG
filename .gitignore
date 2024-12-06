@@ -8,6 +8,9 @@ testInventory
 testWeapons
 testPlayer
 testFinalBoss
+testEliteBoss1
+testEliteBoss2
+testBasicBoss
 testBattle
 a.out 
 

@@ -30,7 +30,7 @@ class FightTile : public Tile {
             "\"Uh, that was rude.\" you mutter under your breath.\n"
             "\"Listen, let's just talk this out. I mean, once I get out of here, I could...maybe free you too. How does that sound?\"\n\n"
             "But your words only seem to fuel the " + boss + "'s anger, his eyes narrowing as his face shifts from anger to rage. His stance shifts, clearly showing he's ready for more.\n\n"
-            "The fight continues...",
+            "The fight continues...\n\n",
             
             
             "Despite fatigue seeping into your body, you keep your stance. You look at your opponent, tired but still with the determination to keep fighting\n"
@@ -43,7 +43,7 @@ class FightTile : public Tile {
             "\"Nice try, you wont get out of this that easily...\"\n\n"
             "You sigh, dropping your hands slightly.\n"
             "\"Bro I'm literally trying to AVOID the both of us getting hurt here. But okay, whatever, it's your funeral.\"\n\n"
-            "The fight continues...",
+            "The fight continues...\n\n",
             
             
             "Your arms ache, your legs feel like jelly, but you press on. Between swings, dodges, and narrowly avoiding certain death, you can't help but blurt out, "
@@ -60,7 +60,7 @@ class FightTile : public Tile {
             "\"Why should I?\" he snaps, his tone suddenly defensive. \"You've always been so good at figuring things out on your own. Isn't that why you built ... nevermind, I've said too much\"\n\n"
             "You freeze, his words rattling in your brain like loose change in a tin can. \"Wait, what? Built...what? I don't even own power tools. You've got the wrong guy.\"\n"
             "The " + boss + " chuckles darkly, his weapon rising again. \"Sure, just think about it for a bit. Maybe you'll remember before I finish you off.\"\n\n"
-            "The fight resumes with renewed intensity, but his words stick in your mind. The pieces don't fit, but they're starting to look like part of a bigger puzzle.",
+            "The fight resumes with renewed intensity, but his words stick in your mind. The pieces don't fit, but they're starting to look like part of a bigger puzzle.\n\n",
 
 
 
@@ -72,7 +72,7 @@ class FightTile : public Tile {
             "\"LITERALLY WHAT ACTIONS! I'VE BEEN HERE FOR A MAX OF LIKE 30 MINUTES! I HAVEN'T DONE ANYTHING! JUST LET ME GO HOME SO I CAN PLAY ROBLOX AND FORGET THIS ALL HAPPENED\"\n\n"
             "\"It's too late to complain...I've already decided your fate, just as you've done mine. Prepare to die\"\n"
             "The " + boss + " grips his weapon harder and prepares to jump back into the fight. You know this is it, your last chance to get out of the cave and find freedom. Finally, internet connection is within your grasp. You take a deep breath and prepare for the battle of your life...\n\n"
-            "The fight continues..."
+            "The fight continues...\n\n"
         };
         vector<string> winDialogueEliteBoss = {
             
@@ -82,7 +82,7 @@ class FightTile : public Tile {
             "Your frustration builds. \n\"Omg can we stop with the games already? What is going on??? Tell me how to get out of here, dude, I'm so hungry and I miss my phone!\" \n \n"
             "As the " + boss + " takes its last breath, it mutters, \n\"With time, my friend...with time, you'll have all the answers.\" \n \n"
             "\"Ugh, I'd rather just have all the answers now, but yeah okay, let's keep exploring this TOTALLY NOT creepy cave. Sounds like a blast.\" \n \n"
-            "You leave with more questions than you began with and a new passion to get out of this place as the " + boss + " leaves a(n) " + reward->getName() + " behind.",
+            "You leave with more questions than you began with and a new passion to get out of this place as the " + boss + " leaves a(n) " + reward->getName() + " behind.\n\n",
             
             
             "With one final strike, the " + boss + " falls to the ground, defeated. \n \n"
@@ -92,7 +92,7 @@ class FightTile : public Tile {
             "The " + boss + " groans in pain, muttering faintly, \n\"Maybe it's better that way...for now.\" \n \n"
             "Annoyed, you grumble, \"Great. Another cryptic answer. Thanks for nothing.\" \n \n"
             "The " + boss + " collapses into ash, leaving a(n) " + reward->getName() + " behind. \n \n"
-            "You grab it, feeling a mixture of triumph and confusion as you continue deeper into the unknown.",
+            "You grab it, feeling a mixture of triumph and confusion as you continue deeper into the unknown.\n\n",
             
             "You land the final blow on the " + boss + ", watching it collapse in defeat. \n \n"
             "\"Finally,\" you mutter, glaring down at the creature. \"Alright, start talking. What's the deal with this place?\" \n \n"
@@ -101,7 +101,7 @@ class FightTile : public Tile {
             "The " + boss + " struggles to speak, its voice fading. \n\"It's all connected... and you'll see it soon enough.\" \n \n"
             "Exasperated, you groan, \"Why is everyone here so cryptic? Can someone give me a straight answer for once?!\" \n \n"
             "The " + boss + " vanishes, leaving a(n) " + reward->getName() + " behind. \n \n"
-            "You sigh, pick up the reward, and press on, your determination growing as the mystery deepens."
+            "You sigh, pick up the reward, and press on, your determination growing as the mystery deepens.\n\n"
         };
         vector<string> winDialogueNormalBoss = { 
            
@@ -110,7 +110,7 @@ class FightTile : public Tile {
             "\"And what does that mean exactly? I really miss watching my daily YouTube videos on my lunch break,\" you reply. \n \n"
             "The " + boss + " smirks weakly, \"You'll find out soon enough...\" \n \n"
             "\"Bruh that still doesn't make any sense.\" \n \n"
-            "You leave confused and frustrated, but a sense of accomplishment lingers as the " + boss + " leaves a(n) " + reward->getName() + " behind.\n",
+            "You leave confused and frustrated, but a sense of accomplishment lingers as the " + boss + " leaves a(n) " + reward->getName() + " behind.\n\n",
            
             "You strike the " + boss + " with a perfectly timed attack using your trusty weapon! \n \n"
             "As the " + boss + " crumples to the ground, it lets out a chilling laugh, \"Heh... enjoy your little victory while it lasts... The real challenge awaits.\" \n \n"
@@ -122,7 +122,7 @@ class FightTile : public Tile {
             "It struggles to speak, rasping out, \"Defeat me if you must, but your journey is far from over. They're watching... always watching.\" \n \n"
             "You sigh. \"Can they 'watch' me take a nap? That'd be great.\" \n \n"
             "Without another word, the " + boss + " collapses, leaving a(n) " + reward->getName() + " behind. \n \n"
-            "Grateful for the reward, you pick it up and move on, bracing for what's next."
+            "Grateful for the reward, you pick it up and move on, bracing for what's next.\n\n"
         };
         vector<string> loseDialogue{
             
@@ -130,5 +130,3 @@ class FightTile : public Tile {
             
         };
 };
-
-// more dialogue incoming 

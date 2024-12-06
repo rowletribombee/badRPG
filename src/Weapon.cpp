@@ -5,6 +5,7 @@
 Weapon::~Weapon(){}
 
 void Weapon::use(Player& target) {
+    equipped = true;
     target.applyStatBoost("atk", attackBoost);
     target.applyStatBoost("def", defenseBoost);
     target.applyStatBoost("matk", magicAttackBoost);
@@ -15,6 +16,7 @@ void Weapon::use(Player& target) {
 }
 
 void Weapon::unequip(Player& target) {
+    equipped = false;
     target.applyStatBoost("atk", -attackBoost);
     target.applyStatBoost("def", -defenseBoost);
     target.applyStatBoost("matk", -magicAttackBoost);

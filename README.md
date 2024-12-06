@@ -60,5 +60,5 @@ Updated Diagram:
  > cmake . && make && ./startGame
 
  ## Testing
- > Our project was tested and validated using CI via Github Actions. 
+ > Our project was tested (gtest) and validated using CI via Github Actions. 
  

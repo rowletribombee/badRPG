@@ -14,12 +14,11 @@ class Screen{
         void displayInventory(Inventory& inventory);
         void displayItemDetails(Item& item, Inventory& inventory);
         void displayMapScreen();
+        void displayStats(Player& player);
         void sleep_for(int milliseconds);
         void displayCredits();
         void displayRaceSelection(Player& player);
         void displayRaceStats();
-        void displayPlayerCombat(Player& player, Stats& stats);
-
-
+        void displayPlayerCombat(Player& player, Stats&);
     private:
 };

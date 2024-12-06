@@ -185,6 +185,18 @@ void Screen::displayRaceStats(){
 
 }
 
+void Screen::displayStats(Player& player){
+    Stats& stats = player.getStats();
+    auto charInfo = [](const Stats& stats) {
+        cout << "   HP: " << stats.getHP() << "/" << stats.getMaxHP() << endl;
+        cout << "   ATK: " << stats.getAtk() << " | DEF: " << stats.getDef() << endl;
+        cout << "   MATK: " << stats.getMAtk() << " | MDEF: " << stats.getMDef() << endl;
+        cout << "   SPD: " << stats.getSpd() << " | LCK: " << stats.getLck() << endl;
+        cout << "-----------------------------------------" << endl;
+    };
+    charInfo(stats);
+}
+
 void Screen::displayRaceSelection(Player& player){
     Stats& stats = player.getStats();
     auto charInfo = [](const Stats& stats) {

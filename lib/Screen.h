@@ -12,6 +12,7 @@ class Screen{
         void displayInstructions();
         void displayIntroScreen();
         void displayInventory(Inventory& inventory);
+        void displayItemDetails(Item& item, Inventory& inventory);
         void displayMapScreen();
         void sleep_for(int milliseconds);
         void displayCredits();

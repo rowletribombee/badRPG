@@ -1,6 +1,7 @@
 #include "../lib/Screen.h"
 #include "../lib/Game.h"
 #include "../lib/Player.h"
+#include "../lib/Inventory.h"
 #include <iostream>
 #include <string>
 #include <chrono>
@@ -27,7 +28,7 @@ void Screen::displayCommandMenu(){
             "[I] Inventory" << endl << 
             "[S] Stats" << endl <<
             "[G] Map" << endl <<
-            "[Q] Quit and Save" << endl <<
+            "[T] Quit and Save" << endl <<
             "[C] Command Menu" << endl <<
             "[X] Credits" << endl << endl;
 }
@@ -54,7 +55,7 @@ void Screen::displayInstructions()
     cout << "[S] Stats: View your characters current stats" << endl;
     cout << "[A] Actions: Choose your action during combat (Fight, flee, defend)" << endl;
     cout << "[G] Map: See your current position on the map and places you've visited before" << endl;
-    cout << "[Q] Quit and Save: Quit and save your game locally" << endl;
+    cout << "[T] Quit and Save: Quit and save your game locally" << endl;
     cout << "[C] Command Menu: Move, check Inventory, view Stats, or Quit and Save your game";
     cout << endl;
     cout << "=========================================" << endl << endl;
@@ -127,6 +128,17 @@ void Screen::displayInventory(Inventory& inventory){
     cout << "========Inventory========" << endl;
     cout << inventory.displayItems();
 }
+
+void Screen::displayItemDetails(Item& item, Inventory& inventory){
+    cout << "========Item Details=====" << endl;
+
+    cout << inventory.displayItemDetails(item);
+
+    cout << "Optons: " << endl;
+    cout << "1. Use" << endl;
+    cout << "2. Back to Inventory" << endl;
+}
+
 
 void Screen::displayCredits(){
     cout << "Developed by:" << endl;

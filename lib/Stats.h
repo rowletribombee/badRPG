@@ -21,6 +21,7 @@ class Stats{
         void isOgre();
         void isFairy();
         int getHP() const;
+        
         int getMaxHP() const;
         int getAtk() const;
         int getMAtk() const;
@@ -28,6 +29,15 @@ class Stats{
         int getMDef() const;
         int getSpd() const;
         int getLck() const;
+        void setHp(int hp) { hp = hp; }
+        void setMaxHp(int maxHp) { maxHp = maxHp; }
+        void setAtk(int atk){ atk = atk; }
+        void setMAtk(int mAtk) { matk = mAtk; }
+        void setDef(int def) { def = def; }
+        void setMDef(int mDef) { mdef = mDef; }
+        void setLck(int lck) { lck = lck; }
+        void setSpd(int spd ) {spd = spd; }
+
         void addHP (int); //for healing
         void addStat(const std::string&, int); // for weapons, utility
         void reduceHp(int); 

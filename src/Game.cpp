@@ -31,8 +31,8 @@ void Game::save(){
     outFile << firstStage << ' ' << secondStage << ' ' << thirdStage << ' ' << gameOver << endl;
     // map backup
     for(int i = 0; i < map.getMapOfTiles().size(); i++){
-        for(int j = 0; j < map.getMapOfTiles().at(j).size(); j++){
-            if(i == map.getMapOfTiles().size() - 1 && j == map.getMapOfTiles().at(j).size() - 1){
+        for(int j = 0; j < map.getMapOfTiles().at(i).size(); j++){
+            if(i == map.getMapOfTiles().size() - 1 && j == map.getMapOfTiles().at(i).size() - 1){
                 outFile << map.getMapOfTiles().at(i).at(j)->isVisited() << endl;
             }else{
                 outFile << map.getMapOfTiles().at(i).at(j)->isVisited() << ' ';
@@ -79,10 +79,11 @@ void Game::save(){
             outFile << ' ';
         }
     }
+    if(inventory.getInventory().size() == 0) outFile << -1 << endl;
     // player backup
     outFile << player.getPositionX() << ' ' << player.getPositionY() << ' ' << player.getBuffCounter() << endl;
     // stats backup
-    outFile << player.getStats().getMaxHP() << ' ' << player.getStats().getAtk() << ' ' << player.getStats().getMAtk() << ' ' << player.getStats().getDef() << ' ' << player.getStats().getMDef() << ' ' << player.getStats().getSpd() << ' ' << player.getStats().getLck() << endl;
+    outFile << player.getStats().getMaxHP() << ' ' << player.getStats().getHP() << ' ' << player.getStats().getAtk() << ' ' << player.getStats().getMAtk() << ' ' << player.getStats().getDef() << ' ' << player.getStats().getMDef() << ' ' << player.getStats().getSpd() << ' ' << player.getStats().getLck() << endl;
     
     outFile.close();
     cout << "Game saved successfully!" << endl;
@@ -100,29 +101,24 @@ void Game::controls(){
             cout << "Invalid menu choice! Try again! Remember that you can always press C to see all available commands!" << endl;
         }
     }
-    switch(choice){
-        case 'M':
-            player.move(map, inventory);
-            screen.displayMapScreen(map, player); // automatically show map after every move?
-        case 'I':
-            screen.displayInventory(inventory);
-            break;
-        case 'S':
-            // there needs to be a function that shows the current stats of the player
-            // screen.displayStats(player);
-            break;
-        case 'X':
-            screen.displayCredits();
-            break;
-        case 'T':
-            save();
-            break;
-        case 'G':
-            screen.displayMapScreen(map, player);
-            break;
-        case 'C':
-            screen.displayCommandMenu();
-            break;
+    if(choice == 'M'){
+        player.move(map, inventory);
+        screen.displayMapScreen(map, player);
+    }else if(choice == 'I'){
+        screen.displayInventory(inventory);
+        
+    }else if(choice == 'S'){
+        // there needs to be a function that shows the current stats of the player
+        // screen.displayStats(player);
+    }else if(choice == 'X'){
+        screen.displayCredits();
+    }else if(choice == 'T'){
+        save();
+        saveState = true;
+    }else if(choice == 'G'){
+        screen.displayMapScreen(map, player);
+    }else if(choice == 'C'){
+        screen.displayCommandMenu();
     }
 }
 void Game::startGame(){
@@ -130,13 +126,25 @@ void Game::startGame(){
     screen.displayInstructions();
     while(!gameOver){
         while(firstStage){
-            controls();
+            if(!saveState){
+                controls();
+            }else{
+                return;
+            }
         }
         while(secondStage){
-            controls();
+            if(!saveState){
+                controls();
+            }else{
+                return;
+            }
         }
         while(thirdStage){
-            controls();
+            if(!saveState){
+                controls();
+            }else{
+                return;
+            }
         }
     }
 }

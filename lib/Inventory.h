@@ -11,6 +11,7 @@ public:
     void addItem(Item* item);
     void removeItem(Item* item);
     string displayItems() const;
+    string displayItemDetails(Item& item) const;
     vector<Item*> getInventory(){ return items; }
 
 private:

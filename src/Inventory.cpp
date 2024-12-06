@@ -1,5 +1,7 @@
 #include "../lib/Item.h"
 #include "../lib/Inventory.h"
+#include "../lib/Weapon.h"
+#include "../lib/Potion.h"
 #include <iostream>
 
 Inventory::Inventory(){
@@ -36,6 +38,33 @@ string Inventory::displayItems() const {
             output += to_string(i + 1) + ") " + item->getName() + "\n"; 
         }
     }
+    return output;
+}
+
+string Inventory::displayItemDetails(Item& item) const {
+    string output = "";
+    output = "Item: " + item.getName() + "\n";
+    
+    if(item.getType() == weapon){
+        Weapon* weaponItem = dynamic_cast<Weapon*>(&item);
+        output += "Attack Boost: " + to_string(weaponItem->getAtkBoost()) + "\n";
+        output += "Defend Boost: " + to_string(weaponItem->getDefBoost()) + "\n";
+        output += "Magic Attack Boost: " + to_string(weaponItem->getM_AtkBoost()) + "\n";
+        output += "Magic Defend Boost: " + to_string(weaponItem->getM_DefBoost()) + "\n";
+        output += "Speed boost: " + to_string(weaponItem->getSpdBoost()) + "\n";
+        output += "Luck Boost: " + to_string(weaponItem->getLuckBoost()) + "\n";
+        if(weaponItem->isEquipped()){
+            output += "Currently Equipped!\n";
+        }
+        else{
+            output += "Not Equipped\n";
+        }
+    }
+    else{
+        Potion* potionItem = dynamic_cast<Potion*>(&item);
+        output += "Heal Amount: " + to_string(potionItem->getHealAmount()) + "\n";
+    }
+    
     return output;
 }
 

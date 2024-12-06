@@ -14,42 +14,120 @@ class FightTile : public Tile {
         shared_ptr<Item> getReward() const { return reward; }
         const vector<string>& getEliteWinDialogue() const { return winDialogueEliteBoss; }
         const vector<string>& getNormalWinDialogue() const { return winDialogueNormalBoss; }
+        const vector<string>& getPhaseDialogueFinalBoss() const { return PhaseDialogueFinalBoss; }
+        const string getFinalBossWin() const { return FinalBossWin; }
     private:
         string boss;
         shared_ptr<Item> reward;
-        vector<string> winDialogueFinalBoss = {
-            //There will be three phases each with their own dialogue
-            "",
-            "",
-            ""
+        
+        string FinalBossWin = {
+           
+            "After a relentless and grueling battle, you finally land the decisive blow. The " + boss + " collapses with a dramatic groan. A stunned silence fills the air.\n\n"
+            "For a moment, you stand there, catching your breath, hardly believing it's over.\n"
+            "\"Oh my god, it's finally over. I thought I was gonna die like...80 times back there.\"\n"
+            "You wipe the sweat from your brow and point your weapon at the fallen foe.\n\n"
+            "\"Alright, final chance to explain things around here. C'mon what's going on here. Is this like a dream? Are we in the matrix or something? Did I eat weird mushrooms? Did YOU put me here? I deserve at least some explanation after everything I've been through.\"\n\n"
+            "The " + boss + " groans and shifts, turning to face you.\n"
+            "\"Okay, okay, you really want to know? You've been stuck in this cave because YOU put yourself here. Everything that you've been through has been because of your own actions, and yours alone. So don't go blaming me, I just work here.\"\n\n"
+            "You stumble back as you process his words.\n"
+            "\"Wha- What are you talking about?? I didn't do anything. I just woke up here with ZERO memory. How is that my fault?\"\n\n"
+            "The " + boss + " rolls his eyes and sighs out of frustration.\n"
+            "\"Dude, how do you think you knew how to fight all those other monsters? Did you ever stop and wonder why this place felt...weirdly familiar?\"\n\n"
+            "\"...No?\"\n\n"
+            "The " + boss + " scoffs.\n"
+            "\"Of course not. Do I have to spell it out: you built this cave. Every wall, rock, monster-even me! You designed this place with your own grubby little hands. It's your own fault for getting stuck here, no one else. Us monsters only fought you to help you get stronger so you could finally get out.\"\n\n"
+            "You blink, trying to process the absurdity of it all.\n"
+            "\"Wait, wait, wait. So you're telling me... I'm the idiot who invented this torture dungeon and then forgot about it?\"\n\n"
+            "\"Exactly. You know, for a genius you really are stupid. Anyways don't worry about us, we'll be okay once this game resets and the next sucker-I mean, player comes.\"\n\n"
+            "Time suddenly feels frozen as you process. Suddenly a portal appears near the cavern entrance, sending debris and air around you. The twinkling light reminds you of the strange flicker you noticed when you first arrived.\n\n"
+            "You glance between the portal and the " + boss + ", still slumped and wheezing on the ground. Your emotions are a confused soup of anger, embarrassment, and—against your better judgment—a little bit of sympathy.\n\n"
+            "\"Welp,\" you mutter. \"Guess I'm out.\" You pause at the portal's edge looking back one last time.\n"
+            "\"Thanks for uh..helping me escape from...me, I guess.\"\n\n"
+            "The " + boss + " groans. \"Just go already. You're ruining my dramatic death scene.\"\n\n"
+            "With a shrug, you step through the portal, muttering under your breath, \"I seriously need to stop watching all those anime late at night.\"\n\n\n"
+            "CONGRATULATIONS! You beat the final boss and won the game!! Thank you for playing and we hope you had fun! Roll the credits!!\n\n\n"
+        };
+        //each string is a part of a phase (out of 4 phases)
+        vector<string> PhaseDialogueFinalBoss = {
+            "You finally find a moment to step back and center your thoughts\n\n"
+            "\"Come on dude lets just talk this out.\" you plead, hoping reason might pierce through the fight\n\n"
+            "The " + boss + " looks at you with an unsettling calm, condescending stare.\n"
+            "\"You're not getting out of here alive. End of story\"\n\n"
+            "You blink in shock, which seemingly upsets the " + boss + "\n"
+            "\"Uh, that was rude.\" you mutter under your breath.\n"
+            "\"Listen, let's just talk this out. I mean, once I get out of here, I could...maybe free you too. How does that sound?\"\n\n"
+            "But your words only seem to fuel the " + boss + "'s anger, his eyes narrowing as his face shifts from anger to rage. His stance shifts, clearly showing he's ready for more.\n\n"
+            "The fight continues...\n\n",
+            
+            
+            "Despite fatigue seeping into your body, you keep your stance. You look at your opponent, tired but still with the determination to keep fighting\n"
+            "\"Ugh, just tell me what's going on. Why are we even fighting? I'm tired bro\" you say, with frustration bleeding into your words.\n\n"
+            "The " + boss + " lets out a chuckle, amused by your ignorance.\n"
+            "\"You know this world better than I. You should be telling me\"\n\n"
+            "You roll your eyes, exasperated.\n"
+            "\"Yeah yeah that's what the last guy said. C'mon just explain what's going on. You seem like the top dog here -I just want answers. What's really in it for you?\"\n\n"
+            "His grin hardened into a scowl.\n"
+            "\"Nice try, you wont get out of this that easily...\"\n\n"
+            "You sigh, dropping your hands slightly.\n"
+            "\"Bro I'm literally trying to AVOID the both of us getting hurt here. But okay, whatever, it's your funeral.\"\n\n"
+            "The fight continues...\n\n",
+            
+            
+            "Your arms ache, your legs feel like jelly, but you press on. Between swings, dodges, and narrowly avoiding certain death, you can't help but blurt out, "
+            "\"Seriously, man, what's your deal? Why are you so mad? Did I step on your pet rock or something?!\"\n\n"
+            "The " + boss + " pauses mid-strike, glaring at you with a mix of annoyance and disdain. \"You don't get it, do you? You really don't remember anything?\"\n"
+            "\"No! That's what I've been saying this whole time! You think I'd voluntarily come hang out in a murder cave?!\"\n"
+            "The " + boss + " exhales sharply, lowering his weapon slightly.\n"
+            "\"This 'murder cave,' as you so eloquently put it, wasn't always like this. You changed everything.\"\n\n"
+            "You stop in your tracks, blinking.\n"
+            "\"Wait... me? What are you talking about? I literally just woke up here!\"\n"
+            "\"You really don't remember, huh? Figures. Typical.\" He shakes his head and smirks darkly.\n"
+            "\"Fine. Here's a hint: you've been here longer than you think. Much longer. And everyone here? They exist because of you.\"\n\n"
+            "You feel a chill crawl up your spine. \"Okay, creepy and vague. Care to elaborate?\"\n"
+            "\"Why should I?\" he snaps, his tone suddenly defensive. \"You've always been so good at figuring things out on your own. Isn't that why you built ... nevermind, I've said too much\"\n\n"
+            "You freeze, his words rattling in your brain like loose change in a tin can. \"Wait, what? Built...what? I don't even own power tools. You've got the wrong guy.\"\n"
+            "The " + boss + " chuckles darkly, his weapon rising again. \"Sure, just think about it for a bit. Maybe you'll remember before I finish you off.\"\n\n"
+            "The fight resumes with renewed intensity, but his words stick in your mind. The pieces don't fit, but they're starting to look like part of a bigger puzzle.\n\n",
+
+
+
+            "Your eyesight begins to get blurry as you start to lose your balance.\n"
+            "\"Okay...I get it... you hate me.\" You gasp, barely able to catch your breath. \"But what I don't understand is WHY. This is getting so lame-I just want to go home\"\n\n"
+            "For a moment the " + boss + " almost looks sympathetic, as if he understands... until their eyes shift back into focus\n"
+            "\"Oh shut up, don't give me all that. Just because you lost your memory doesn't mean your actions don't have consequences.\"\n\n"
+            "Your body almost goes limp\n"
+            "\"LITERALLY WHAT ACTIONS! I'VE BEEN HERE FOR A MAX OF LIKE 30 MINUTES! I HAVEN'T DONE ANYTHING! JUST LET ME GO HOME SO I CAN PLAY ROBLOX AND FORGET THIS ALL HAPPENED\"\n\n"
+            "\"It's too late to complain...I've already decided your fate, just as you've done mine. Prepare to die\"\n"
+            "The " + boss + " grips his weapon harder and prepares to jump back into the fight. You know this is it, your last chance to get out of the cave and find freedom. Finally, internet connection is within your grasp. You take a deep breath and prepare for the battle of your life...\n\n"
+            "The fight continues...\n\n"
         };
         vector<string> winDialogueEliteBoss = {
             
             "You have finally defeated the " + boss + " with a final blow to the head with your trusty weapon! \n \n"
-            "As you stand over your enemy, you ask, \n\"I'll ask one more time…what this place is and how did I get here with no memory?\" \n \n"
-            "The monster snaps back at you, \n\"I think you'd be better suited to answer that question than me…You know these caves better than anyone else.\" \n \n"
+            "As you stand over your enemy, you ask, \n\"I'll ask one more time...what this place is and how did I get here with no memory?\" \n \n"
+            "The " + boss + " snaps back at you, \n\"I think you'd be better suited to answer that question than me...You know these caves better than anyone else.\" \n \n"
             "Your frustration builds. \n\"Omg can we stop with the games already? What is going on??? Tell me how to get out of here, dude, I'm so hungry and I miss my phone!\" \n \n"
-            "As the monster takes its last breath, it mutters, \n\"With time, my friend…with time, you'll have all the answers.\" \n \n"
+            "As the " + boss + " takes its last breath, it mutters, \n\"With time, my friend...with time, you'll have all the answers.\" \n \n"
             "\"Ugh, I'd rather just have all the answers now, but yeah okay, let's keep exploring this TOTALLY NOT creepy cave. Sounds like a blast.\" \n \n"
-            "You leave with more questions than you began with and a new passion to get out of this place as the " + boss + " leaves a(n) " + reward->getName() + " behind.",
+            "You leave with more questions than you began with and a new passion to get out of this place as the " + boss + " leaves a(n) " + reward->getName() + " behind.\n\n",
             
             "With one final strike, the " + boss + " falls to the ground, defeated. \n \n"
             "Panting, you shout, \"Who keeps sending you guys? What do you want from me?!\" \n \n"
-            "The " + boss + " chuckles weakly, \"Sending us? No one sends us. You… you're the one who keeps coming back.\" \n \n"
+            "The " + boss + " chuckles weakly, \"Sending us? No one sends us. You... you're the one who keeps coming back.\" \n \n"
             "\"Coming back? What are you talking about? I don't even know where I am!\" \n \n"
-            "The " + boss + " groans in pain, muttering faintly, \n\"Maybe it's better that way…for now.\" \n \n"
+            "The " + boss + " groans in pain, muttering faintly, \n\"Maybe it's better that way...for now.\" \n \n"
             "Annoyed, you grumble, \"Great. Another cryptic answer. Thanks for nothing.\" \n \n"
             "The " + boss + " collapses into ash, leaving a(n) " + reward->getName() + " behind. \n \n"
-            "You grab it, feeling a mixture of triumph and confusion as you continue deeper into the unknown.",
+            "You grab it, feeling a mixture of triumph and confusion as you continue deeper into the unknown.\n\n",
             
             "You land the final blow on the " + boss + ", watching it collapse in defeat. \n \n"
             "\"Finally,\" you mutter, glaring down at the creature. \"Alright, start talking. What's the deal with this place?\" \n \n"
             "The " + boss + " smirks through its pain, \n\"What's the deal? You're the one who knows this place the best, aren't you?\" \n \n"
             "Shocked, you stumble back. \"What? No. That's impossible.\" \n \n"
-            "The " + boss + " struggles to speak, its voice fading. \n\"It's all connected… and you'll see it soon enough.\" \n \n"
+            "The " + boss + " struggles to speak, its voice fading. \n\"It's all connected... and you'll see it soon enough.\" \n \n"
             "Exasperated, you groan, \"Why is everyone here so cryptic? Can someone give me a straight answer for once?!\" \n \n"
             "The " + boss + " vanishes, leaving a(n) " + reward->getName() + " behind. \n \n"
-            "You sigh, pick up the reward, and press on, your determination growing as the mystery deepens."
+            "You sigh, pick up the reward, and press on, your determination growing as the mystery deepens.\n\n"
         };
         vector<string> winDialogueNormalBoss = { 
            
@@ -58,7 +136,7 @@ class FightTile : public Tile {
             "\"And what does that mean exactly? I really miss watching my daily YouTube videos on my lunch break,\" you reply. \n \n"
             "The " + boss + " smirks weakly, \"You'll find out soon enough...\" \n \n"
             "\"Bruh that still doesn't make any sense.\" \n \n"
-            "You leave confused and frustrated, but a sense of accomplishment lingers as the " + boss + " leaves a(n) " + reward->getName() + " behind.\n",
+            "You leave confused and frustrated, but a sense of accomplishment lingers as the " + boss + " leaves a(n) " + reward->getName() + " behind.\n\n",
            
             "You strike the " + boss + " with a perfectly timed attack using your trusty weapon! \n \n"
             "As the " + boss + " crumples to the ground, it lets out a chilling laugh, \"Heh... enjoy your little victory while it lasts... The real challenge awaits.\" \n \n"
@@ -70,13 +148,11 @@ class FightTile : public Tile {
             "It struggles to speak, rasping out, \"Defeat me if you must, but your journey is far from over. They're watching... always watching.\" \n \n"
             "You sigh. \"Can they 'watch' me take a nap? That'd be great.\" \n \n"
             "Without another word, the " + boss + " collapses, leaving a(n) " + reward->getName() + " behind. \n \n"
-            "Grateful for the reward, you pick it up and move on, bracing for what's next."
+            "Grateful for the reward, you pick it up and move on, bracing for what's next.\n\n"
         };
         vector<string> loseDialogue{
             
-            "OOF… that one hurt… \n ... \n You can see the Wi-Fi slowly fade away from your grasp as you take your last breath…. \n You Died! \n \n",
+            "OOF... that one hurt... \n ... \n You can see the Wi-Fi slowly fade away from your grasp as you take your last breath... \n You Died! \n \n",
             
         };
 };
-
-// more dialogue incoming 

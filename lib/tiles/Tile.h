@@ -5,7 +5,7 @@ using namespace std;
 enum TileType{ spawnTile, emptyTile, fightTile, potionTile, weaponTile };
 class Tile{
     protected:
-        bool visited = false;
+        bool visited;
         bool instantEquip;
         TileType type;
     public:

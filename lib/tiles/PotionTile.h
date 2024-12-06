@@ -6,7 +6,7 @@ using namespace std;
 
 class PotionTile : public Tile{
     public:
-        PotionTile(Potion potion) : potion(potion) { type = potionTile; }
+        PotionTile(Potion potion);
         ~PotionTile();
         void print() override;
         Potion getPotion() { return potion; }

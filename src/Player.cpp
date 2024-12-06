@@ -1,6 +1,8 @@
 #include "../lib/Player.h"
 #include "../lib/Potion.h"
+#include "../lib/Weapon.h"
 #include "../lib/tiles/PotionTile.h"
+#include "../lib/tiles/WeaponTile.h"
 #include <iostream>
 #include <cctype>
 
@@ -35,17 +37,17 @@ Player::Player(Stats& bStats){
 
 bool Player::checkForWall(char dir){
     if(positionX == 0 && dir == 'a'){
-        cout << "Whoops! There appears to be a wall here! Try again! w for up, a for left, s for down and d for right!" << endl;
+        cout << "Whoops! There appears to be a wall here! Try again!" << endl << "Please enter in a direction! w for up, a for left, s for down and d for right: ";
         return true;
     }else if(positionX == 7 && dir == 'd'){
-        cout << "Whoops! There appears to be a wall here! Try again! w for up, a for left, s for down and d for right!" << endl;
+        cout << "Whoops! There appears to be a wall here! Try again!" << endl << "Please enter in a direction! w for up, a for left, s for down and d for right: ";
         return true;
     }else if(positionY == 0 && dir == 'w'){
-        cout << "Whoops! There appears to be a wall here! Try again! w for up, a for left, s for down and d for right!" << endl;
+        cout << "Whoops! There appears to be a wall here! Try again!" << endl << "Please enter in a direction! w for up, a for left, s for down and d for right: ";
         return true;
     }
     else if(positionY == 7 && dir == 's'){
-        cout << "Whoops! There appears to be a wall here! Try again! w for up, a for left, s for down and d for right!" << endl;
+        cout << "Whoops! There appears to be a wall here! Try again!" << endl << "Please enter in a direction! w for up, a for left, s for down and d for right: ";
         return true;
     }else{
         return false;
@@ -97,13 +99,14 @@ void Player::move(Map& map, Inventory& inventory){
                     inventory.addItem(new Potion(potion));
                     cout << "You found a " << potion.getName() << " and added it to your inventory!\n";
                 }
-                // add it into inventory
             }
             if(map.mapOfTiles.at(positionY).at(positionX)->getType() == 4){ // weapon tile
-                // add weapon into the inventory, LATER PROBLEM -- WAITING ON PR TO BE MERGED
-                // dialogue
+                if (WeaponTile* weaponTile = dynamic_cast<WeaponTile*>(map.mapOfTiles.at(positionY).at(positionX))) {
+                    Weapon weapon = weaponTile->getWeapon();
+                    inventory.addItem(new Weapon(weapon));
+                    cout << "You found a " << weapon.getName() << " and added it to your inventory!\n";
+                }
             }
-
             map.mapOfTiles.at(positionY).at(positionX)->setVisited();
         }else{
             // screen class can print something like looks like you've already been here yada yada, there's nothing here

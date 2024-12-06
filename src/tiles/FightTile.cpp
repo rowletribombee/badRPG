@@ -8,10 +8,7 @@ FightTile::FightTile(const string& boss, shared_ptr<Item> reward)
     : boss(boss), reward(reward) {
         instantEquip = false;
         this->type = fightTile;
-}
-
-FightTile::~FightTile(){
-
+        visited = false;
 }
 
 FightTile::~FightTile(){}

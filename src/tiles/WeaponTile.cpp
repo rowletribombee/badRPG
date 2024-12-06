@@ -3,6 +3,11 @@
 #include <cstdlib>
 #include <ctime>
 
+WeaponTile::WeaponTile(Weapon weapon) : weapon(weapon) {
+    type = weaponTile;
+    visited = false;
+}
+
 WeaponTile::~WeaponTile(){}
 
 void WeaponTile::print(){

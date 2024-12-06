@@ -1,8 +1,6 @@
 #include "../../lib/tiles/SpawnTile.h"
 #include <iostream>
 
-SpawnTile::~SpawnTile(){}
-
 SpawnTile::SpawnTile(){
     type = spawnTile;
     setVisited();

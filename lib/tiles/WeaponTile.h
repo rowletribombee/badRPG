@@ -6,7 +6,7 @@ using namespace std;
 
 class WeaponTile : public Tile{
     public:
-        WeaponTile(Weapon weapon) : weapon(weapon) { type = weaponTile; }
+        WeaponTile(Weapon weapon);
         ~WeaponTile();
         void print();
         Weapon getWeapon() {return weapon;}

@@ -33,14 +33,11 @@ class Player{
 
     private:
         Stats baseStats;
-        int positionX = 0;
-        int positionY = 7;
-        int buffCounter = 0; // from prev player.h file
+        int positionX;
+        int positionY;
+        int buffCounter = 0;
+        int buffMagnitude = 0;
+        int buffID = 0;
 
-        void Attack(Stats&) const;
-        void MagicAttack(Stats&) const;
-        void Heal();
-        void BuffChosen(string&);
-        void Guard();
-        void Throw(Stats&) const; //should also take an item       
+        
 };

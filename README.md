@@ -70,6 +70,8 @@ Updated Diagram:
 ![image](https://github.com/user-attachments/assets/64ffe7eb-cf95-41f7-a333-da71000c39a0)
 * (I) Inventory
 ![image](https://github.com/user-attachments/assets/2540e603-490b-4e7b-9e63-da71aa824805)
+* (S) Stats
+![image](https://github.com/user-attachments/assets/9f1c5a56-ed7a-4b26-8e7d-b82147ee981a)
 * Move through the map:
 ![image](https://github.com/user-attachments/assets/435e00c3-f83b-476a-b582-33734b583191)
 * Saving and quiting:
@@ -81,5 +83,5 @@ Updated Diagram:
  > cmake . && make && ./startGame
 
  ## Testing
- > Our project was tested (gtest) and validated using CI via Github Actions. 
+* Our project was tested (gtest) and validated using CI via Github Actions. 
  

@@ -23,7 +23,7 @@ Game& LoadManager::loadGame(Game& game){
         }
         cout << endl;
         if(choice == 'A'){
-                
+            game.setSavedGame();
             return loading(game);
         }
         if(choice == 'B'){
@@ -43,7 +43,6 @@ Game& LoadManager::loading(Game& game){
         cout << "Error: file could not be opened. File must be named 'saveFile.txt'" << endl << endl << "A new game will be loaded" << endl;
         return game;
     }
-
     // game class loading
     int firstStage, secondStage, thirdStage, gameOver;
     inFile >> firstStage >> secondStage >> thirdStage >> gameOver;

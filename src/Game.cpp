@@ -124,9 +124,9 @@ void Game::controls(){
 }
 void Game::startGame(){
     // screen.displayIntroScreen();
-    screen.displayInstructions();
-    screen.displayRaceStats();
-    screen.displayRaceSelection(player);
+    // screen.displayInstructions();
+    if(!isSavedGame) screen.displayRaceStats();
+    if(!isSavedGame) screen.displayRaceSelection(player);
     while(!gameOver){
         while(firstStage){
             if(!saveState){

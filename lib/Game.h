@@ -18,6 +18,7 @@ class Game{
         void setSecondStageFalse();
         void setThirdStageFalse();
         void setGameOver() { gameOver = true; }
+        void setSavedGame() { isSavedGame = true; }
     private:
         Map map;
         Player player;

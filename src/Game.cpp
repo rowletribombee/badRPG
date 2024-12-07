@@ -123,8 +123,8 @@ void Game::controls(){
     }
 }
 void Game::startGame(){
-    // screen.displayIntroScreen();
-    // screen.displayInstructions();
+    screen.displayIntroScreen();
+    screen.displayInstructions();
     if(!isSavedGame) screen.displayRaceStats();
     if(!isSavedGame) screen.displayRaceSelection(player);
     while(!gameOver){

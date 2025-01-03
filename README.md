@@ -21,9 +21,6 @@ Some features we plan on providing include:
 * Scoring System: The player's score is determined by how quickly they find the optimal path out of the cave. Certain paths may have detours to pick up items or fight bosses, but they add to the "move count." Winning is possible through various paths, but those who play strategically get higher points.
 * Save/Load Game Functionality: Players can save their current game state at any point, allowing them to load and continue their adventure later. This feature ensures that players can manage their gameplay time effectively without losing progress.
 
- > ## Phase II
-
-## User Interface Specification
 
 ### Navigation Diagram
 This navigation diagram represents how our screen and interaction options change as the player progresses from the main menu into character setup and the main game loop, where they navigate through exploration, item interaction, and combat outcomes.
@@ -40,14 +37,7 @@ Updated Diagram:
 ![Screenshot 2024-12-06 161131](https://github.com/user-attachments/assets/26095829-5698-4e52-bfa8-bcee65e3d7c2)
 
 
- > ## Phase III
-## SOLID Principles
-* Single Responsibility: We applied the Single Responsibility principle by implementing a Screen class dedicated solely to managing and printing text for different screens (e.g., command menu, inventory, map, etc.). This allowed us to improve our code by centralizing all printing functionality into one class, reducing redundancy. Originally, many classes in our design included their own print functions, leading to unnecessary complexity. By refactoring to include a single Screen class responsible for printing, we simplified our class diagram and adhered to the principle effectively.
-* Open/Closed: This follows the Open/Closed principle, as we extended the Tile class's functionality by creating multiple derived classes for different types of tiles without modifying the original Tile class. This approach allowed us to enhance the behavior of Tile while keeping the base class intact. It improved our code by preventing repeated changes to the Tile class and instead enabling the creation of specific tile types through extension, resulting in a more maintainable and scalable design.
-* Interface Segregation: This follows the Interface Segregation principle, as we ensured that the Item class does not force its subclasses to implement irrelevant properties. Originally, the Item class had a weight variable that was only applicable to Weapon but not to Potion. By removing the weight variable from the Item class, we ensured that Potion does not implement functionality it doesn't need. This change improves our code by making the design more focused and preventing future issues where Potion might incorrectly handle a weight value, which is irrelevant to its purpose.
  
- > ## Final deliverable
-
  ## Screenshots
 * Starting game: <br/>
 ![image](https://github.com/user-attachments/assets/1279e814-a1d0-4282-9768-e73471712eed)
